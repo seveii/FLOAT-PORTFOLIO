@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me — Rafael Joseph Nieves</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230a0a0b%22/><text x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2216%22 fill=%22%23d8ff3f%22 text-anchor=%22middle%22>R</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .about-hero{ padding-top:6rem; }
+
+  /* two-column bio layout, built with float instead of grid */
+  .about-grid::after{ content:''; display:table; clear:both; }
+  .about-text{ float:left; width:58%; }
+  .about-photo{ float:right; width:36%; }
+
+  .about-grid h1{ font-size:clamp(2.6rem,5.4vw,4.4rem); text-transform:uppercase; margin-top:.5rem; }
+  .about-grid h1 .last{ display:block; -webkit-text-stroke:1.5px var(--text); color:transparent; }
+  .tagline{ font-style:italic; font-family:'Space Grotesk',sans-serif; font-size:1.2rem; color:var(--text-dim); margin-top:1.4rem; }
+  .bio p{ color:var(--text-dim); margin-top:1.3rem; }
+  .bio{ margin-top:1.8rem; max-width:52ch; }
+
+  .tagrow{ margin-top:2.2rem; }
+  .tagrow::after{ content:''; display:table; clear:both; }
+  .tagrow .chip{ float:left; margin:0 .7rem .7rem 0; }
+
+  .about-photo .media{ aspect-ratio:4/5; }
+  .about-photo{ position:sticky; top:120px; }
+
+  /* four-column stat strip, built with float instead of grid */
+  .fact-strip{
+    border:1px solid var(--line); border-radius:var(--radius-md);
+    overflow:hidden; margin-top:5rem;
+  }
+  .fact-strip::after{ content:''; display:table; clear:both; }
+  .fact{ float:left; width:25%; background:var(--surface); padding:1.8rem 1.6rem; border-left:1px solid var(--line); }
+  .fact:first-child{ border-left:none; }
+  .fact .num{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; color:var(--accent); }
+  .fact .lbl{ font-family:'JetBrains Mono',monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); margin-top:.5rem; }
+
+  @media (max-width:860px){
+    .about-text, .about-photo{ float:none; width:auto; }
+    .about-photo{ position:static; max-width:320px; margin:0 auto 2rem; }
+    .fact{ float:left; width:50%; }
+    .fact:nth-child(2n+1){ border-left:none; }
+    .fact:nth-child(-n+2){ border-bottom:1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="floatnav">
+  <div class="floatnav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span>R. Nieves</a>
+    <input type="checkbox" id="nav-toggle">
+    <ul class="navlinks">
+      <li><a href="about.html" class="active">About Me</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="works.html">Sample Works</a></li>
+      <li><a href="credentials.html">Credentials</a></li>
+    </ul>
+    <div class="navcta"><a href="mailto:nrafaeljoseph@gmail.com" class="btn ghost">Let's Talk</a></div>
+    <label for="nav-toggle" class="burger"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero">
+    <div class="wrap about-grid">
+      <div class="about-photo rise d2">
+        <div class="media">
+          <div class="label"><strong>Portrait</strong>swap in a B&amp;W photo — 4:5</div>
+        </div>
+      </div>
+
+      <div class="about-text rise">
+        <div class="eyebrow">Hello, I'm</div>
+        <h1>Rafael Joseph <span class="last">Nieves</span></h1>
+        <p class="tagline">Computer Engineering student, web designer &amp; graphic artist based in Marilao, Bulacan.</p>
+
+        <div class="bio">
+          <p>I'm a 21-year-old 3rd Year BS Computer Engineering student at Dr. Yanga's Colleges Inc. Somewhere between wiring circuits for class and staying up designing layouts, I found out the thing I actually love is building things people get to look at and use — mostly websites, sometimes brand identities, always with too much attention to detail.</p>
+          <p>Outside of school I'm usually cafe hopping with a camera, shooting everything in black &amp; white, planning the next trip to somewhere new, or grinding a few rounds online when I finally get free time. I've served as Multimedia Director for the Association of Computer Enthusiast Student, and I'm currently P.R.O. of ICpEP — so leading creative work for a room full of people is pretty normal for me at this point.</p>
+        </div>
+
+        <div class="tagrow">
+          <span class="chip">21 Years Old</span>
+          <span class="chip">Marilao, Bulacan</span>
+          <span class="chip">BS Computer Engineering</span>
+          <span class="chip">3rd Year</span>
+          <span class="chip">P.R.O. — ICpEP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="fact-strip rise d3">
+        <div class="fact"><div class="num">03</div><div class="lbl">Year Level</div></div>
+        <div class="fact"><div class="num">02</div><div class="lbl">Org Roles Held</div></div>
+        <div class="fact"><div class="num">∞</div><div class="lbl">Cups of Coffee</div></div>
+        <div class="fact"><div class="num">B&amp;W</div><div class="lbl">Go-To Filter</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="logo"><span class="dot"></span>R. Nieves</div>
+        <div class="footer-links">
+          <a href="mailto:nrafaeljoseph@gmail.com">Email</a>
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">Marilao, Bulacan, Philippines — Portfolio design © 2026</div>
+    </div>
+  </footer>
+</main>
+
+</body>
+</html>

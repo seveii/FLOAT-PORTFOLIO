@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Works — Rafael Joseph Nieves</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230a0a0b%22/><text x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2216%22 fill=%22%23d8ff3f%22 text-anchor=%22middle%22>R</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .works-hero{ padding-top:6rem; padding-bottom:0; }
+  .works-hero h1{ font-size:clamp(2.4rem,5vw,4rem); text-transform:uppercase; margin-top:.5rem; max-width:18ch; }
+  .works-intro{ max-width:56ch; color:var(--text-dim); margin-top:1.4rem; }
+
+  /* project grid, built with float instead of CSS grid */
+  .work-grid{ margin-top:4rem; }
+  .work-grid::after{ content:''; display:table; clear:both; }
+  .work-card{ float:left; width:47%; margin:0 6% 3rem 0; padding:1.3rem; }
+  .work-card:nth-child(2n){ margin-right:0; }
+  .work-card .media{ aspect-ratio:16/10; cursor:pointer; }
+  .work-meta{ padding:1.4rem .4rem .5rem; }
+  .work-tags::after{ content:''; display:table; clear:both; }
+  .work-tags{ margin-bottom:.9rem; }
+  .work-tags .chip{ float:left; margin:0 .5rem .5rem 0; font-size:.68rem; padding:.4em .8em; }
+  .work-meta h3{ font-size:1.35rem; text-transform:uppercase; }
+  .work-meta p{ color:var(--text-dim); margin-top:.7rem; font-size:.94rem; }
+  .work-link{
+    display:inline-block;
+    margin-top:1.1rem; font-family:'JetBrains Mono',monospace; font-size:.76rem;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--accent);
+  }
+  .work-link .arrow{ display:inline-block; margin-left:.5em; transition:transform .3s var(--ease); }
+  .work-card:hover .work-link .arrow{ transform:translate(4px,-4px); }
+
+  /* CSS-only lightbox via :target, centered with position + transform */
+  .lightbox{
+    position:fixed; inset:0; z-index:500;
+    background:rgba(6,6,7,.92); backdrop-filter:blur(6px);
+    padding:6vw;
+    opacity:0; pointer-events:none;
+    transition:opacity .35s var(--ease);
+  }
+  .lightbox:target{ opacity:1; pointer-events:auto; }
+  .lightbox-inner{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    max-width:720px; width:88%; text-align:center;
+  }
+  .lightbox .media{ aspect-ratio:16/10; margin-bottom:1.6rem; }
+  .lightbox h4{ font-size:1.3rem; text-transform:uppercase; }
+  .lightbox p{ color:var(--text-dim); margin-top:.6rem; max-width:52ch; margin-left:auto; margin-right:auto; }
+  .lightbox-close{
+    display:inline-block; margin-top:1.6rem;
+    font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--text-faint); border:1px solid var(--line); border-radius:999px; padding:.7em 1.3em;
+  }
+  .lightbox-close:hover{ color:var(--accent); border-color:var(--accent); }
+
+  @media (max-width:860px){
+    .work-card{ float:none; width:auto; margin-right:0; }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="floatnav">
+  <div class="floatnav-inner">
+    <a href="index.html" class="logo"><span class="dot"></span>R. Nieves</a>
+    <input type="checkbox" id="nav-toggle">
+    <ul class="navlinks">
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="works.html" class="active">Sample Works</a></li>
+      <li><a href="credentials.html">Credentials</a></li>
+    </ul>
+    <div class="navcta"><a href="mailto:nrafaeljoseph@gmail.com" class="btn ghost">Let's Talk</a></div>
+    <label for="nav-toggle" class="burger"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<main>
+  <section class="works-hero">
+    <div class="wrap">
+      <div class="eyebrow rise">Selected Work</div>
+      <h1 class="rise d1">A few things I've designed &amp; built.</h1>
+      <p class="works-intro rise d2">These are project-purpose pieces I've made so far — a mix of engineering coursework and design commissions. Swap these out with your own case studies as you finish them.</p>
+    </div>
+
+    <div class="wrap work-grid">
+
+      <!-- Replace this project with your own -->
+      <a href="#project-1" class="work-card card rise d1">
+        <div class="media"><div class="label"><strong>Project 01</strong>add screenshot — 16:10</div></div>
+        <div class="work-meta">
+          <div class="work-tags"><span class="chip">Embedded Systems</span><span class="chip">Arduino</span></div>
+          <h3>Smart Attendance System</h3>
+          <p>RFID-based attendance tracker with a live web dashboard — built for a Computer Engineering systems course.</p>
+          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+      <!-- Replace this project with your own -->
+      <a href="#project-2" class="work-card card rise d2">
+        <div class="media"><div class="label"><strong>Project 02</strong>add screenshot — 16:10</div></div>
+        <div class="work-meta">
+          <div class="work-tags"><span class="chip">Web Design</span><span class="chip">HTML/CSS</span></div>
+          <h3>ICpEP Org Website</h3>
+          <p>Landing page designed and coded for the organization while serving as P.R.O. — from moodboard to deployed site.</p>
+          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+      <!-- Replace this project with your own -->
+      <a href="#project-3" class="work-card card rise d3">
+        <div class="media"><div class="label"><strong>Project 03</strong>add screenshot — 16:10</div></div>
+        <div class="work-meta">
+          <div class="work-tags"><span class="chip">Branding</span><span class="chip">Graphic Design</span></div>
+          <h3>Cafe Brand Identity</h3>
+          <p>Logo, menu layout, and social kit for a local cafe concept — inspired by one too many coffee-hopping trips.</p>
+          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+      <!-- Replace this project with your own -->
+      <a href="#project-4" class="work-card card rise d4">
+        <div class="media"><div class="label"><strong>Project 04</strong>add screenshot — 16:10</div></div>
+        <div class="work-meta">
+          <div class="work-tags"><span class="chip">Photography</span><span class="chip">B&amp;W Series</span></div>
+          <h3>Grayscale — A Photo Series</h3>
+          <p>A personal black-and-white photography series shot across cafes and trips, edited for tone and contrast in Lightroom.</p>
+          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <div class="logo"><span class="dot"></span>R. Nieves</div>
+        <div class="footer-links">
+          <a href="mailto:nrafaeljoseph@gmail.com">Email</a>
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-note">Marilao, Bulacan, Philippines — Portfolio design © 2026</div>
+    </div>
+  </footer>
+</main>
+
+<div id="project-1" class="lightbox">
+  <div class="lightbox-inner">
+    <div class="media"><div class="label"><strong>Project 01</strong>add more screenshots here</div></div>
+    <h4>Smart Attendance System</h4>
+    <p>Describe the problem, your role, the tools used, and the outcome. This panel opens with pure CSS (no JavaScript) via the :target selector.</p>
+    <a href="#" class="lightbox-close">Close ✕</a>
+  </div>
+</div>
+<div id="project-2" class="lightbox">
+  <div class="lightbox-inner">
+    <div class="media"><div class="label"><strong>Project 02</strong>add more screenshots here</div></div>
+    <h4>ICpEP Org Website</h4>
+    <p>Describe the problem, your role, the tools used, and the outcome.</p>
+    <a href="#" class="lightbox-close">Close ✕</a>
+  </div>
+</div>
+<div id="project-3" class="lightbox">
+  <div class="lightbox-inner">
+    <div class="media"><div class="label"><strong>Project 03</strong>add more screenshots here</div></div>
+    <h4>Cafe Brand Identity</h4>
+    <p>Describe the problem, your role, the tools used, and the outcome.</p>
+    <a href="#" class="lightbox-close">Close ✕</a>
+  </div>
+</div>
+<div id="project-4" class="lightbox">
+  <div class="lightbox-inner">
+    <div class="media"><div class="label"><strong>Project 04</strong>add more screenshots here</div></div>
+    <h4>Grayscale — A Photo Series</h4>
+    <p>Describe the shoot, your process, and what you learned.</p>
+    <a href="#" class="lightbox-close">Close ✕</a>
+  </div>
+</div>
+
+</body>
+</html>

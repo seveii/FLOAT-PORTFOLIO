@@ -1,0 +1,346 @@
+<meta charset="UTF-8">
+<title>Defending the Float Layout</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #0a0a0b;
+    --surface: #16161a;
+    --surface-2: #1c1c21;
+    --line: rgba(244,243,239,0.12);
+    --line-strong: rgba(244,243,239,0.26);
+    --text: #f2f1ec;
+    --text-dim: #a8a7a2;
+    --text-faint: #706f6c;
+    --accent: #d8ff3f;
+    --accent-dim: #96a344;
+    --avoid: #ff6b5e;
+    --avoid-dim: #8a4a44;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --display: 'Space Grotesk', sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--accent); color:#0a0a0b; }
+
+  .page{ max-width:760px; margin:0 auto; padding:5rem 1.5rem 7rem; }
+
+  /* ---------- header ---------- */
+  header.top{ margin-bottom:3.5rem; }
+  .kicker{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:1rem;
+  }
+  h1{
+    font-family:var(--display); font-weight:700; letter-spacing:-.02em;
+    font-size:clamp(2.1rem,5vw,3rem); line-height:1.05; margin:0 0 .9rem;
+    text-wrap:balance;
+  }
+  .lede{ font-size:1.15rem; color:var(--text-dim); max-width:60ch; margin:0; }
+
+  .stat-row{
+    display:flex; gap:0; margin-top:2.4rem;
+    border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  }
+  .stat{ flex:1; padding:1rem 1.2rem; border-left:1px solid var(--line); }
+  .stat:first-child{ border-left:none; }
+  .stat .n{ font-family:var(--display); font-size:1.5rem; font-weight:700; }
+  .stat .n.accent{ color:var(--accent); }
+  .stat .n.avoid{ color:var(--avoid); }
+  .stat .l{ font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); margin-top:.3rem; }
+
+  /* ---------- sections ---------- */
+  section{ margin-top:4rem; }
+  section > h2{
+    font-family:var(--display); font-size:1.5rem; font-weight:700; letter-spacing:-.01em;
+    margin:0 0 1.3rem; padding-bottom:.8rem; border-bottom:1px solid var(--line);
+  }
+  h3{ font-family:var(--display); font-size:1.1rem; font-weight:600; margin:2rem 0 .8rem; }
+  p{ margin:0 0 1.1rem; color:var(--text-dim); }
+  p strong{ color:var(--text); font-weight:600; }
+  ul, ol{ color:var(--text-dim); padding-left:1.3rem; margin:0 0 1.1rem; }
+  li{ margin-bottom:.5rem; }
+  li strong{ color:var(--text); }
+  a{ color:var(--accent); }
+
+  /* opening pitch box */
+  .pitch{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    padding:1.8rem 2rem; margin-top:0;
+  }
+  .pitch .kicker{ margin-bottom:.7rem; }
+  .pitch p{ color:var(--text); font-size:1.05rem; margin-bottom:0; }
+  .pitch p + p{ margin-top:.9rem; }
+
+  /* file map */
+  .filemap{ border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .frow{ display:flex; gap:1rem; padding:.9rem 1.2rem; border-top:1px solid var(--line); align-items:baseline; }
+  .frow:first-child{ border-top:none; }
+  .frow .fname{ font-family:var(--mono); font-size:.85rem; color:var(--accent); white-space:nowrap; min-width:150px; }
+  .frow .fdesc{ font-size:.92rem; color:var(--text-dim); font-family:var(--serif); }
+
+  /* code blocks */
+  .code{
+    background:#0e0e11; border:1px solid var(--line); border-radius:10px;
+    padding:1.1rem 1.3rem; margin:1.1rem 0 1.4rem;
+    font-family:var(--mono); font-size:.82rem; line-height:1.7;
+    color:#c7c6c1; overflow-x:auto; white-space:pre;
+  }
+  .code .tag{ color:var(--text-faint); }
+  .code .float{ color:var(--accent); font-weight:600; }
+  .code .avoid{ color:var(--avoid); font-weight:600; text-decoration:line-through; }
+  .code .cm{ color:var(--text-faint); font-style:italic; }
+  .code-cap{
+    font-family:var(--mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--text-faint); margin:-.6rem 0 0;
+  }
+
+  /* before/after strip */
+  .compare{ display:flex; gap:1rem; margin:1.4rem 0 1.6rem; }
+  .compare > div{ flex:1; border-radius:10px; padding:1rem 1.1rem; border:1px solid var(--line); }
+  .compare .no{ background:rgba(255,107,94,.06); border-color:rgba(255,107,94,.28); }
+  .compare .yes{ background:rgba(216,255,63,.05); border-color:rgba(216,255,63,.28); }
+  .compare .tag{ font-family:var(--mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:.5rem; display:block; }
+  .compare .no .tag{ color:var(--avoid); }
+  .compare .yes .tag{ color:var(--accent); }
+  .compare p{ font-size:.88rem; margin:0; color:var(--text-dim); }
+
+  /* Q&A */
+  details.qa{
+    border:1px solid var(--line); border-radius:12px; margin-bottom:.8rem;
+    background:var(--surface);
+  }
+  details.qa[open]{ border-color:var(--line-strong); }
+  details.qa summary{
+    cursor:pointer; padding:1.05rem 1.3rem; font-family:var(--display); font-weight:600; font-size:.98rem;
+    color:var(--text); list-style:none; position:relative; padding-right:2.5rem;
+  }
+  details.qa summary::-webkit-details-marker{ display:none; }
+  details.qa summary::after{
+    content:'+'; position:absolute; right:1.3rem; top:50%; transform:translateY(-50%);
+    font-family:var(--display); font-size:1.3rem; color:var(--accent); transition:transform .25s ease;
+  }
+  details.qa[open] summary::after{ transform:translateY(-50%) rotate(45deg); }
+  .qa .qa-body{ padding:0 1.3rem 1.3rem; }
+  .qa .qa-body p{ font-size:.94rem; margin-bottom:.8rem; }
+  .qa .qa-body p:last-child{ margin-bottom:0; }
+
+  /* glossary */
+  .gloss{ border-top:1px solid var(--line); }
+  .gterm{ padding:1rem 0; border-bottom:1px solid var(--line); }
+  .gterm dt{ font-family:var(--mono); color:var(--accent); font-size:.88rem; font-weight:600; }
+  .gterm dd{ margin:.35rem 0 0; color:var(--text-dim); font-size:.92rem; }
+
+  footer.end{ margin-top:4.5rem; padding-top:2rem; border-top:1px solid var(--line); }
+  footer.end p{ font-family:var(--mono); font-size:.75rem; color:var(--text-faint); margin:0; }
+
+  @media (max-width:600px){
+    .page{ padding:3rem 1.2rem 5rem; }
+    .stat-row{ flex-wrap:wrap; }
+    .stat{ flex:1 1 50%; border-left:none; border-top:1px solid var(--line); }
+    .stat:nth-child(-n+2){ border-top:none; }
+    .compare{ flex-direction:column; }
+    .frow{ flex-direction:column; gap:.3rem; }
+    .frow .fname{ min-width:0; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="top">
+    <div class="kicker">Defense Prep · Float Portfolio</div>
+    <h1>Explaining my code</h1>
+    <p class="lede">A walkthrough of how the site is actually built, written so you can answer whatever your professor asks about it — not just recite what the code does.</p>
+
+    <div class="stat-row">
+      <div class="stat"><div class="n">5</div><div class="l">HTML pages</div></div>
+      <div class="stat"><div class="n accent">49</div><div class="l">float declarations</div></div>
+      <div class="stat"><div class="n avoid">0</div><div class="l">flex / grid</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">lines of JS</div></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="pitch">
+      <div class="kicker">If your prof says "walk me through this"</div>
+      <p>"It's a 5-page personal portfolio — one cover page and four content pages that share a nav, footer, and card system. Everything is plain HTML and CSS, no JavaScript. The layout — the nav bar, the multi-column sections, the card grids — is all built with the CSS <code>float</code> property and manual clearfixes, the way pages were laid out before Flexbox and Grid existed. Anywhere float genuinely can't do the job — like centering a modal — I used a different pre-Flexbox technique, <code>position: absolute</code> with <code>transform</code>, and I can explain why float doesn't work there."</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>1 · How the project is organized</h2>
+    <p>One shared stylesheet, five HTML pages. Four of the pages reuse the exact same nav and footer markup, so the layout logic only has to be written once.</p>
+    <div class="filemap">
+      <div class="frow"><div class="fname">index.html</div><div class="fdesc">The cover page. Full-screen photo hero, then float-card sections that summarize the other four pages.</div></div>
+      <div class="frow"><div class="fname">about.html</div><div class="fdesc">Bio in a two-column float layout, plus a 4-column stat strip.</div></div>
+      <div class="frow"><div class="fname">skills.html</div><div class="fdesc">Tools column + essay column, both floated, with floated chip lists inside.</div></div>
+      <div class="frow"><div class="fname">works.html</div><div class="fdesc">A floated project-card grid, plus a CSS-only lightbox (no JS) using <code>:target</code>.</div></div>
+      <div class="frow"><div class="fname">credentials.html</div><div class="fdesc">Education card + two role cards, floated.</div></div>
+      <div class="frow"><div class="fname">css/style.css</div><div class="fdesc">Shared: CSS variables, the nav, buttons, chips, cards, footer — everything reused on every page.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · The core technique: float layout</h2>
+    <p><strong>This is the part your professor is actually grading</strong>, so it's worth being able to explain from first principles, not just point at the code.</p>
+
+    <h3>What <code>float</code> actually does</h3>
+    <p>Normally every block element stacks top to bottom, full width. <code>float: left</code> or <code>float: right</code> pulls an element <em>out</em> of that normal stacking and pushes it to one side, letting whatever comes after it flow up alongside it instead of underneath it. That "letting content flow beside it" behavior is the entire mechanism — it's literally how magazine layouts wrapped text around a photo before CSS existed. Two elements floated left and right at fixed widths sit side by side, which is how every multi-column section on this site is built.</p>
+
+    <div class="code-cap">about.html — the two-column bio layout</div>
+    <div class="code">.about-text{ <span class="float">float:left</span>; width:58%; }
+.about-photo{ <span class="float">float:right</span>; width:36%; }</div>
+    <p>No wrapper needs <code>display: flex</code> or <code>display: grid</code> for this — the two elements just claim opposite sides of their container.</p>
+
+    <h3>The problem float creates: collapsing height</h3>
+    <p>A floated element is taken out of normal flow, so its parent no longer "sees" its height. If every child of a container is floated, the parent collapses to zero height — borders and backgrounds on that parent visually disappear, because as far as the parent's box model is concerned, it has no content in it.</p>
+
+    <div class="compare">
+      <div class="no"><span class="tag">Without a clearfix</span><p>The nav's background pill and border would collapse to a sliver, because every child inside it — the logo, the links, the button — is floated.</p></div>
+      <div class="yes"><span class="tag">With a clearfix</span><p>A tiny generated element after the floats forces the parent to expand and wrap around them properly.</p></div>
+    </div>
+
+    <div class="code-cap">css/style.css — the clearfix used on every floated container</div>
+    <div class="code">.floatnav-inner::after{
+  content:'';
+  display:table;
+  <span class="float">clear:both</span>;
+}</div>
+    <p>This pattern — an empty <code>::after</code> pseudo-element set to <code>clear: both</code> — is called a <strong>clearfix</strong>. It's the standard fix for the float-collapse problem, and it's why you'll see <code>::after{ content:''; display:table; clear:both; }</code> repeated after almost every floated container in the stylesheet: <code>.about-grid</code>, <code>.work-grid</code>, <code>.role-grid</code>, <code>.footer-row</code>, and so on.</p>
+
+    <h3>Multi-column card grids</h3>
+    <p>For a grid of cards (not just two columns), each card floats left at a fixed percentage width, and every card that starts a new row has its right margin removed with <code>:nth-child</code> so the row totals stay under 100%.</p>
+
+    <div class="code-cap">works.html — a 2-column project grid</div>
+    <div class="code">.work-card{ <span class="float">float:left</span>; width:47%; margin:0 6% 3rem 0; }
+.work-card:nth-child(2n){ margin-right:0; }  <span class="cm">/* every 2nd card: no gap on the right */</span></div>
+    <p>47% + 6% + 47% = 100%, so two cards fit per row with a 6% gutter between them, and the pattern repeats down the grid.</p>
+
+    <h3>The thing float can't do: vertical centering</h3>
+    <p>Float only controls left/right position — it has no concept of centering something vertically the way <code>align-items: center</code> does in Flexbox. The nav bar needed its logo, links, and button to look vertically centered in a pill-shaped bar, so instead of Flexbox, it uses a much older trick: <strong>set every item's <code>line-height</code> equal to the bar's total height</strong>, which centers single-line text automatically.</p>
+
+    <div class="code-cap">css/style.css — line-height as a centering trick</div>
+    <div class="code">.floatnav-inner{ min-height:3.6rem; }
+.logo{ <span class="float">float:left</span>; line-height:3.6rem; }   <span class="cm">/* line-height = bar height → text centers itself */</span>
+.navlinks li{ <span class="float">float:left</span>; line-height:3.6rem; margin-right:2.1rem; }</div>
+    <p>Good follow-up if asked: <em>"Why not use <code>align-items: center</code>?"</em> — because that's a Flexbox property, and the assignment is specifically about proving the layout with <code>float</code>.</p>
+  </section>
+
+  <section>
+    <h2>3 · Where float genuinely doesn't apply</h2>
+    <p>Being upfront about this is stronger than pretending float did everything. A couple of spots needed a different, still pre-Flexbox technique — <strong>because float has no answer for centering something in the middle of the screen</strong>, only for pushing things to a side.</p>
+
+    <h3>Centering the project lightbox</h3>
+    <p>works.html opens a full case-study panel with no JavaScript, using the CSS <code>:target</code> selector — the browser adds an <code>:target</code> match to whatever element's <code>id</code> matches the current URL's <code>#hash</code>, so a plain link like <code>&lt;a href="#project-1"&gt;</code> can open it. Centering that panel uses <code>position: absolute</code> plus a <code>transform</code>, not float:</p>
+
+    <div class="code-cap">works.html — dead-center a box with no flex/grid</div>
+    <div class="code">.lightbox-inner{
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);  <span class="cm">/* pull it back by half its own size */</span>
+}</div>
+    <p>The trick: <code>top: 50%; left: 50%</code> puts the box's top-left <em>corner</em> at the exact center of the screen. <code>translate(-50%, -50%)</code> then shifts the box back by half of <em>its own</em> width and height, which lands its actual center on that point.</p>
+
+    <h3>Pinning the hero text to the bottom of the photo</h3>
+    <div class="code-cap">index.html — the cover page's text block</div>
+    <div class="code">.hero-content{
+  position:absolute;
+  left:0; right:0; bottom:0;
+}</div>
+    <p>Same idea, simpler: <code>left:0; right:0</code> stretches it full-width, <code>bottom:0</code> pins it to the floor of the hero section — no float needed because nothing sits beside it to push against.</p>
+  </section>
+
+  <section>
+    <h2>4 · Other techniques worth naming</h2>
+    <ul>
+      <li><strong>CSS custom properties</strong> — every color, radius, and easing curve is a variable in <code>:root</code> (<code>--accent</code>, <code>--surface</code>, <code>--ease</code>…), so the whole site's palette can change from one place.</li>
+      <li><strong><code>:target</code> for the lightbox</strong> — no JavaScript modal library; a hidden panel becomes visible purely because its <code>id</code> matches the URL hash.</li>
+      <li><strong>The mobile menu is a checkbox, not JS</strong> — a hidden <code>&lt;input type="checkbox"&gt;</code> plus a <code>&lt;label&gt;</code> styled as a hamburger icon. CSS reads <code>#nav-toggle:checked ~ .navlinks</code> to slide the menu in — a real click/state toggle with zero script.</li>
+      <li><strong>CSS keyframe animation</strong> — the scrolling role ticker on the cover page and the fade-up entrance on each section are <code>@keyframes</code>, not JS.</li>
+      <li><strong>Media queries</strong> — at 860px, float rules are explicitly turned off (<code>float:none; width:auto;</code>) so columns stack for mobile instead of squeezing sideways.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5 · Likely questions, ready answers</h2>
+
+    <details class="qa">
+      <summary>Why did you use float instead of Flexbox or Grid?</summary>
+      <div class="qa-body">
+        <p>It's the layout technique this project was specifically asked to demonstrate — the pre-Flexbox way of building multi-column layouts, using <code>float</code> and <code>clear</code> instead of a layout module purpose-built for it.</p>
+        <p>Flexbox and Grid are newer and generally easier for this exact job, but float was the standard tool for years before them, and understanding how it works — and where it breaks — is the point of the exercise.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>What's the actual difference between float:left and float:right?</summary>
+      <div class="qa-body">
+        <p><code>float: left</code> pulls the element to the left edge of its container and lets later content wrap along its right side. <code>float: right</code> does the mirror image — pulls to the right edge, content wraps along its left. Order in the HTML doesn't decide which side an element ends up on; the <code>float</code> value does.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>What happens if you forget to clear a float?</summary>
+      <div class="qa-body">
+        <p>The parent container collapses — since it no longer "contains" any in-flow content — so its background, border, and padding effectively disappear, and anything after it in the HTML flows up underneath the floated elements instead of below them. That's why this project adds a <code>::after{ clear:both; }</code> clearfix on every container that has floated children.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>How did you build multi-column grids without CSS Grid?</summary>
+      <div class="qa-body">
+        <p>Each item floats left at a fixed percentage width with a right margin for the gutter, and <code>:nth-child()</code> removes that margin on the last item of each row so the widths add up to exactly 100% instead of overflowing.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>Doesn't float break on mobile?</summary>
+      <div class="qa-body">
+        <p>It would if left alone — fixed percentage widths don't leave room to stack on a narrow screen. A media query at 860px explicitly resets every floated element back to <code>float: none; width: auto;</code>, so on phones the layout falls back to plain block stacking, one item per row.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>How does the image lightbox open without any JavaScript?</summary>
+      <div class="qa-body">
+        <p>It uses the CSS <code>:target</code> pseudo-class. Each lightbox is a hidden full-screen <code>&lt;div id="project-1"&gt;</code> with <code>opacity:0; pointer-events:none</code>. A project card links to <code>#project-1</code>. When that's the current URL hash, the browser matches <code>#project-1:target</code> in the CSS, which flips it to <code>opacity:1; pointer-events:auto</code>. The browser does the state-tracking; no script is involved.</p>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary>Why does the nav bar look centered if float can't center things?</summary>
+      <div class="qa-body">
+        <p>It's not actually centered by float — float only pushes left/right. The vertical centering comes from a different, older trick: every nav item's <code>line-height</code> is set equal to the bar's height, which centers a single line of text inside its own box automatically. Combined with float for the left/right placement, the two techniques together produce what looks like a normal centered nav bar.</p>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <h2>6 · Quick glossary</h2>
+    <dl class="gloss">
+      <div class="gterm"><dt>float</dt><dd>A CSS property that removes an element from normal block flow and pushes it to the left or right edge of its container, letting other content wrap alongside it.</dd></div>
+      <div class="gterm"><dt>clear</dt><dd>Forces an element to move below any floated elements before it, instead of wrapping beside them.</dd></div>
+      <div class="gterm"><dt>clearfix</dt><dd>The standard workaround for a parent collapsing around floated children — an empty <code>::after</code> pseudo-element set to <code>clear: both</code>.</dd></div>
+      <div class="gterm"><dt>normal flow</dt><dd>The default way block elements stack — top to bottom, full container width — before any float or positioning changes it.</dd></div>
+      <div class="gterm"><dt>:target</dt><dd>A CSS pseudo-class that matches an element whose <code>id</code> equals the current URL's <code>#hash</code> — what makes the JS-free lightbox possible.</dd></div>
+    </dl>
+  </section>
+
+  <footer class="end">
+    <p>Study guide for the "FLOAT PORTFOLIO" project — read alongside the actual source in about.html, skills.html, works.html, credentials.html, index.html, and css/style.css.</p>
+  </footer>
+
+</div>
