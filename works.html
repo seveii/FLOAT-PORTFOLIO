@@ -6,58 +6,7 @@
 <title>Sample Works — Rafael Joseph Nieves</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230a0a0b%22/><text x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2216%22 fill=%22%23d8ff3f%22 text-anchor=%22middle%22>R</text></svg>">
 <link rel="stylesheet" href="css/style.css">
-<style>
-  .works-hero{ padding-top:6rem; padding-bottom:0; }
-  .works-hero h1{ font-size:clamp(2.4rem,5vw,4rem); text-transform:uppercase; margin-top:.5rem; max-width:18ch; }
-  .works-intro{ max-width:56ch; color:var(--text-dim); margin-top:1.4rem; }
-
-  /* project grid, built with float instead of CSS grid */
-  .work-grid{ margin-top:4rem; }
-  .work-grid::after{ content:''; display:table; clear:both; }
-  .work-card{ float:left; width:47%; margin:0 6% 3rem 0; padding:1.3rem; }
-  .work-card:nth-child(2n){ margin-right:0; }
-  .work-card .media{ aspect-ratio:16/10; cursor:pointer; }
-  .work-meta{ padding:1.4rem .4rem .5rem; }
-  .work-tags::after{ content:''; display:table; clear:both; }
-  .work-tags{ margin-bottom:.9rem; }
-  .work-tags .chip{ float:left; margin:0 .5rem .5rem 0; font-size:.68rem; padding:.4em .8em; }
-  .work-meta h3{ font-size:1.35rem; text-transform:uppercase; }
-  .work-meta p{ color:var(--text-dim); margin-top:.7rem; font-size:.94rem; }
-  .work-link{
-    display:inline-block;
-    margin-top:1.1rem; font-family:'JetBrains Mono',monospace; font-size:.76rem;
-    text-transform:uppercase; letter-spacing:.08em; color:var(--accent);
-  }
-  .work-link .arrow{ display:inline-block; margin-left:.5em; transition:transform .3s var(--ease); }
-  .work-card:hover .work-link .arrow{ transform:translate(4px,-4px); }
-
-  /* CSS-only lightbox via :target, centered with position + transform */
-  .lightbox{
-    position:fixed; inset:0; z-index:500;
-    background:rgba(6,6,7,.92); backdrop-filter:blur(6px);
-    padding:6vw;
-    opacity:0; pointer-events:none;
-    transition:opacity .35s var(--ease);
-  }
-  .lightbox:target{ opacity:1; pointer-events:auto; }
-  .lightbox-inner{
-    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    max-width:720px; width:88%; text-align:center;
-  }
-  .lightbox .media{ aspect-ratio:16/10; margin-bottom:1.6rem; }
-  .lightbox h4{ font-size:1.3rem; text-transform:uppercase; }
-  .lightbox p{ color:var(--text-dim); margin-top:.6rem; max-width:52ch; margin-left:auto; margin-right:auto; }
-  .lightbox-close{
-    display:inline-block; margin-top:1.6rem;
-    font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
-    color:var(--text-faint); border:1px solid var(--line); border-radius:999px; padding:.7em 1.3em;
-  }
-  .lightbox-close:hover{ color:var(--accent); border-color:var(--accent); }
-
-  @media (max-width:860px){
-    .work-card{ float:none; width:auto; margin-right:0; }
-  }
-</style>
+<link rel="stylesheet" href="css/works.css">
 </head>
 <body>
 <div class="grain"></div>
@@ -87,42 +36,40 @@
 
     <div class="wrap work-grid">
 
-      <!-- Replace this project with your own -->
+      <a href="#project-whispr" class="work-card card rise d1">
+        <div class="media"><img src="pictures/whispr-preview.svg" alt="Whispr app screen — anonymous confession feed"></div>
+        <div class="work-meta">
+          <div class="work-tags"><span class="chip">Full-Stack Web App</span><span class="chip">Node.js + WebSocket</span></div>
+          <h3>Whispr</h3>
+          <p>An anonymous confession platform where every account still verifies back to one real person — live feed, real-time social features, no framework.</p>
+          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
+        </div>
+      </a>
+
       <a href="#project-1" class="work-card card rise d1">
-        <div class="media"><div class="label"><strong>Project 01</strong>add screenshot — 16:10</div></div>
+        <div class="media"><img src="pictures/oasis-preview.svg" alt="OASIS admin dashboard — student roster and clearance status"></div>
         <div class="work-meta">
-          <div class="work-tags"><span class="chip">Embedded Systems</span><span class="chip">Arduino</span></div>
-          <h3>Smart Attendance System</h3>
-          <p>RFID-based attendance tracker with a live web dashboard — built for a Computer Engineering systems course.</p>
+          <div class="work-tags"><span class="chip">Admin Dashboard</span><span class="chip">In Development</span></div>
+          <h3>OASIS</h3>
+          <p>An officer admin system for ACES — tracks member dues, attendance, and clearance status in one place instead of scattered spreadsheets.</p>
           <span class="work-link">View Case Study <span class="arrow">↗</span></span>
         </div>
       </a>
 
-      <!-- Replace this project with your own -->
-      <a href="#project-2" class="work-card card rise d2">
-        <div class="media"><div class="label"><strong>Project 02</strong>add screenshot — 16:10</div></div>
-        <div class="work-meta">
-          <div class="work-tags"><span class="chip">Web Design</span><span class="chip">HTML/CSS</span></div>
-          <h3>ICpEP Org Website</h3>
-          <p>Landing page designed and coded for the organization while serving as P.R.O. — from moodboard to deployed site.</p>
-          <span class="work-link">View Case Study <span class="arrow">↗</span></span>
-        </div>
-      </a>
-
-      <!-- Replace this project with your own -->
       <a href="#project-3" class="work-card card rise d3">
-        <div class="media"><div class="label"><strong>Project 03</strong>add screenshot — 16:10</div></div>
+        <div class="media"><img src="pictures/pubmats/pubmants.png" alt="A grid of ACES publication graphics — announcements, exam-week reminders, and newsletters"></div>
         <div class="work-meta">
-          <div class="work-tags"><span class="chip">Branding</span><span class="chip">Graphic Design</span></div>
-          <h3>Cafe Brand Identity</h3>
-          <p>Logo, menu layout, and social kit for a local cafe concept — inspired by one too many coffee-hopping trips.</p>
+          <div class="work-tags"><span class="chip">Graphic Design</span><span class="chip">Canva</span></div>
+          <h3>Editing Collection</h3>
+          <p>A running compilation of logos, posters, palmares graphics, and publication layouts — mostly made for ACES and related orgs.</p>
           <span class="work-link">View Case Study <span class="arrow">↗</span></span>
         </div>
       </a>
 
-      <!-- Replace this project with your own -->
       <a href="#project-4" class="work-card card rise d4">
-        <div class="media"><div class="label"><strong>Project 04</strong>add screenshot — 16:10</div></div>
+        <div class="media">
+          <img class="bw" src="pictures/PHOTOGRAPH/6783146c-192e-4886-9798-5d34a8b1d019.jpg" alt="Sunset through tree branches over a bridge">
+        </div>
         <div class="work-meta">
           <div class="work-tags"><span class="chip">Photography</span><span class="chip">B&amp;W Series</span></div>
           <h3>Grayscale — A Photo Series</h3>
@@ -140,9 +87,8 @@
         <div class="logo"><span class="dot"></span>R. Nieves</div>
         <div class="footer-links">
           <a href="mailto:nrafaeljoseph@gmail.com">Email</a>
-          <a href="#">Instagram</a>
-          <a href="#">Behance</a>
-          <a href="#">GitHub</a>
+          <a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://github.com/seveii" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer-note">Marilao, Bulacan, Philippines — Portfolio design © 2026</div>
@@ -150,37 +96,114 @@
   </footer>
 </main>
 
-<div id="project-1" class="lightbox">
+<div id="project-whispr" class="lightbox">
   <div class="lightbox-inner">
-    <div class="media"><div class="label"><strong>Project 01</strong>add more screenshots here</div></div>
-    <h4>Smart Attendance System</h4>
-    <p>Describe the problem, your role, the tools used, and the outcome. This panel opens with pure CSS (no JavaScript) via the :target selector.</p>
+    <div class="media"><img src="pictures/whispr-preview.svg" alt="Whispr app screen — anonymous confession feed"></div>
+    <h4>Whispr — say it anonymously</h4>
+    <p>Whispr is an anonymous confession board — post under a made-up name and avatar, never your real identity. Every account still has to prove it belongs to one real, unique person, through Google/Discord OAuth or an email verified with a 6-digit code, so it can't be spammed with throwaway accounts. New users fill out a short, deliberately vague bio (hobbies, lifestyle, work/study) that adds personality without breaking anonymity.</p>
+    <p>Confessions get tagged by category and live hashtags, reacted to with "relate" instead of a like, and threaded with comments. Enough community flags auto-hides a post for review. Two live layers sit on top: follow someone to unlock a private shared drawing canvas with them, or send a 10–15 second clip of a real song that interrupts their screen full-screen — playable only once, ever.</p>
+    <p>Every uploaded photo is scanned client-side for faces and blocked if one's detected, so avatars stay anonymous by design, with a built-in avatar generator as a no-photo option. Built with Node.js and Express, no database — per-feature JSON stores with async locks — vanilla JS/HTML/CSS on the front end with no framework or build step, and two WebSocket channels for the drawing canvas and notifications.</p>
     <a href="#" class="lightbox-close">Close ✕</a>
   </div>
 </div>
-<div id="project-2" class="lightbox">
+<div id="project-1" class="lightbox">
   <div class="lightbox-inner">
-    <div class="media"><div class="label"><strong>Project 02</strong>add more screenshots here</div></div>
-    <h4>ICpEP Org Website</h4>
-    <p>Describe the problem, your role, the tools used, and the outcome.</p>
+    <div class="media"><img src="pictures/oasis-preview.svg" alt="OASIS admin dashboard — student roster and clearance status"></div>
+    <h4>OASIS — Officer &amp; Admin System for Involvement &amp; Students</h4>
+    <p>OASIS is a management app I'm building for ACES (Association of Computer Enthusiast Students) at Dr. Yanga's Colleges — one place for officers to run the org's day-to-day admin instead of scattered spreadsheets and paper. Its core job: track whether every member is in good standing — dues paid, required events attended — so by the end of the semester it's instantly clear who's cleared and who still owes something.</p>
+    <p>Login is officer-only; students are records the officers manage, not users of the system. Dashboard gives a landing overview — total/active/cleared/pending counts, dues-collection progress, a snapshot of recent attendance. User is the searchable, filterable student roster, with an ID-card-style profile per student. Payments tracks dues and requirements (org shirt, lanyard, booklet), lets officers add new requirement types on the fly, and exports a filtered list to Excel. Attendance lets officers build a sheet per event and check students in by ID — plus a locked-down Kiosk Mode students can use themselves, showing only their own name and time, never the full roster. Import bulk-adds students from an Excel/CSV file with validation against bad or duplicate rows.</p>
+    <p>Current limitation, worth being upfront about: there's no real backend yet — everything lives in the browser's <code>localStorage</code>, so it works well for one officer on one device but won't sync across officers on different computers. Shared, simultaneous access is the natural next step.</p>
     <a href="#" class="lightbox-close">Close ✕</a>
   </div>
 </div>
 <div id="project-3" class="lightbox">
   <div class="lightbox-inner">
-    <div class="media"><div class="label"><strong>Project 03</strong>add more screenshots here</div></div>
-    <h4>Cafe Brand Identity</h4>
-    <p>Describe the problem, your role, the tools used, and the outcome.</p>
+    <div class="media"><img src="pictures/editing-collection-hero.png" alt="ACES logos combined with a grid of publication graphics"></div>
+    <h4>Editing Collection</h4>
+    <p>An ongoing compilation of the graphic design and editing work I've made outside of coding — org logos, palmares and exam-week announcement graphics, event posters, publication layouts, and full brand campaigns. Most of it was made for ACES and the orgs around it, put together in Canva.</p>
+
+    <div class="lightbox-gallery">
+      <img src="pictures/logo/ACES%20LOGOS%20-%20DONE.png" alt="ACES cherry-blossom themed logo">
+      <img src="pictures/posters/asean%20poster.png" alt="Japan x DYCI ASEAN infographic poster spread">
+      <img src="pictures/batch%206%20promotion/Editing%20Compilations%20(12).png" alt="Batch6 Coffee — Sinaglayag brand campaign with vouchers and event photo">
+      <img src="pictures/omnebyte/Editing%20Compilations%20(13).png" alt="OmneByte college newsletter layout">
+      <img src="pictures/pubmats/tarpaulin.png" alt="Event tarpaulin designs">
+      <img src="pictures/sublimation%20shirt/Editing%20Compilations%20(14).png" alt="ICpEP sublimation shirt design">
+    </div>
+
+    <a href="https://canva.link/3xmcdojopigcj9d" target="_blank" rel="noopener" class="btn solid lightbox-cta">View Full Collection <span class="arrow">↗</span></a>
+    <br>
     <a href="#" class="lightbox-close">Close ✕</a>
   </div>
 </div>
 <div id="project-4" class="lightbox">
   <div class="lightbox-inner">
-    <div class="media"><div class="label"><strong>Project 04</strong>add more screenshots here</div></div>
+    <div class="media"><img src="pictures/PHOTOGRAPH/c35debee-f74a-4a73-b5ba-ee5c5d969809.jpg" alt="Portrait on a foggy balcony"></div>
     <h4>Grayscale — A Photo Series</h4>
-    <p>Describe the shoot, your process, and what you learned.</p>
+    <p>A personal black-and-white photography series — cafe hopping, trips, and everyday moments, shot on my phone and edited for tone and contrast in Lightroom. Click any shot below to view it larger, one at a time.</p>
+
+    <div class="photo-gallery">
+      <a href="#photo-1"><img src="pictures/PHOTOGRAPH/c35debee-f74a-4a73-b5ba-ee5c5d969809.jpg" alt="Portrait on a foggy balcony"></a>
+      <a href="#photo-2"><img src="pictures/PHOTOGRAPH/6783146c-192e-4886-9798-5d34a8b1d019.jpg" alt="Sunset through tree branches over a bridge"></a>
+      <a href="#photo-3"><img src="pictures/PHOTOGRAPH/66f8dc56-5c43-4467-ab58-a376babcffcd.jpg" alt="Mirror selfie at a cafe overlooking Tagaytay"></a>
+      <a href="#photo-4"><img src="pictures/PHOTOGRAPH/5c428796-79c8-4056-a129-d04d6ce09d77.jpg" alt="Looking out at the sea on an island trip"></a>
+      <a href="#photo-5"><img src="pictures/PHOTOGRAPH/83386d32-383d-47e2-abd0-6700402d893b.jpg" alt="Beach morning with a dog and a banana boat"></a>
+      <a href="#photo-6"><img src="pictures/PHOTOGRAPH/80115c30-f86e-4dab-9c5d-0f1b8d1c4320.jpg" alt="Golden hour traffic on a bridge"></a>
+      <a href="#photo-7"><img src="pictures/PHOTOGRAPH/23097fb8-17e0-4078-8a8c-019ce1e01f9d.jpg" alt="Bonfire with friends at night"></a>
+    </div>
+
     <a href="#" class="lightbox-close">Close ✕</a>
   </div>
+</div>
+
+<div id="photo-1" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/c35debee-f74a-4a73-b5ba-ee5c5d969809.jpg" alt="Portrait on a foggy balcony">
+    <figcaption>Portrait, foggy morning</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-2" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/6783146c-192e-4886-9798-5d34a8b1d019.jpg" alt="Sunset through tree branches over a bridge">
+    <figcaption>Sunset through the trees</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-3" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/66f8dc56-5c43-4467-ab58-a376babcffcd.jpg" alt="Mirror selfie at a cafe overlooking Tagaytay">
+    <figcaption>Cafe mirror, Tagaytay view</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-4" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/5c428796-79c8-4056-a129-d04d6ce09d77.jpg" alt="Looking out at the sea on an island trip">
+    <figcaption>Looking out at the sea</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-5" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/83386d32-383d-47e2-abd0-6700402d893b.jpg" alt="Beach morning with a dog and a banana boat">
+    <figcaption>Beach morning</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-6" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/80115c30-f86e-4dab-9c5d-0f1b8d1c4320.jpg" alt="Golden hour traffic on a bridge">
+    <figcaption>Golden hour on the bridge</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
+</div>
+<div id="photo-7" class="photo-lightbox">
+  <figure>
+    <img src="pictures/PHOTOGRAPH/23097fb8-17e0-4078-8a8c-019ce1e01f9d.jpg" alt="Bonfire with friends at night">
+    <figcaption>Bonfire with friends</figcaption>
+  </figure>
+  <a href="#project-4" class="photo-close">Back to Gallery ✕</a>
 </div>
 
 </body>

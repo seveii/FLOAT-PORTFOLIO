@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "static-server",
-      "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5500"],
-      "port": 5500
+      "runtimeExecutable": "C:\\Program Files\\Git\\usr\\bin\\bash.exe",
+      "runtimeArgs": ["-c", "python -m http.server \"$PORT\""],
+      "autoPort": true
     }
   ]
 }

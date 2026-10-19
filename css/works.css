@@ -1,0 +1,125 @@
+/* ============================================================
+   works.css — Sample Works page only
+   ============================================================ */
+
+.works-hero{ padding-top:6rem; padding-bottom:0; }
+.works-hero h1{ font-size:clamp(2.4rem,5vw,4rem); text-transform:uppercase; margin-top:.5rem; max-width:18ch; }
+.works-intro{ max-width:56ch; color:var(--text-dim); margin-top:1.4rem; }
+
+/* project grid, built with float instead of CSS grid */
+.work-grid{ margin-top:4rem; }
+.work-grid::after{ content:''; display:table; clear:both; }
+.work-card{ float:left; width:47%; margin:0 6% 3rem 0; padding:1.3rem; }
+.work-card:nth-child(2n){ margin-right:0; }
+.work-card .media{ aspect-ratio:16/10; cursor:pointer; }
+.work-card .media img{ width:100%; height:100%; object-fit:cover; }
+.work-card .media img.bw{ filter:grayscale(1) contrast(1.05); }
+.lightbox .media img{ width:100%; height:100%; object-fit:cover; }
+/* real photos/posters (not the hand-drawn app mockups) show in full, never cropped */
+#project-3 .media img, #project-4 .media img{ object-fit:contain; background:var(--surface); padding:1.4rem; }
+#project-4 .media img{ filter:grayscale(1) contrast(1.05); }
+.work-meta{ padding:1.4rem .4rem .5rem; }
+.work-tags::after{ content:''; display:table; clear:both; }
+.work-tags{ margin-bottom:.9rem; }
+.work-tags .chip{ float:left; margin:0 .5rem .5rem 0; font-size:.68rem; padding:.4em .8em; }
+.work-meta h3{ font-size:1.35rem; text-transform:uppercase; }
+.work-meta p{ color:var(--text-dim); margin-top:.7rem; font-size:.94rem; }
+.work-link{
+  display:inline-block;
+  margin-top:1.1rem; font-family:'JetBrains Mono',monospace; font-size:.76rem;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--accent);
+}
+.work-link .arrow{ display:inline-block; margin-left:.5em; transition:transform .3s var(--ease); }
+.work-card:hover .work-link .arrow{ transform:translate(4px,-4px); }
+
+/* CSS-only lightbox via :target — scrolls internally when the
+   case study is taller than the screen, instead of clipping it */
+.lightbox{
+  position:fixed; inset:0; z-index:500;
+  background:rgba(6,6,7,.92); backdrop-filter:blur(6px);
+  padding:6vw;
+  overflow-y:auto;
+  opacity:0; pointer-events:none;
+  transition:opacity .35s var(--ease);
+}
+.lightbox:target{ opacity:1; pointer-events:auto; }
+.lightbox-inner{
+  max-width:720px; width:88%; margin:4vh auto; text-align:center;
+}
+.lightbox .media{ aspect-ratio:16/10; margin-bottom:1.6rem; }
+.lightbox h4{ font-size:1.3rem; text-transform:uppercase; }
+.lightbox p{ color:var(--text-dim); margin-top:.6rem; max-width:52ch; margin-left:auto; margin-right:auto; }
+.lightbox p code{ font-family:'JetBrains Mono',monospace; font-size:.85em; color:var(--text); background:var(--surface-2); padding:.1em .4em; border-radius:4px; }
+/* selected-pieces gallery inside a case study — floated thumbnail grid */
+.lightbox-gallery{ margin-top:1.8rem; text-align:left; }
+.lightbox-gallery::after{ content:''; display:table; clear:both; }
+.lightbox-gallery img{
+  float:left; width:31.33%; margin:0 3% 3% 0;
+  aspect-ratio:4/3; object-fit:contain;
+  border-radius:10px; border:1px solid var(--line);
+  background:var(--surface);
+  padding:8px;
+}
+.lightbox-gallery img:nth-child(3n){ margin-right:0; }
+
+/* photo series gets its own wider, taller gallery, each shot clickable for a full view */
+.photo-gallery{ margin-top:1.8rem; text-align:left; }
+.photo-gallery::after{ content:''; display:table; clear:both; }
+.photo-gallery a{
+  float:left; width:31.33%; margin:0 3% 3% 0;
+  display:block; border-radius:10px; overflow:hidden; border:1px solid var(--line);
+  cursor:zoom-in;
+}
+.photo-gallery a:nth-child(3n){ margin-right:0; }
+.photo-gallery img{
+  width:100%; aspect-ratio:4/5; object-fit:cover;
+  filter:grayscale(1) contrast(1.05);
+  transition:transform .4s var(--ease);
+  display:block;
+}
+.photo-gallery a:hover img{ transform:scale(1.06); }
+
+/* single-photo viewer, stacked above the case-study lightbox, opened one at a time */
+.photo-lightbox{
+  position:fixed; inset:0; z-index:600;
+  background:rgba(4,4,5,.96); backdrop-filter:blur(8px);
+  padding:5vw 5vw 3rem;
+  overflow-y:auto;
+  opacity:0; pointer-events:none;
+  transition:opacity .3s var(--ease);
+}
+.photo-lightbox:target{ opacity:1; pointer-events:auto; }
+.photo-lightbox figure{ margin:0; }
+.photo-lightbox img{
+  display:block; width:auto; height:auto;
+  max-width:min(100%,1000px); max-height:78vh;
+  margin:5vh auto 0;
+  border-radius:12px; border:1px solid var(--line);
+  filter:grayscale(1) contrast(1.05);
+}
+.photo-lightbox figcaption{
+  text-align:center; margin-top:1rem;
+  font-family:'JetBrains Mono',monospace; font-size:.8rem; letter-spacing:.04em;
+  color:var(--text-dim);
+}
+.photo-close{
+  display:block; width:fit-content; margin:1.4rem auto 0;
+  font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text-faint); border:1px solid var(--line); border-radius:999px; padding:.7em 1.3em;
+}
+.photo-close:hover{ color:var(--accent); border-color:var(--accent); }
+
+.lightbox-cta{ margin-top:1.6rem; }
+.lightbox-close{
+  display:inline-block; margin-top:1.2rem;
+  font-family:'JetBrains Mono',monospace; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--text-faint); border:1px solid var(--line); border-radius:999px; padding:.7em 1.3em;
+}
+.lightbox-close:hover{ color:var(--accent); border-color:var(--accent); }
+
+@media (max-width:860px){
+  .work-card{ float:none; width:auto; margin-right:0; }
+  .lightbox-gallery img{ float:none; width:auto; margin:0 0 1rem; aspect-ratio:16/10; }
+  .photo-gallery a{ float:none; width:auto; margin:0 0 1rem; }
+  .photo-gallery img{ aspect-ratio:4/3; }
+}

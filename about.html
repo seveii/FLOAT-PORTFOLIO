@@ -6,46 +6,7 @@
 <title>About Me — Rafael Joseph Nieves</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%230a0a0b%22/><text x=%2216%22 y=%2222%22 font-family=%22monospace%22 font-size=%2216%22 fill=%22%23d8ff3f%22 text-anchor=%22middle%22>R</text></svg>">
 <link rel="stylesheet" href="css/style.css">
-<style>
-  .about-hero{ padding-top:6rem; }
-
-  /* two-column bio layout, built with float instead of grid */
-  .about-grid::after{ content:''; display:table; clear:both; }
-  .about-text{ float:left; width:58%; }
-  .about-photo{ float:right; width:36%; }
-
-  .about-grid h1{ font-size:clamp(2.6rem,5.4vw,4.4rem); text-transform:uppercase; margin-top:.5rem; }
-  .about-grid h1 .last{ display:block; -webkit-text-stroke:1.5px var(--text); color:transparent; }
-  .tagline{ font-style:italic; font-family:'Space Grotesk',sans-serif; font-size:1.2rem; color:var(--text-dim); margin-top:1.4rem; }
-  .bio p{ color:var(--text-dim); margin-top:1.3rem; }
-  .bio{ margin-top:1.8rem; max-width:52ch; }
-
-  .tagrow{ margin-top:2.2rem; }
-  .tagrow::after{ content:''; display:table; clear:both; }
-  .tagrow .chip{ float:left; margin:0 .7rem .7rem 0; }
-
-  .about-photo .media{ aspect-ratio:4/5; }
-  .about-photo{ position:sticky; top:120px; }
-
-  /* four-column stat strip, built with float instead of grid */
-  .fact-strip{
-    border:1px solid var(--line); border-radius:var(--radius-md);
-    overflow:hidden; margin-top:5rem;
-  }
-  .fact-strip::after{ content:''; display:table; clear:both; }
-  .fact{ float:left; width:25%; background:var(--surface); padding:1.8rem 1.6rem; border-left:1px solid var(--line); }
-  .fact:first-child{ border-left:none; }
-  .fact .num{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; color:var(--accent); }
-  .fact .lbl{ font-family:'JetBrains Mono',monospace; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); margin-top:.5rem; }
-
-  @media (max-width:860px){
-    .about-text, .about-photo{ float:none; width:auto; }
-    .about-photo{ position:static; max-width:320px; margin:0 auto 2rem; }
-    .fact{ float:left; width:50%; }
-    .fact:nth-child(2n+1){ border-left:none; }
-    .fact:nth-child(-n+2){ border-bottom:1px solid var(--line); }
-  }
-</style>
+<link rel="stylesheet" href="css/about.css">
 </head>
 <body>
 <div class="grain"></div>
@@ -70,7 +31,7 @@
     <div class="wrap about-grid">
       <div class="about-photo rise d2">
         <div class="media">
-          <div class="label"><strong>Portrait</strong>swap in a B&amp;W photo — 4:5</div>
+          <img src="pictures/studiopic1.jpg" alt="Rafael Joseph Nieves">
         </div>
       </div>
 
@@ -110,9 +71,8 @@
         <div class="logo"><span class="dot"></span>R. Nieves</div>
         <div class="footer-links">
           <a href="mailto:nrafaeljoseph@gmail.com">Email</a>
-          <a href="#">Instagram</a>
-          <a href="#">Behance</a>
-          <a href="#">GitHub</a>
+          <a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://github.com/seveii" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="footer-note">Marilao, Bulacan, Philippines — Portfolio design © 2026</div>
