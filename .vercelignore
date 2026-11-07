@@ -1,0 +1,5 @@
+# Not needed on Vercel (the old static site, saved messages and local files)
+old-site
+data
+.claude
+README.md
