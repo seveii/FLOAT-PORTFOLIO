@@ -8,6 +8,7 @@ $description = 'Selected projects: web apps, logos, social media graphics, campa
 $groups = [
     'design'      => ['Web & design projects', 'Websites, brand identities, publications and campaign graphics.'],
     'engineering' => ['Computer Engineering projects', 'Hardware and electronics builds from my coursework.'],
+    'game'        => ['Games', 'Playable projects built with HTML5 Canvas.'],
 ];
 
 require INC . '/header.php';
