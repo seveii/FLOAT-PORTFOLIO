@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="RN emblem">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="90%">
+      <stop offset="0" stop-color="#16494d"/><stop offset=".55" stop-color="#0b2d30"/><stop offset="1" stop-color="#06181a"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd25a"/><stop offset=".5" stop-color="#f2a900"/><stop offset="1" stop-color="#a86b00"/>
+    </linearGradient>
+    <linearGradient id="face" gradientUnits="userSpaceOnUse" x1="30" y1="40" x2="213" y2="170">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#d4f1ee"/><stop offset="1" stop-color="#7fd0cb"/>
+    </linearGradient>
+    <linearGradient id="amber" gradientUnits="userSpaceOnUse" x1="140" y1="40" x2="205" y2="170">
+      <stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#f2a900"/><stop offset="1" stop-color="#d97f00"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="disc"><circle cx="128" cy="128" r="114"/></clipPath>
+    <g id="rn-r"  fill="none" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"><path d="M30 170V40h38a30 30 0 0 1 0 60H30M62 100l38 70"/></g>
+    <g id="rn-ns" fill="none" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"><path d="M140 170V40M205 170V40"/></g>
+    <g id="rn-nd" fill="none" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"><path d="M140 40l65 130"/></g>
+  </defs>
+
+  <!-- badge -->
+  <circle cx="128" cy="128" r="124" fill="url(#rim)"/>
+  <circle cx="128" cy="128" r="118" fill="#06181a"/>
+  <circle cx="128" cy="128" r="114" fill="url(#bg)"/>
+
+  <!-- circuit traces: the engineer side -->
+  <g clip-path="url(#disc)" fill="none" stroke="#2fb8b0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+    <path d="M14 70h34l14-14h30"/><path d="M14 98h22l10 10"/><path d="M20 190h30l12 12h40"/>
+    <path d="M242 70h-34l-14-14h-30"/><path d="M242 98h-22l-10 10"/><path d="M236 190h-30l-12 12h-40"/>
+    <path d="M128 14v26"/><path d="M104 20v18l8 8"/><path d="M152 20v18l-8 8"/>
+    <path d="M110 242v-24"/><path d="M146 242v-24"/>
+  </g>
+  <g fill="#f2a900" opacity=".9">
+    <circle cx="92" cy="56" r="3.4"/><circle cx="46" cy="108" r="3.4"/><circle cx="102" cy="202" r="3.4"/>
+    <circle cx="164" cy="56" r="3.4"/><circle cx="210" cy="108" r="3.4"/><circle cx="154" cy="202" r="3.4"/>
+  </g>
+
+  <!-- inner ring -->
+  <circle cx="128" cy="128" r="96" fill="none" stroke="#f2a900" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <!-- monogram -->
+  <g transform="translate(128 128) scale(.72) translate(-117.5 -105)">
+    <g filter="url(#soft)" opacity=".7" transform="translate(14 22)">
+      <use href="#rn-r" stroke="#000"/><use href="#rn-ns" stroke="#000"/><use href="#rn-nd" stroke="#000"/>
+    </g>
+    <g>
+      <g transform="translate(14.40 14.40)"><use href="#rn-r" stroke="rgb(3,52,56)"/><use href="#rn-ns" stroke="rgb(3,52,56)"/><use href="#rn-nd" stroke="rgb(110,70,0)"/></g>
+      <g transform="translate(13.60 13.60)"><use href="#rn-r" stroke="rgb(3,55,59)"/><use href="#rn-ns" stroke="rgb(3,55,59)"/><use href="#rn-nd" stroke="rgb(114,72,0)"/></g>
+      <g transform="translate(12.80 12.80)"><use href="#rn-r" stroke="rgb(4,58,62)"/><use href="#rn-ns" stroke="rgb(4,58,62)"/><use href="#rn-nd" stroke="rgb(118,75,0)"/></g>
+      <g transform="translate(12.00 12.00)"><use href="#rn-r" stroke="rgb(4,62,66)"/><use href="#rn-ns" stroke="rgb(4,62,66)"/><use href="#rn-nd" stroke="rgb(123,78,0)"/></g>
+      <g transform="translate(11.20 11.20)"><use href="#rn-r" stroke="rgb(5,65,69)"/><use href="#rn-ns" stroke="rgb(5,65,69)"/><use href="#rn-nd" stroke="rgb(127,81,0)"/></g>
+      <g transform="translate(10.40 10.40)"><use href="#rn-r" stroke="rgb(6,68,73)"/><use href="#rn-ns" stroke="rgb(6,68,73)"/><use href="#rn-nd" stroke="rgb(132,83,0)"/></g>
+      <g transform="translate(9.60 9.60)"><use href="#rn-r" stroke="rgb(6,72,76)"/><use href="#rn-ns" stroke="rgb(6,72,76)"/><use href="#rn-nd" stroke="rgb(136,86,0)"/></g>
+      <g transform="translate(8.80 8.80)"><use href="#rn-r" stroke="rgb(7,75,80)"/><use href="#rn-ns" stroke="rgb(7,75,80)"/><use href="#rn-nd" stroke="rgb(141,89,0)"/></g>
+      <g transform="translate(8.00 8.00)"><use href="#rn-r" stroke="rgb(7,78,83)"/><use href="#rn-ns" stroke="rgb(7,78,83)"/><use href="#rn-nd" stroke="rgb(145,92,0)"/></g>
+      <g transform="translate(7.20 7.20)"><use href="#rn-r" stroke="rgb(8,82,87)"/><use href="#rn-ns" stroke="rgb(8,82,87)"/><use href="#rn-nd" stroke="rgb(150,95,0)"/></g>
+      <g transform="translate(6.40 6.40)"><use href="#rn-r" stroke="rgb(9,85,90)"/><use href="#rn-ns" stroke="rgb(9,85,90)"/><use href="#rn-nd" stroke="rgb(154,97,0)"/></g>
+      <g transform="translate(5.60 5.60)"><use href="#rn-r" stroke="rgb(9,88,93)"/><use href="#rn-ns" stroke="rgb(9,88,93)"/><use href="#rn-nd" stroke="rgb(158,100,0)"/></g>
+      <g transform="translate(4.80 4.80)"><use href="#rn-r" stroke="rgb(10,92,97)"/><use href="#rn-ns" stroke="rgb(10,92,97)"/><use href="#rn-nd" stroke="rgb(163,103,0)"/></g>
+      <g transform="translate(4.00 4.00)"><use href="#rn-r" stroke="rgb(10,95,100)"/><use href="#rn-ns" stroke="rgb(10,95,100)"/><use href="#rn-nd" stroke="rgb(167,106,0)"/></g>
+      <g transform="translate(3.20 3.20)"><use href="#rn-r" stroke="rgb(11,98,104)"/><use href="#rn-ns" stroke="rgb(11,98,104)"/><use href="#rn-nd" stroke="rgb(172,108,0)"/></g>
+      <g transform="translate(2.40 2.40)"><use href="#rn-r" stroke="rgb(12,102,107)"/><use href="#rn-ns" stroke="rgb(12,102,107)"/><use href="#rn-nd" stroke="rgb(176,111,0)"/></g>
+      <g transform="translate(1.60 1.60)"><use href="#rn-r" stroke="rgb(12,105,111)"/><use href="#rn-ns" stroke="rgb(12,105,111)"/><use href="#rn-nd" stroke="rgb(181,114,0)"/></g>
+      <g transform="translate(0.80 0.80)"><use href="#rn-r" stroke="rgb(13,108,114)"/><use href="#rn-ns" stroke="rgb(13,108,114)"/><use href="#rn-nd" stroke="rgb(185,117,0)"/></g>
+    </g>
+    <use href="#rn-r" stroke="url(#face)"/>
+    <use href="#rn-ns" stroke="url(#face)"/>
+    <use href="#rn-nd" stroke="url(#amber)"/>
+    <!-- bevel highlight -->
+    <g transform="translate(-3 -3)" opacity=".75">
+      <g fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M30 168V40h38a30 30 0 0 1 24 12" opacity=".9"/>
+        <path d="M140 168V40"/><path d="M205 150V42" opacity=".7"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- glass highlight on the badge -->
+  <path d="M40 98A92 92 0 0 1 128 36a92 92 0 0 1 70 32A120 120 0 0 0 40 98z" fill="#fff" opacity=".07"/>
+</svg>
