@@ -40,5 +40,14 @@ old-site/                    the previous static HTML version, kept as a backup
 - Before going live, set `MAIL_FROM` in `includes/config.php` to an address on your own domain (for example `no-reply@yourdomain.com`), otherwise some mail providers will reject the email.
 - Built-in protection: CSRF token, hidden spam trap, input validation, a short cooldown between sends, and email-header injection prevention.
 
+## Deploy on Vercel
+The site runs on Vercel through the community `vercel-php` runtime. `vercel.json` and `api/index.php` are already set up.
+
+1. In Vercel choose **Add New, Project** and import this GitHub repository.
+2. Framework Preset: **Other**. Leave the build and output settings empty.
+3. Deploy. Every push to `main` redeploys automatically.
+
+On Vercel the contact page shows an **email button** instead of the form, because Vercel has no mail server and cannot save messages. On a normal PHP host the full form is used. Test the Vercel setup locally with `VERCEL=1 php -S localhost:8081 api/index.php`.
+
 ## Hosting
 This site needs a host that runs PHP (almost any shared hosting does). **GitHub Pages cannot run PHP**, so it can only host the static `old-site/` version. Upload everything except `old-site/` to your PHP host.
