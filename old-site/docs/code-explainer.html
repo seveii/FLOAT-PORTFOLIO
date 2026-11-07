@@ -166,8 +166,8 @@
 
     <div class="stat-row">
       <div class="stat"><div class="n">5</div><div class="l">HTML pages</div></div>
-      <div class="stat"><div class="n accent">49</div><div class="l">float declarations</div></div>
-      <div class="stat"><div class="n avoid">0</div><div class="l">flex / grid</div></div>
+      <div class="stat"><div class="n accent">3</div><div class="l">layout methods</div></div>
+      <div class="stat"><div class="n">19·8·6</div><div class="l">float · flex · grid</div></div>
       <div class="stat"><div class="n">0</div><div class="l">lines of JS</div></div>
     </div>
   </header>
@@ -175,7 +175,7 @@
   <section>
     <div class="pitch">
       <div class="kicker">If your prof says "walk me through this"</div>
-      <p>"It's a 5-page personal portfolio — one cover page and four content pages that share a nav, footer, and card system. Everything is plain HTML and CSS, no JavaScript. The layout — the nav bar, the multi-column sections, the card grids — is all built with the CSS <code>float</code> property and manual clearfixes, the way pages were laid out before Flexbox and Grid existed. Anywhere float genuinely can't do the job — like centering a modal — I used a different pre-Flexbox technique, <code>position: absolute</code> with <code>transform</code>, and I can explain why float doesn't work there."</p>
+      <p>"It's a 5-page personal portfolio — one cover page and four content pages that share a nav, footer, and card system. Everything is plain HTML and CSS, no JavaScript, and it's responsive from phone to desktop. I used all three layout methods, each where it fits: <code>float</code> with clearfixes for the nav bar and the main two-column page layouts, <strong>Flexbox</strong> for rows of buttons, tags and the footer, and <strong>CSS Grid</strong> for every grid of cards. The grids adapt on their own with <code>auto-fit</code> and <code>minmax()</code>, and media queries handle the nav menu and the float columns."</p>
     </div>
   </section>
 
@@ -183,18 +183,19 @@
     <h2>1 · How the project is organized</h2>
     <p>One shared stylesheet, five HTML pages. Four of the pages reuse the exact same nav and footer markup, so the layout logic only has to be written once.</p>
     <div class="filemap">
-      <div class="frow"><div class="fname">index.html</div><div class="fdesc">The cover page. Full-screen photo hero, then float-card sections that summarize the other four pages.</div></div>
-      <div class="frow"><div class="fname">about.html</div><div class="fdesc">Bio in a two-column float layout, plus a 4-column stat strip.</div></div>
-      <div class="frow"><div class="fname">skills.html</div><div class="fdesc">Tools column + essay column, both floated, with floated chip lists inside.</div></div>
-      <div class="frow"><div class="fname">works.html</div><div class="fdesc">A floated project-card grid, plus a CSS-only lightbox (no JS) using <code>:target</code>.</div></div>
-      <div class="frow"><div class="fname">credentials.html</div><div class="fdesc">Education card + two role cards, floated.</div></div>
-      <div class="frow"><div class="fname">css/style.css</div><div class="fdesc">Shared: CSS variables, the nav, buttons, chips, cards, footer — everything reused on every page.</div></div>
+      <div class="frow"><div class="fname">index.html</div><div class="fdesc">The cover page (root). Full-screen photo hero, then summary sections: floated about card, Grid card rows, Flexbox chip rows.</div></div>
+      <div class="frow"><div class="fname">pages/about.html</div><div class="fdesc">Bio in a two-column <strong>float</strong> layout, <strong>Flexbox</strong> tag row and stat strip.</div></div>
+      <div class="frow"><div class="fname">pages/skills.html</div><div class="fdesc">Tools column + essay column, both <strong>floated</strong>, with floated chips inside.</div></div>
+      <div class="frow"><div class="fname">pages/works.html</div><div class="fdesc">A <strong>Grid</strong> of project cards and photo galleries, plus a CSS-only lightbox (no JS) using <code>:target</code>.</div></div>
+      <div class="frow"><div class="fname">pages/credentials.html</div><div class="fdesc">Education, leadership, awards and certifications as <strong>Grid</strong> card rows.</div></div>
+      <div class="frow"><div class="fname">css/style.css</div><div class="fdesc">The one main stylesheet: variables, nav, buttons, cards, footer, then one labelled section per page.</div></div>
+      <div class="frow"><div class="fname">images/</div><div class="fdesc">Every image used by the site, in one flat folder.</div></div>
     </div>
   </section>
 
   <section>
-    <h2>2 · The core technique: float layout</h2>
-    <p><strong>This is the part your professor is actually grading</strong>, so it's worth being able to explain from first principles, not just point at the code.</p>
+    <h2>2 · Float: the nav and the main page columns</h2>
+    <p>The site uses three layout methods. <strong>Float</strong> is the oldest, so it's worth being able to explain from first principles, not just point at the code. It drives the nav pill, the two-column About and Skills layouts, the home page's About card and credentials row, the section headings with a button on the right, and the drop cap. Flexbox and Grid are covered in the sections after this one.</p>
 
     <h3>What <code>float</code> actually does</h3>
     <p>Normally every block element stacks top to bottom, full width. <code>float: left</code> or <code>float: right</code> pulls an element <em>out</em> of that normal stacking and pushes it to one side, letting whatever comes after it flow up alongside it instead of underneath it. That "letting content flow beside it" behavior is the entire mechanism — it's literally how magazine layouts wrapped text around a photo before CSS existed. Two elements floated left and right at fixed widths sit side by side, which is how every multi-column section on this site is built.</p>
@@ -202,7 +203,7 @@
     <div class="code-cap">about.html — the two-column bio layout</div>
     <div class="code">.about-text{ <span class="float">float:left</span>; width:58%; }
 .about-photo{ <span class="float">float:right</span>; width:36%; }</div>
-    <p>No wrapper needs <code>display: flex</code> or <code>display: grid</code> for this — the two elements just claim opposite sides of their container.</p>
+    <p>No flex or grid container is needed for this — the two elements just claim opposite sides of their container.</p>
 
     <h3>The problem float creates: collapsing height</h3>
     <p>A floated element is taken out of normal flow, so its parent no longer "sees" its height. If every child of a container is floated, the parent collapses to zero height — borders and backgrounds on that parent visually disappear, because as far as the parent's box model is concerned, it has no content in it.</p>
@@ -218,15 +219,10 @@
   display:table;
   <span class="float">clear:both</span>;
 }</div>
-    <p>This pattern — an empty <code>::after</code> pseudo-element set to <code>clear: both</code> — is called a <strong>clearfix</strong>. It's the standard fix for the float-collapse problem, and it's why you'll see <code>::after{ content:''; display:table; clear:both; }</code> repeated after almost every floated container in the stylesheet: <code>.about-grid</code>, <code>.work-grid</code>, <code>.role-grid</code>, <code>.footer-row</code>, and so on.</p>
+    <p>This pattern — an empty <code>::after</code> pseudo-element set to <code>clear: both</code> — is called a <strong>clearfix</strong>. It's the standard fix for the float-collapse problem, and it's why you'll see <code>::after{ content:''; display:table; clear:both; }</code> repeated after every floated container in the stylesheet: <code>.floatnav-inner</code>, <code>.about-grid</code>, <code>.skills-grid</code>, <code>.section-head-row</code>, and so on.</p>
 
-    <h3>Multi-column card grids</h3>
-    <p>For a grid of cards (not just two columns), each card floats left at a fixed percentage width, and every card that starts a new row has its right margin removed with <code>:nth-child</code> so the row totals stay under 100%.</p>
-
-    <div class="code-cap">works.html — a 2-column project grid</div>
-    <div class="code">.work-card{ <span class="float">float:left</span>; width:47%; margin:0 6% 3rem 0; }
-.work-card:nth-child(2n){ margin-right:0; }  <span class="cm">/* every 2nd card: no gap on the right */</span></div>
-    <p>47% + 6% + 47% = 100%, so two cards fit per row with a 6% gutter between them, and the pattern repeats down the grid.</p>
+    <h3>Why float is not used for the card grids</h3>
+    <p>Floated cards don't stretch to match each other's height, and a row of cards has to be hand-tuned with percentage widths and <code>:nth-child</code> margin resets. That's the job CSS Grid was built for, so every grid of cards uses Grid instead (section 4).</p>
 
     <h3>The thing float can't do: vertical centering</h3>
     <p>Float only controls left/right position — it has no concept of centering something vertically the way <code>align-items: center</code> does in Flexbox. The nav bar needed its logo, links, and button to look vertically centered in a pill-shaped bar, so instead of Flexbox, it uses a much older trick: <strong>set every item's <code>line-height</code> equal to the bar's total height</strong>, which centers single-line text automatically.</p>
@@ -235,23 +231,48 @@
     <div class="code">.floatnav-inner{ min-height:3.6rem; }
 .logo{ <span class="float">float:left</span>; line-height:3.6rem; }   <span class="cm">/* line-height = bar height → text centers itself */</span>
 .navlinks li{ <span class="float">float:left</span>; line-height:3.6rem; margin-right:2.1rem; }</div>
-    <p>Good follow-up if asked: <em>"Why not use <code>align-items: center</code>?"</em> — because that's a Flexbox property, and the assignment is specifically about proving the layout with <code>float</code>.</p>
+    <p>Good follow-up if asked: <em>"Why not use <code>align-items: center</code>?"</em> — the nav is deliberately the float showcase, so it uses the line-height trick. Flexbox's <code>align-items: center</code> is used elsewhere, such as inside the buttons.</p>
   </section>
 
   <section>
-    <h2>3 · Where float genuinely doesn't apply</h2>
-    <p>Being upfront about this is stronger than pretending float did everything. A couple of spots needed a different, still pre-Flexbox technique — <strong>because float has no answer for centering something in the middle of the screen</strong>, only for pushing things to a side.</p>
+    <h2>3 · Flexbox: rows of small things</h2>
+    <p>Flexbox lays items out along <strong>one line</strong> and handles spacing, alignment and wrapping for you. It's used wherever there's a row of small items:</p>
+    <ul>
+      <li><strong>Buttons</strong> — <code>display:inline-flex; align-items:center; gap:.5em</code> centers the label and arrow and spaces them evenly.</li>
+      <li><strong>Tag and chip rows</strong> — <code>display:flex; flex-wrap:wrap; gap:.7rem</code> lets chips wrap onto new lines automatically.</li>
+      <li><strong>The footer</strong> — <code>justify-content:space-between</code> puts the logo on one side and the links on the other, and <code>flex-wrap</code> stacks them on small screens.</li>
+      <li><strong>The stat strip</strong> — each box is <code>flex:1 1 180px</code>, so four across on desktop, two on a tablet, one on a phone, with no media query.</li>
+    </ul>
+    <div class="code-cap">css/style.css — the wrapping tag row</div>
+    <div class="code">.tagrow{ <span class="float">display:flex</span>; flex-wrap:wrap; gap:.7rem; }</div>
+  </section>
 
-    <h3>Centering the project lightbox</h3>
-    <p>works.html opens a full case-study panel with no JavaScript, using the CSS <code>:target</code> selector — the browser adds an <code>:target</code> match to whatever element's <code>id</code> matches the current URL's <code>#hash</code>, so a plain link like <code>&lt;a href="#project-1"&gt;</code> can open it. Centering that panel uses <code>position: absolute</code> plus a <code>transform</code>, not float:</p>
-
-    <div class="code-cap">works.html — dead-center a box with no flex/grid</div>
-    <div class="code">.lightbox-inner{
-  position:absolute;
-  top:50%; left:50%;
-  transform:translate(-50%,-50%);  <span class="cm">/* pull it back by half its own size */</span>
+  <section>
+    <h2>4 · CSS Grid: the cards</h2>
+    <p>Grid lays items out in <strong>rows and columns at once</strong>. Every grid of cards uses it: the project cards, both photo galleries, the credentials cards and the home page summaries. Because grid cells in a row share a height, cards line up without any hacks.</p>
+    <div class="code-cap">css/style.css — the project cards</div>
+    <div class="code">.work-grid{
+  <span class="float">display:grid</span>; gap:2.5rem 3rem;
+  grid-template-columns:repeat(<span class="float">auto-fit</span>, <span class="float">minmax</span>(min(100%,360px), 1fr));
 }</div>
-    <p>The trick: <code>top: 50%; left: 50%</code> puts the box's top-left <em>corner</em> at the exact center of the screen. <code>translate(-50%, -50%)</code> then shifts the box back by half of <em>its own</em> width and height, which lands its actual center on that point.</p>
+    <p>Read it as: "make as many columns as fit, each at least 360px wide, and share the leftover space equally." On a wide screen that's two columns. On a phone it's one. No media query is needed.</p>
+  </section>
+
+  <section>
+    <h2>5 · Positioning: the bits the three methods don't cover</h2>
+    <p>Some things aren't about rows or columns at all, like pinning text to the bottom of a photo or overlaying a panel on the page.</p>
+
+    <h3>The project lightbox (full-screen overlay)</h3>
+    <p>works.html opens a full case-study panel with no JavaScript, using the CSS <code>:target</code> selector — the browser adds an <code>:target</code> match to whatever element's <code>id</code> matches the current URL's <code>#hash</code>, so a plain link like <code>&lt;a href="#project-1"&gt;</code> can open it. The panel itself is <code>position: fixed</code> to cover the screen, and it scrolls inside itself when a case study is taller than the screen:</p>
+
+    <div class="code-cap">css/style.css — a full-screen overlay that scrolls</div>
+    <div class="code">.lightbox{
+  position:fixed; inset:0; z-index:500;
+  overflow-y:auto;                 <span class="cm">/* long case studies scroll instead of clipping */</span>
+  opacity:0; pointer-events:none;  <span class="cm">/* hidden until :target matches */</span>
+}
+.lightbox:target{ opacity:1; pointer-events:auto; }</div>
+    <p>The key idea: <code>inset:0</code> stretches the fixed panel to all four edges of the screen. The <code>:target</code> rule fades it in when the URL hash matches its <code>id</code>. <code>pointer-events:none</code> while hidden means it never blocks clicks on the page underneath.</p>
 
     <h3>Pinning the hero text to the bottom of the photo</h3>
     <div class="code-cap">index.html — the cover page's text block</div>
@@ -263,24 +284,24 @@
   </section>
 
   <section>
-    <h2>4 · Other techniques worth naming</h2>
+    <h2>6 · Other techniques worth naming</h2>
     <ul>
       <li><strong>CSS custom properties</strong> — every color, radius, and easing curve is a variable in <code>:root</code> (<code>--accent</code>, <code>--surface</code>, <code>--ease</code>…), so the whole site's palette can change from one place.</li>
       <li><strong><code>:target</code> for the lightbox</strong> — no JavaScript modal library; a hidden panel becomes visible purely because its <code>id</code> matches the URL hash.</li>
       <li><strong>The mobile menu is a checkbox, not JS</strong> — a hidden <code>&lt;input type="checkbox"&gt;</code> plus a <code>&lt;label&gt;</code> styled as a hamburger icon. CSS reads <code>#nav-toggle:checked ~ .navlinks</code> to slide the menu in — a real click/state toggle with zero script.</li>
-      <li><strong>CSS keyframe animation</strong> — the scrolling role ticker on the cover page and the fade-up entrance on each section are <code>@keyframes</code>, not JS.</li>
-      <li><strong>Media queries</strong> — at 860px, float rules are explicitly turned off (<code>float:none; width:auto;</code>) so columns stack for mobile instead of squeezing sideways.</li>
+      <li><strong>CSS keyframe animation</strong> — the fade-up entrance on each section and the scroll cue on the cover page are <code>@keyframes</code>, not JS.</li>
+      <li><strong>Media queries and fluid sizing</strong> — at 980px the nav links collapse into the slide-in menu, at 860px the float columns stack (<code>float:none; width:auto;</code>), and at 560px the gutters tighten. Grids adapt on their own with <code>auto-fit</code>/<code>minmax()</code>, and spacing scales with <code>clamp()</code>.</li>
     </ul>
   </section>
 
   <section>
-    <h2>5 · Likely questions, ready answers</h2>
+    <h2>7 · Likely questions, ready answers</h2>
 
     <details class="qa">
-      <summary>Why did you use float instead of Flexbox or Grid?</summary>
+      <summary>Why did you use float, Flexbox and Grid together?</summary>
       <div class="qa-body">
-        <p>It's the layout technique this project was specifically asked to demonstrate — the pre-Flexbox way of building multi-column layouts, using <code>float</code> and <code>clear</code> instead of a layout module purpose-built for it.</p>
-        <p>Flexbox and Grid are newer and generally easier for this exact job, but float was the standard tool for years before them, and understanding how it works — and where it breaks — is the point of the exercise.</p>
+        <p>Each one is used where it fits best. <strong>Float</strong> handles the nav bar and the main two-column page layouts, and it needs a clearfix so the parent wraps its floated children. <strong>Flexbox</strong> lays out a single row of small items, like buttons, tags and the footer. <strong>Grid</strong> lays out rows and columns together, so every grid of cards uses it.</p>
+        <p>Using all three shows I understand what each is for, and where one is a better tool than another. For example, floated cards can not stretch to equal heights, but grid cards can.</p>
       </div>
     </details>
 
@@ -299,16 +320,16 @@
     </details>
 
     <details class="qa">
-      <summary>How did you build multi-column grids without CSS Grid?</summary>
+      <summary>How do the card grids stay responsive without media queries?</summary>
       <div class="qa-body">
-        <p>Each item floats left at a fixed percentage width with a right margin for the gutter, and <code>:nth-child()</code> removes that margin on the last item of each row so the widths add up to exactly 100% instead of overflowing.</p>
+        <p>The grid container uses <code>repeat(auto-fit, minmax(min(100%, 360px), 1fr))</code>. That means "as many columns as fit, each at least 360px wide". The browser works out the column count itself, so there is nothing to switch at a breakpoint.</p>
       </div>
     </details>
 
     <details class="qa">
       <summary>Doesn't float break on mobile?</summary>
       <div class="qa-body">
-        <p>It would if left alone — fixed percentage widths don't leave room to stack on a narrow screen. A media query at 860px explicitly resets every floated element back to <code>float: none; width: auto;</code>, so on phones the layout falls back to plain block stacking, one item per row.</p>
+        <p>It would if left alone, because fixed percentage widths leave no room to stack on a narrow screen. A media query at 860px resets the floated columns back to <code>float: none; width: auto;</code>, so on phones they stack one per row. The nav collapses into a slide-in menu at 980px, where the links would otherwise run out of room.</p>
       </div>
     </details>
 
@@ -329,7 +350,7 @@
   </section>
 
   <section>
-    <h2>6 · Quick glossary</h2>
+    <h2>8 · Quick glossary</h2>
     <dl class="gloss">
       <div class="gterm"><dt>float</dt><dd>A CSS property that removes an element from normal block flow and pushes it to the left or right edge of its container, letting other content wrap alongside it.</dd></div>
       <div class="gterm"><dt>clear</dt><dd>Forces an element to move below any floated elements before it, instead of wrapping beside them.</dd></div>
