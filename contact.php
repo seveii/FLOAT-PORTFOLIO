@@ -1,14 +1,16 @@
 <?php
 require __DIR__ . '/includes/bootstrap.php';
 
-session_set_cookie_params([
-    'lifetime' => 0,
-    'path'     => '/',
-    'httponly' => true,
-    'samesite' => 'Lax',
-    'secure'   => !empty($_SERVER['HTTPS']),
-]);
-session_start();
+if (!ON_VERCEL) {
+    session_set_cookie_params([
+        'lifetime' => 0,
+        'path'     => '/',
+        'httponly' => true,
+        'samesite' => 'Lax',
+        'secure'   => !empty($_SERVER['HTTPS']),
+    ]);
+    session_start();
+}
 
 $types = [
     'website' => 'A website',
@@ -22,7 +24,7 @@ $old    = ['name' => '', 'email' => '', 'type' => '', 'message' => ''];
 $sent   = isset($_GET['sent']);
 
 // One-time token that proves the form was loaded from this site (CSRF protection).
-if (empty($_SESSION['csrf'])) {
+if (!ON_VERCEL && empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 
@@ -36,7 +38,7 @@ function field(string $key, int $max): string
     return substr(trim($value), 0, $max);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (!ON_VERCEL && $_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. Spam trap: real people never see or fill this hidden field.
     if (field('website', 200) !== '') {
         header('Location: contact.php?sent=1');
@@ -116,6 +118,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$mailto = 'mailto:' . SITE_EMAIL . '?subject=' . rawurlencode('Project inquiry')
+    . '&body=' . rawurlencode("Hi Rafael,
+
+I need help with: (a website / a logo or poster / social media content)
+Who it's for:
+Any examples I like:
+
+Thanks!");
+
 $page        = 'contact';
 $title       = 'Contact — ' . SITE_NAME;
 $description = 'Start a project: tell me what you need and I will reply by email.';
@@ -135,7 +146,14 @@ require INC . '/header.php';
   <div class="container contact-layout">
 
     <div class="contact-form-wrap">
-      <?php if ($sent): ?>
+      <?php if (ON_VERCEL): ?>
+      <div class="mail-card">
+        <h2>Email me about your project</h2>
+        <p>Tell me what you need, who it’s for and any examples you like. Your email app opens with a ready-to-fill message, and I’ll reply by email.</p>
+        <a class="btn btn-accent" href="<?= e($mailto) ?>">Email <?= e(SITE_EMAIL) ?></a>
+        <p class="hint">Prefer social media? You can also message me on Instagram, linked on this page.</p>
+      </div>
+      <?php elseif ($sent): ?>
       <div class="notice notice-ok" role="status">
         <h2>Thank you, your message was sent</h2>
         <p>I’ll read it and reply to the email address you gave.</p>
