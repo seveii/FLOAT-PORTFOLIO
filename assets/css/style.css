@@ -149,7 +149,8 @@ a:hover { color: var(--teal-dark); }
 }
 .site-nav li a:hover { color: var(--ink); }
 .site-nav li a.active { color: var(--ink); border-bottom-color: var(--teal); }
-.nav-cta { padding: 0.6rem 1.1rem; font-size: 0.95rem; }
+.nav-cta { padding: 0.6rem 1.1rem; font-size: 0.95rem; white-space: nowrap; }
+.brand { white-space: nowrap; }
 
 /* On the home page the header floats on top of the cover photo */
 .has-cover .site-header { position: absolute; left: 0; right: 0; background: transparent; backdrop-filter: none; border-bottom: 0; }
@@ -511,7 +512,7 @@ a:hover { color: var(--teal-dark); }
 }
 
 /* The nav becomes a dropdown menu (opened by the checkbox, no JavaScript) */
-@media (max-width: 860px) {
+@media (max-width: 1020px) {
   .menu-btn { display: inline-flex; }
   .site-nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
