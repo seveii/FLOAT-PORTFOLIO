@@ -13,6 +13,7 @@
      8. About page                 (float: portrait + text wrap)
      9. Contact form
     10. Footer
+    10b. Decoration                (accents, dot patterns, gradients)
     11. Responsive + reduced motion
    ========================================================================== */
 
@@ -513,6 +514,97 @@ a:hover { color: var(--teal-dark); }
 .footer-col li { margin-bottom: 0.55rem; overflow-wrap: anywhere; }
 .footer-base { margin-top: 2.5rem; padding-block: 1.25rem 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.92rem; }
 .footer-base p { margin: 0; }
+
+
+/* 10b. Decoration: accents, patterns and depth (pure CSS, no extra files) ------- */
+:root { --dots: radial-gradient(rgba(13, 106, 110, 0.18) 1.5px, transparent 1.6px); }
+
+/* Small amber bar before every section label */
+.eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; }
+.eyebrow::before { content: ""; width: 1.8rem; height: 3px; border-radius: 3px; background: var(--amber); }
+
+/* Inner page banners: soft gradient, dot grid and an amber ring */
+.page-hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  background: linear-gradient(135deg, var(--tint) 0%, var(--paper) 75%);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: clamp(1.75rem, 4vw, 2.75rem);
+}
+.page-hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: var(--dots); background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(to left, #000, transparent 55%);
+          mask-image: linear-gradient(to left, #000, transparent 55%);
+}
+.page-hero::after {
+  content: ""; position: absolute; z-index: -1; right: -4rem; top: -7rem;
+  width: 19rem; height: 19rem; border-radius: 50%;
+  border: 2.4rem solid rgba(242, 169, 0, 0.22);
+}
+
+@media (max-width: 600px) {
+  .page-hero::after { width: 11rem; height: 11rem; border-width: 1.5rem; right: -3.5rem; top: -4.5rem; }
+}
+
+/* Tinted sections get a faint dot pattern */
+.section-tint { background-image: radial-gradient(rgba(13, 106, 110, 0.11) 1.5px, transparent 1.6px); background-size: 24px 24px; }
+
+/* Service cards: white cards, a teal-to-amber top edge and a big faded number */
+.grid-3 { counter-reset: svc; }
+.service {
+  position: relative; overflow: hidden; counter-increment: svc;
+  background: var(--surface); border: 1px solid var(--line); border-top: 0; border-radius: var(--radius);
+  padding: 2rem 1.75rem 1.6rem; box-shadow: 0 18px 30px -24px rgba(15, 42, 44, 0.55);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.service:hover { transform: translateY(-3px); box-shadow: 0 24px 34px -22px rgba(15, 42, 44, 0.55); }
+.service::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 5px; background: linear-gradient(90deg, var(--teal), var(--amber)); }
+.service::after {
+  content: "0" counter(svc); position: absolute; right: 1.25rem; bottom: 0.9rem;
+  font-family: var(--font-display); font-weight: 700; font-size: 3.2rem; line-height: 1; color: rgba(13, 106, 110, 0.1);
+}
+
+/* Process steps: filled number badges joined by a dashed line */
+.step-num { background: var(--teal); color: #fff; border-color: var(--teal); box-shadow: 0 0 0 5px rgba(242, 169, 0, 0.3); }
+@media (min-width: 1000px) {
+  .steps li { position: relative; }
+  .steps li:not(:last-child)::after {
+    content: ""; position: absolute; top: 1.35rem; left: 4rem; right: 0.5rem;
+    border-top: 2px dashed rgba(13, 106, 110, 0.35);
+  }
+}
+
+/* Project cards: the category becomes a small tag */
+.project-cat { align-self: flex-start; padding: 0.2rem 0.7rem; border-radius: 99px; background: var(--tint); }
+.project-card:hover .project-media { box-shadow: inset 0 -4px 0 var(--amber); }
+
+/* Call-to-action band: gradient with an amber ring and dots */
+.cta-band { position: relative; isolation: isolate; overflow: hidden; background: linear-gradient(120deg, var(--teal-dark), var(--teal)); }
+.cta-band::before {
+  content: ""; position: absolute; z-index: -1; right: 24%; top: -9rem;
+  width: 18rem; height: 18rem; border-radius: 50%; border: 2.2rem solid rgba(242, 169, 0, 0.3);
+}
+.cta-band::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.6px); background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(to right, #000, transparent 45%);
+          mask-image: linear-gradient(to right, #000, transparent 45%);
+}
+
+/* Footer: gradient line along the top */
+.site-footer { border-top: 4px solid; border-image: linear-gradient(90deg, var(--teal), var(--amber)) 1; }
+
+/* Home cover (wide screens): a warm glow and dot grid on the dark side */
+@media (min-width: 1000px) {
+  .cover::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(34rem 26rem at 10% 90%, rgba(242, 169, 0, 0.18), transparent 70%),
+      radial-gradient(rgba(255, 255, 255, 0.13) 1.5px, transparent 1.6px) 0 0 / 26px 26px;
+    -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 52%);
+            mask-image: linear-gradient(to right, #000 0%, transparent 52%);
+  }
+}
 
 
 /* 11. Responsive + reduced motion ----------------------------------------- */
