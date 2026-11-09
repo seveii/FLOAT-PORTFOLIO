@@ -9,7 +9,7 @@
      4. Buttons
      5. Home: full-screen photo cover, facts, services, steps, call-to-action
      6. Project cards + project page   (grid)
-     7. Services page, FAQ
+     7. Services page
      8. About page                 (float: portrait + text wrap)
      9. Contact form
     10. Footer
@@ -365,7 +365,7 @@ a:hover { color: var(--teal-dark); }
 .pager-link:hover strong { color: var(--teal); }
 
 
-/* 7. Services page + FAQ -------------------------------------------------- */
+/* 7. Services page -------------------------------------------------- */
 .service-row {
   display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(1.5rem, 5vw, 4rem);
   padding-block: clamp(2rem, 5vw, 3rem); border-top: 1px solid var(--line);
@@ -376,19 +376,6 @@ a:hover { color: var(--teal-dark); }
 .service-list { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; }
 .service-list h3 { font-size: 1.1rem; margin-bottom: 1rem; }
 .service-list .ticks { margin: 0; }
-
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary {
-  position: relative; cursor: pointer; list-style: none;
-  padding: 1.1rem 2.5rem 1.1rem 0; font-weight: 600; font-size: 1.1rem;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: "+"; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%);
-  font-size: 1.6rem; font-weight: 400; color: var(--teal); transition: transform 0.2s;
-}
-.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-.faq details p { color: var(--muted); padding-bottom: 1.2rem; margin: 0; max-width: 40em; }
 
 
 /* 8. About page (FLOAT: portrait with text wrapping around it) ------------ */

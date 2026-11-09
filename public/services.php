@@ -69,23 +69,6 @@ require INC . '/header.php';
   </div>
 </section>
 
-<section class="section">
-  <div class="container narrow">
-    <header class="section-head">
-      <p class="eyebrow">Questions</p>
-      <h2>Good to know before we start</h2>
-    </header>
-    <div class="faq">
-      <?php foreach ($faqs as [$q, $a]): ?>
-      <details>
-        <summary><?= e($q) ?></summary>
-        <p><?= e($a) ?></p>
-      </details>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
 <section class="cta-band">
   <div class="container cta-inner">
     <div>

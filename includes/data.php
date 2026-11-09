@@ -60,30 +60,6 @@ $process = [
     ['Deliver', 'You get the final files or the finished site, plus a handover so you can use it with confidence.'],
 ];
 
-/* ---------- Frequently asked questions ---------- */
-$faqs = [
-    [
-        'Who do you work with?',
-        'Small businesses, student organizations and personal brands. I have led multimedia for the Association of Computer Enthusiast Students and handle communications for ICpEP, so I am used to working with teams and deadlines.',
-    ],
-    [
-        'What do you need from me to get started?',
-        'A short brief: what the project is for, who it is for, and any logo, colors or content you already have. Examples of designs you like help a lot.',
-    ],
-    [
-        'How long will it take?',
-        'It depends on the scope. After our first conversation I will give you a realistic estimate. I am a full-time student, so I agree on timelines up front rather than promise something I cannot keep.',
-    ],
-    [
-        'Will my website work on phones?',
-        'Yes. Every site I build is responsive, meaning it adapts to phones, tablets and desktop screens.',
-    ],
-    [
-        'How do we communicate?',
-        'By email through the contact form, or by message on Instagram. I will keep you updated at each stage.',
-    ],
-];
-
 /* ---------- Projects ----------
  * 'fit' controls how the cover image sits in its card: 'cover' fills the box,
  * 'contain' shows the whole image (best for logos, posters and wide layouts).
