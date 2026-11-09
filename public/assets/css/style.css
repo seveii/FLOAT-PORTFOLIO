@@ -7,7 +7,7 @@
      2. Base + utilities
      3. Header + navigation        (flexbox)
      4. Buttons
-     5. Home: full-screen photo cover, facts, services, steps, call-to-action
+     5. Home: full-screen photo cover, highlights, services, steps, call-to-action
      6. Project cards + project page   (grid)
      7. Services page
      8. About page                 (float: portrait + text wrap)
@@ -258,14 +258,7 @@ a:hover { color: var(--teal-dark); }
 .intro-title { font-size: clamp(1.9rem, 3.8vw, 2.9rem); }
 .intro-grid .lede { margin-top: 0; }
 
-.facts {
-  list-style: none; margin: clamp(2.5rem, 6vw, 4rem) 0 0; padding: 0;
-  display: flex; flex-wrap: wrap; gap: 1px;
-  background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
-}
-.facts li { flex: 1 1 210px; background: var(--surface); padding: 1.2rem 1.4rem; }
-.facts strong { display: block; font-family: var(--font-display); font-size: 1.7rem; line-height: 1.1; color: var(--teal); }
-.facts span { color: var(--muted); font-size: 0.94rem; }
+.highlights { margin: 1.4rem 0 1.6rem; font-weight: 500; }
 
 .worked-with { border-block: 1px solid var(--line); }
 .worked-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 2.25rem; padding-block: 1.4rem; }

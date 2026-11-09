@@ -47,15 +47,14 @@ require INC . '/header.php';
       </div>
       <div>
         <p class="lede">I design and build responsive websites, and create the logos, posters and social media graphics that go with them, for small businesses, student organizations and personal brands. I study Computer Engineering, so I understand how things are built as well as how they look.</p>
+        <ul class="ticks highlights" aria-label="Highlights">
+          <?php foreach ($facts as $fact): ?>
+          <li><?= e($fact) ?></li>
+          <?php endforeach; ?>
+        </ul>
         <a class="text-link" href="about.php">More about me <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
-
-    <ul class="facts" aria-label="Quick facts">
-      <?php foreach ($facts as [$value, $label]): ?>
-      <li><strong><?= e($value) ?></strong><span><?= e($label) ?></span></li>
-      <?php endforeach; ?>
-    </ul>
   </div>
 </section>
 

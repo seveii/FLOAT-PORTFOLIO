@@ -489,12 +489,12 @@ $skills = [
     'Working with people' => ['Event coordination', 'Public relations', 'Teamwork', 'Microsoft Office'],
 ];
 
-/* ---------- Short facts shown on the home page ---------- */
+/* ---------- Short highlights shown on the home page ---------- */
 $facts = [
-    ['4', 'semesters on the Dean’s List'],
-    ['4', 'leadership roles in student organizations'],
-    ['1st', 'place, ASEAN Exhibit Poster Making'],
-    ['3rd year', 'BS Computer Engineering'],
+    'Dean’s Lister for 4 semesters',
+    'Led 4 student organization teams',
+    '1st place, ASEAN Exhibit Poster Making',
+    '3rd-year BS Computer Engineering student',
 ];
 
 /* Organizations the work was made for (plain text, not logos). */
