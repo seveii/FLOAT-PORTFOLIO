@@ -91,8 +91,8 @@ a:hover { color: var(--teal-dark); }
 .skip-link:focus { left: 0.75rem; }
 
 /* Sections */
-.section       { padding-block: clamp(3.5rem, 8vw, 6rem); }
-.section-tight { padding-block: clamp(2rem, 5vw, 3.5rem); }
+.section       { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.section-tight { padding-block: clamp(1.5rem, 4vw, 2.5rem); }
 .section-tint  { background: var(--tint); }
 
 .section-head { max-width: 44rem; margin-bottom: 2.5rem; }
@@ -310,7 +310,7 @@ a:hover { color: var(--teal-dark); }
 .project-more { margin-top: auto; font-weight: 600; color: var(--teal); }
 .project-card:hover .project-more span { display: inline-block; transform: translateX(3px); }
 
-.page-hero { padding-top: clamp(2.75rem, 7vw, 5rem); padding-bottom: clamp(1rem, 3vw, 2rem); }
+.page-hero { padding-top: clamp(2rem, 5vw, 3.5rem); padding-bottom: clamp(0.25rem, 1.5vw, 1rem); }
 .page-hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.4rem); max-width: 19em; margin-bottom: 1rem; }
 .page-hero .lede { margin-bottom: 0; }
 
@@ -372,7 +372,7 @@ a:hover { color: var(--teal-dark); }
 
 
 /* 8. About page (FLOAT: portrait with text wrapping around it) ------------ */
-.about-intro { display: flow-root; max-width: 52rem; }
+.about-intro { display: flow-root; max-width: 70rem; }
 .about-portrait {
   float: left; width: min(300px, 40%); margin: 0 clamp(1.5rem, 4vw, 2.5rem) 1.5rem 0;
   background: var(--tint-2); border-radius: 1.6rem;
