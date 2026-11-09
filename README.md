@@ -24,7 +24,6 @@ assets/css/style.css         the one stylesheet
 assets/img/                  optimised images (WebP), certificate scans and the favicon
 assets/video/                short MP4 clips shown on project pages
 data/                        saved contact-form messages (private, blocked from the web)
-old-site/                    the previous static HTML version, kept as a backup
 ```
 
 ## Edit the site
@@ -50,4 +49,4 @@ The site runs on Vercel through the community `vercel-php` runtime. `vercel.json
 On Vercel the contact page shows an **email button** instead of the form, because Vercel has no mail server and cannot save messages. On a normal PHP host the full form is used. Test the Vercel setup locally with `VERCEL=1 php -S localhost:8081 api/index.php`.
 
 ## Hosting
-This site needs a host that runs PHP (almost any shared hosting does). **GitHub Pages cannot run PHP**, so it can only host the static `old-site/` version. Upload everything except `old-site/` to your PHP host.
+This site needs a host that runs PHP (almost any shared hosting does, and Vercel works too). **GitHub Pages cannot run PHP.** The previous static version is in the git history if you ever need it back.
