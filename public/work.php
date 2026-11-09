@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/includes/bootstrap.php';
+require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'work';
 $title       = 'Work — ' . SITE_NAME;

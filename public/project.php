@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/includes/bootstrap.php';
+require __DIR__ . '/../includes/bootstrap.php';
 
 // Only a slug that exists in data.php is ever accepted; anything else is a 404.
 $slug    = isset($_GET['slug']) && is_string($_GET['slug']) ? $_GET['slug'] : '';

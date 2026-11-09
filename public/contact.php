@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/includes/bootstrap.php';
+require __DIR__ . '/../includes/bootstrap.php';
 
 if (!ON_VERCEL) {
     session_set_cookie_params([
@@ -89,7 +89,7 @@ if (!ON_VERCEL && $_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // A private copy on the server. It is a .php file whose first line stops execution,
         // so even if someone requested it in a browser, nothing would be shown.
-        $log = __DIR__ . '/data/messages.php';
+        $log = __DIR__ . '/../data/messages.php';
         if (!is_file($log)) {
             @file_put_contents($log, "<?php http_response_code(403); exit; ?>\n", LOCK_EX);
         }

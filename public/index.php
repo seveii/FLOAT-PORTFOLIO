@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/includes/bootstrap.php';
+require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'home';
 $cover       = true; // the header floats over the full-screen photo

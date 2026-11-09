@@ -8,6 +8,7 @@
  * On a normal PHP host or `php -S`, the pages are used directly and this file is not involved.
  */
 $root = dirname(__DIR__);
+$web  = $root . '/public';   // the pages and assets
 
 $pages = [
     '/'                 => 'index.php',
@@ -31,10 +32,10 @@ if (PHP_SAPI === 'cli-server' && str_starts_with($path, '/assets/')) {
     return false;
 }
 
-chdir($root);
+chdir($web);
 
 if (isset($pages[$path])) {
-    require $root . '/' . $pages[$path];
+    require $web . '/' . $pages[$path];
     return;
 }
 

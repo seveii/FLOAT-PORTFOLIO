@@ -14,7 +14,7 @@ function e(?string $text): string
 function img(string $name, string $alt, array $o = []): string
 {
     static $cache = [];
-    $dir = __DIR__ . '/../assets/img/';
+    $dir = __DIR__ . '/../public/assets/img/';
     $class = isset($o['class']) ? ' class="' . e($o['class']) . '"' : '';
     $loading = ($o['loading'] ?? 'lazy') === 'eager' ? '' : ' loading="lazy" decoding="async"';
     $priority = !empty($o['priority']) ? ' fetchpriority="high"' : '';
