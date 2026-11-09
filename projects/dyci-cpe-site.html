@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DYCI Computer Engineering website — Rafael Joseph Nieves</title>
+<meta name="description" content="A dark, circuit-board themed site for a college Computer Engineering program, with a 3D hero built in pure CSS and no JavaScript.">
+<meta name="theme-color" content="#0d6a6e">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+      <span class="brand-name">Rafael Nieves</span>
+    </a>
+
+    <!-- Mobile menu: a hidden checkbox + label, so no JavaScript is needed -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open or close the menu">
+    <label for="menu-toggle" class="menu-btn"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Menu</span></label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html" class="active" aria-current="page">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="../contact.html">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero project-hero">
+  <div class="container">
+    <p class="crumbs"><a href="../work.html">Work</a> <span aria-hidden="true">/</span> DYCI Computer Engineering website</p>
+    <p class="eyebrow">Website</p>
+    <h1>DYCI Computer Engineering website</h1>
+    <p class="lede">A dark, circuit-board themed site for a college Computer Engineering program, with a 3D hero built in pure CSS and no JavaScript.</p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <figure class="project-cover fit-cover">
+      <img src="../assets/img/cpe-home.webp" srcset="../assets/img/cpe-home-sm.webp 640w, ../assets/img/cpe-home.webp 1400w" sizes="(min-width: 1100px) 1100px, 100vw" alt="DYCI Computer Engineering website preview" width="1400" height="788">    </figure>
+
+    <div class="project-layout">
+      <div class="project-text">
+        <h2>Overview</h2>
+                <p>A website for the BS Computer Engineering program at Dr. Yanga’s Colleges and the ICpEP.SE – DYCI student chapter. It presents the program, laboratories, faculty, officers and admissions in one dark “circuit board” world with orange accents, using the college’s TECH seal as its logo.</p>
+                <p>It is written in plain PHP, HTML and CSS with no JavaScript. The hero is a 3D circuit board drawn entirely with CSS transforms, and it tilts toward your cursor. Tabs, selectable career cards and the admissions steps are all built with CSS only.</p>
+        
+        <h2>Highlights</h2>
+        <ul class="ticks">
+                    <li>Home page with a 3D CSS circuit board that follows the cursor, using hidden hover zones instead of scripts.</li>
+                    <li>Program overview with six study areas, nine career paths shown as selectable cards, and a four-step admissions guide.</li>
+                    <li>Pages for four laboratories, ten faculty members with search, and a news and events section.</li>
+                    <li>ICpEP.SE – DYCI officers page with search and group filters handled on the server.</li>
+                    <li>All content is kept as data in one PHP file, so people and events can be updated without touching the page code.</li>
+                    <li>Inquiry form that saves messages privately on the server, with a hidden spam trap and validation.</li>
+                    <li>Layout adapts to phones with a CSS-only mobile menu.</li>
+                  </ul>
+      </div>
+
+      <aside class="project-meta" aria-label="Project details">
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; development</dd></div>
+          <div><dt>Type</dt><dd>Website</dd></div>
+          <div><dt>Status</dt><dd>Working site</dd></div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              <ul class="chips">
+                                <li>PHP</li>
+                                <li>HTML &amp; CSS</li>
+                                <li>CSS 3D transforms</li>
+                                <li>No JavaScript</li>
+                              </ul>
+            </dd>
+          </div>
+        </dl>
+                <a class="btn btn-primary btn-block" href="../contact.html">Start a similar project</a>
+      </aside>
+    </div>
+
+    
+        <h2 class="gallery-title">More from this project</h2>
+    <div class="gallery">
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/cpe-about.webp" srcset="../assets/img/cpe-about-sm.webp 640w, ../assets/img/cpe-about.webp 1200w" sizes="(min-width: 900px) 33vw, 100vw" alt="The about section, with a chip illustration and the reasons to study Computer Engineering" width="1200" height="900" loading="lazy" decoding="async">        <figcaption>The about section, with a chip illustration and the reasons to study Computer Engineering</figcaption>
+      </figure>
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/cpe-labs.webp" srcset="../assets/img/cpe-labs-sm.webp 640w, ../assets/img/cpe-labs.webp 1200w" sizes="(min-width: 900px) 33vw, 100vw" alt="The laboratories page: Sandbox, Nexus, Raise and Inspire labs" width="1200" height="900" loading="lazy" decoding="async">        <figcaption>The laboratories page: Sandbox, Nexus, Raise and Inspire labs</figcaption>
+      </figure>
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/cpe-officers.webp" srcset="../assets/img/cpe-officers-sm.webp 640w, ../assets/img/cpe-officers.webp 1200w" sizes="(min-width: 900px) 33vw, 100vw" alt="The ICpEP.SE – DYCI officers page with search and group tabs" width="1200" height="900" loading="lazy" decoding="async">        <figcaption>The ICpEP.SE – DYCI officers page with search and group tabs</figcaption>
+      </figure>
+          </div>
+      </div>
+</section>
+
+<section class="section section-tint section-tight">
+  <div class="container pager">
+    <a class="pager-link" href="../projects/oasis.html">
+      <span class="pager-label"><span aria-hidden="true">&larr;</span> Previous</span>
+      <strong>OASIS</strong>
+    </a>
+    <a class="pager-link pager-next" href="../projects/bayani-quest.html">
+      <span class="pager-label">Next <span aria-hidden="true">&rarr;</span></span>
+      <strong>Bayani Quest</strong>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="brand brand-light" href="../index.html">
+        <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+        <span class="brand-name">Rafael Joseph Nieves</span>
+      </a>
+      <p>Web &amp; Graphic Designer based in Marilao, Bulacan, Philippines. Available for freelance projects and internships.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2>Get in touch</h2>
+      <ul>
+        <li><a href="mailto:nrafaeljoseph@gmail.com">nrafaeljoseph@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://github.com/seveii" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <p>&copy; 2026 Rafael Joseph Nieves</p>
+  </div>
+</footer>
+</body>
+</html>

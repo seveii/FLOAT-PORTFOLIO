@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OASIS — Rafael Joseph Nieves</title>
+<meta name="description" content="Attendance and clearance for a college of computer studies: students scan their ID at events, earn points and see if they are cleared.">
+<meta name="theme-color" content="#0d6a6e">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+      <span class="brand-name">Rafael Nieves</span>
+    </a>
+
+    <!-- Mobile menu: a hidden checkbox + label, so no JavaScript is needed -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open or close the menu">
+    <label for="menu-toggle" class="menu-btn"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Menu</span></label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html" class="active" aria-current="page">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="../contact.html">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero project-hero">
+  <div class="container">
+    <p class="crumbs"><a href="../work.html">Work</a> <span aria-hidden="true">/</span> OASIS</p>
+    <p class="eyebrow">Web system</p>
+    <h1>OASIS</h1>
+    <p class="lede">Attendance and clearance for a college of computer studies: students scan their ID at events, earn points and see if they are cleared.</p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <figure class="project-cover fit-contain">
+      <img src="../assets/img/oasis.webp" alt="OASIS preview" width="800" height="449">    </figure>
+
+    <div class="project-layout">
+      <div class="project-text">
+        <h2>Overview</h2>
+                <p>OASIS (Officer &amp; Admin System for Involvement &amp; Students) is the attendance and clearance system for the College of Computer Studies at Dr. Yanga’s Colleges, run with the Association of Computer Enthusiast Students (ACES). It replaces paper forms and sign-in sheets: students scan their ID at an event, earn points for every event and requirement, and see how close they are to semester clearance.</p>
+                <p>It is three connected sites on one shared database. Students use the student site, officers manage everything from the admin console, and staff at the door use a scanner site. The student login is a split screen in maroon and yellow with a terminal-style form, and the rest of the system uses a dark cyberpunk-style interface with a falling-code background and a full-screen check-in kiosk.</p>
+        
+        <h2>Highlights</h2>
+        <ul class="ticks">
+                    <li>Student site: log in with a student number, see your points, progress toward clearance, recent activity and a requirements checklist, with a points breakdown shown as a HUD with charts.</li>
+                    <li>Students also get events and notifications tabs, a profile with photo, bio, talent and hobbies, and a cyberpunk-styled ID card with a barcode, a QR code and a live clearance panel.</li>
+                    <li>Admin console: a dashboard with live counts and an activity feed, a student roster with ID cards, requirements and events with point values, and bulk import of students from Excel or CSV.</li>
+                    <li>Admins create student accounts in bulk with temporary passwords. Students must set their own password on first login, and a “forgot my password” request goes to the admin.</li>
+                    <li>Scanner site: staff pick an event that is open today and launch a full-screen kiosk. Scanning a barcode or QR code records attendance and shows the student their result.</li>
+                    <li>Scanning only works on the event’s own date, and events limited to one program (BSIT, BSCpE or BSCS) reject students from the others.</li>
+                    <li>A student is cleared when their points reach the total of the requirements and events that apply to their program.</li>
+                    <li>Access is enforced in the database rules: admins, scanners and students each get different permissions, and students can only edit their own profile.</li>
+                  </ul>
+      </div>
+
+      <aside class="project-meta" aria-label="Project details">
+        <dl>
+          <div><dt>Role</dt><dd>Team project</dd></div>
+          <div><dt>Type</dt><dd>Web system</dd></div>
+          <div><dt>Status</dt><dd>Live</dd></div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              <ul class="chips">
+                                <li>React</li>
+                                <li>Vite</li>
+                                <li>Tailwind CSS</li>
+                                <li>Firebase Auth</li>
+                                <li>Cloud Firestore</li>
+                                <li>Vercel</li>
+                              </ul>
+            </dd>
+          </div>
+        </dl>
+                <a class="btn btn-ghost btn-block meta-link" href="https://softwareengineering-flax.vercel.app/" target="_blank" rel="noopener noreferrer">Open the student site <span aria-hidden="true">&nearr;</span></a>
+                <a class="btn btn-primary btn-block" href="../contact.html">Start a similar project</a>
+      </aside>
+    </div>
+
+    
+        <h2 class="gallery-title">More from this project</h2>
+    <div class="gallery">
+            <figure class="gallery-item fit-contain">
+        <img src="../assets/img/oasis-landing.webp" alt="The landing page: pick your program, see how it works, then log in" width="800" height="449" loading="lazy" decoding="async">        <figcaption>The landing page: pick your program, see how it works, then log in</figcaption>
+      </figure>
+            <figure class="gallery-item fit-contain">
+        <img src="../assets/img/oasis-how-it-works.webp" alt="The “Attend. Scan. Get cleared.” section of the student site: events, ID scan and points" width="800" height="449" loading="lazy" decoding="async">        <figcaption>The “Attend. Scan. Get cleared.” section of the student site: events, ID scan and points</figcaption>
+      </figure>
+          </div>
+      </div>
+</section>
+
+<section class="section section-tint section-tight">
+  <div class="container pager">
+    <a class="pager-link" href="../projects/whispr.html">
+      <span class="pager-label"><span aria-hidden="true">&larr;</span> Previous</span>
+      <strong>Whispr</strong>
+    </a>
+    <a class="pager-link pager-next" href="../projects/dyci-cpe-site.html">
+      <span class="pager-label">Next <span aria-hidden="true">&rarr;</span></span>
+      <strong>DYCI Computer Engineering website</strong>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="brand brand-light" href="../index.html">
+        <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+        <span class="brand-name">Rafael Joseph Nieves</span>
+      </a>
+      <p>Web &amp; Graphic Designer based in Marilao, Bulacan, Philippines. Available for freelance projects and internships.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2>Get in touch</h2>
+      <ul>
+        <li><a href="mailto:nrafaeljoseph@gmail.com">nrafaeljoseph@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://github.com/seveii" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <p>&copy; 2026 Rafael Joseph Nieves</p>
+  </div>
+</footer>
+</body>
+</html>

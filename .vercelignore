@@ -1,4 +1,0 @@
-# Not needed on Vercel (saved messages and local files)
-data
-.claude
-README.md

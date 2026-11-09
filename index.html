@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rafael Joseph Nieves — Web &amp; Graphic Designer</title>
+<meta name="description" content="Web and graphic designer and Computer Engineering student in Marilao, Bulacan. Websites, logos, posters and social media graphics for small businesses, organizations and personal brands.">
+<meta name="theme-color" content="#0d6a6e">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="has-cover">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+      <span class="brand-name">Rafael Nieves</span>
+    </a>
+
+    <!-- Mobile menu: a hidden checkbox + label, so no JavaScript is needed -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open or close the menu">
+    <label for="menu-toggle" class="menu-btn"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Menu</span></label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="contact.html">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- COVER: the whole first screen is the photo. Phones get the portrait photo, larger screens the wide one. -->
+<section class="cover" aria-label="Introduction">
+  <picture>
+    <source media="(max-width: 700px)" srcset="assets/img/awards-presidents-list.webp">
+    <img class="cover-photo" src="assets/img/cover-pool.webp" width="1400" height="1050"
+         alt="Rafael Joseph Nieves" fetchpriority="high">
+  </picture>
+  <div class="cover-shade" aria-hidden="true"></div>
+
+  <div class="container cover-content">
+    <p class="badge badge-dark"><span class="badge-dot" aria-hidden="true"></span>Open to freelance projects and internships</p>
+    <h1><span>Rafael Joseph</span> <span>Nieves</span></h1>
+    <p class="cover-role">Web &amp; Graphic Designer &middot; Marilao, Bulacan, Philippines</p>
+
+    <ul class="cover-tags" aria-label="About me in brief">
+      <li>3rd-year BS Computer Engineering</li>
+      <li>Dean’s Lister</li>
+      <li>PRO, ICpEP</li>
+    </ul>
+
+    <div class="actions">
+      <a class="btn btn-accent" href="work.html">See my work</a>
+      <a class="btn btn-light" href="contact.html">Start a project</a>
+    </div>
+  </div>
+
+  <a class="cover-scroll" href="#intro"><span>Scroll</span><i aria-hidden="true"></i></a>
+</section>
+
+<section class="section section-tight" id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <p class="eyebrow">Hello</p>
+        <h2 class="intro-title">Websites and visuals that make your work easy to trust.</h2>
+      </div>
+      <div>
+        <p class="lede">I design and build responsive websites, and create the logos, posters and social media graphics that go with them, for small businesses, student organizations and personal brands. I study Computer Engineering, so I understand how things are built as well as how they look.</p>
+        <ul class="ticks highlights" aria-label="Highlights">
+                    <li>Dean’s Lister for 4 semesters</li>
+                    <li>Led 4 student organization teams</li>
+                    <li>1st place, ASEAN Exhibit Poster Making</li>
+                    <li>3rd-year BS Computer Engineering student</li>
+                  </ul>
+        <a class="text-link" href="about.html">More about me <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="worked-with" aria-label="Work made for">
+  <div class="container worked-row">
+    <p class="worked-label">Work made for</p>
+    <ul>
+            <li>Association of Computer Enthusiast Students</li>
+            <li>ICpEP</li>
+            <li>Dr. Yanga’s Colleges, Inc.</li>
+            <li>Batch6 Coffee</li>
+          </ul>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">What I do</p>
+      <h2>Three ways I can help</h2>
+      <p class="section-lede">Whether you need a website, a consistent look, or content for your page, I handle it from first idea to final files.</p>
+    </header>
+
+    <div class="grid-3">
+            <article class="service">
+        <h3>Web design &amp; development</h3>
+        <p>Clear, responsive websites that explain who you are and make it easy for people to get in touch.</p>
+        <ul class="ticks">
+                    <li>Landing pages and small business or organization sites</li>
+                    <li>Layouts that work on phones, tablets and desktops</li>
+                    <li>Contact forms and clear calls to action</li>
+                  </ul>
+        <a class="text-link" href="services.html#web">Learn more <span aria-hidden="true">&rarr;</span></a>
+      </article>
+            <article class="service">
+        <h3>Graphic design &amp; branding</h3>
+        <p>Logos and print-ready layouts that look consistent, so your brand is recognised wherever it appears.</p>
+        <ul class="ticks">
+                    <li>Logos and alternate marks</li>
+                    <li>Posters, tarpaulins and event materials</li>
+                    <li>Newsletter and publication layouts</li>
+                  </ul>
+        <a class="text-link" href="services.html#graphic">Learn more <span aria-hidden="true">&rarr;</span></a>
+      </article>
+            <article class="service">
+        <h3>Social media &amp; multimedia content</h3>
+        <p>Announcements, campaign graphics and edited photo and video that keep your page active and on-brand.</p>
+        <ul class="ticks">
+                    <li>Announcement and event graphics sized for social media</li>
+                    <li>Campaign sets: posters, banners and vouchers</li>
+                    <li>Photo and video editing for event coverage</li>
+                  </ul>
+        <a class="text-link" href="services.html#content">Learn more <span aria-hidden="true">&rarr;</span></a>
+      </article>
+          </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="work">
+  <div class="container">
+    <header class="section-head section-head-row">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2>Recent projects</h2>
+      </div>
+      <a class="btn btn-ghost" href="work.html">View all work</a>
+    </header>
+
+    <div class="grid-3">
+              <article class="project-card"><a class="project-link" href="projects/whispr.html"><div class="project-media fit-cover"><img src="assets/img/whispr.svg" alt="Whispr preview" width="640" height="400" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Web app</p><h3>Whispr</h3><p class="project-sum">An anonymous confession platform where every account still verifies back to one real person.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>              <article class="project-card"><a class="project-link" href="projects/oasis.html"><div class="project-media fit-contain"><img src="assets/img/oasis.webp" alt="OASIS preview" width="800" height="449" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Web system</p><h3>OASIS</h3><p class="project-sum">Attendance and clearance for a college of computer studies: students scan their ID at events, earn points and see if they are cleared.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>              <article class="project-card"><a class="project-link" href="projects/dyci-cpe-site.html"><div class="project-media fit-cover"><img src="assets/img/cpe-home.webp" srcset="assets/img/cpe-home-sm.webp 640w, assets/img/cpe-home.webp 1400w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="DYCI Computer Engineering website preview" width="1400" height="788" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Website</p><h3>DYCI Computer Engineering website</h3><p class="project-sum">A dark, circuit-board themed site for a college Computer Engineering program, with a 3D hero built in pure CSS and no JavaScript.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>              <article class="project-card"><a class="project-link" href="projects/bayani-quest.html"><div class="project-media fit-cover"><img src="assets/img/game-title.webp" srcset="assets/img/game-title-sm.webp 640w, assets/img/game-title.webp 1280w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Bayani Quest preview" width="1280" height="960" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Game</p><h3>Bayani Quest</h3><p class="project-sum">A Filipino folklore RPG in the browser: explore a barangay, catch mythical creatures and battle them, all drawn on an HTML5 canvas.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>              <article class="project-card"><a class="project-link" href="projects/aces-logos.html"><div class="project-media fit-cover"><img src="assets/img/logo-collage.webp" srcset="assets/img/logo-collage-sm.webp 640w, assets/img/logo-collage.webp 1046w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="ACES and publication logos preview" width="1046" height="658" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Logo &amp; identity</p><h3>ACES and publication logos</h3><p class="project-sum">The ACES emblem, an alternate cherry-blossom mark, and logos for student publications.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>              <article class="project-card"><a class="project-link" href="projects/social-graphics.html"><div class="project-media fit-cover"><img src="assets/img/pubmat-grid.webp" srcset="assets/img/pubmat-grid-sm.webp 640w, assets/img/pubmat-grid.webp 1046w" sizes="(min-width: 900px) 33vw, (min-width: 600px) 50vw, 100vw" alt="Event &amp; social media graphics preview" width="1046" height="658" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-cat">Social media</p><h3>Event &amp; social media graphics</h3><p class="project-sum">Announcements, awareness days, exam reminders and tarpaulins for a college organization.</p><span class="project-more">View project <span aria-hidden="true">&rarr;</span></span></div></a></article>          </div>
+  </div>
+</section>
+
+<section class="section" id="certificates">
+  <div class="container">
+    <header class="section-head section-head-row">
+      <div>
+        <p class="eyebrow">Credentials</p>
+        <h2>Certificates and awards</h2>
+      </div>
+      <a class="btn btn-ghost" href="certificates.html">See all certificates</a>
+    </header>
+
+    <ul class="cert-strip">
+            <li>
+        <a href="certificates.html">
+          <img src="assets/img/cert-claude-engineers.webp" srcset="assets/img/cert-claude-engineers-sm.webp 640w, assets/img/cert-claude-engineers.webp 1400w" sizes="(min-width: 900px) 25vw, 50vw" alt="Certificate: Claude for Engineers" width="1400" height="1033" loading="lazy" decoding="async">          <span class="cert-name">Claude for Engineers</span>
+          <span class="cert-meta">tixu.ai &middot; 17 October 2026</span>
+        </a>
+      </li>
+            <li>
+        <a href="certificates.html">
+          <img src="assets/img/cert-chatgpt.webp" srcset="assets/img/cert-chatgpt-sm.webp 640w, assets/img/cert-chatgpt.webp 1312w" sizes="(min-width: 900px) 25vw, 50vw" alt="Certificate: ChatGPT" width="1312" height="968" loading="lazy" decoding="async">          <span class="cert-name">ChatGPT</span>
+          <span class="cert-meta">tixu.ai &middot; 3 October 2026</span>
+        </a>
+      </li>
+            <li>
+        <a href="certificates.html">
+          <img src="assets/img/cert-achiever-honors-2023.webp" srcset="assets/img/cert-achiever-honors-2023-sm.webp 640w, assets/img/cert-achiever-honors-2023.webp 1325w" sizes="(min-width: 900px) 25vw, 50vw" alt="Certificate: Academic Achiever Award, With Honors" width="1325" height="994" loading="lazy" decoding="async">          <span class="cert-name">Academic Achiever Award, With Honors</span>
+          <span class="cert-meta">Colegio de Sto. Niño &middot; 25 May 2023</span>
+        </a>
+      </li>
+            <li>
+        <a href="certificates.html">
+          <img src="assets/img/cert-academic-excellence-2023.webp" srcset="assets/img/cert-academic-excellence-2023-sm.webp 640w, assets/img/cert-academic-excellence-2023.webp 1325w" sizes="(min-width: 900px) 25vw, 50vw" alt="Certificate: Certificate of Academic Excellence" width="1325" height="994" loading="lazy" decoding="async">          <span class="cert-name">Certificate of Academic Excellence</span>
+          <span class="cert-meta">Colegio de Sto. Niño &middot; 25 May 2023</span>
+        </a>
+      </li>
+          </ul>
+  </div>
+</section>
+
+<section class="section section-tint" id="process">
+  <div class="container">
+    <header class="section-head">
+      <p class="eyebrow">How I work</p>
+      <h2>A simple process, so you always know what’s next</h2>
+    </header>
+
+    <ol class="steps">
+            <li>
+        <span class="step-num" aria-hidden="true">1</span>
+        <h3>Discover</h3>
+        <p>We talk about your goals, your audience and what you already have: a logo, content, examples you like.</p>
+      </li>
+            <li>
+        <span class="step-num" aria-hidden="true">2</span>
+        <h3>Plan</h3>
+        <p>I send a short outline or concept direction. We agree on what will be made before any design starts.</p>
+      </li>
+            <li>
+        <span class="step-num" aria-hidden="true">3</span>
+        <h3>Design &amp; build</h3>
+        <p>I share drafts as I go, you give feedback, and I refine until it is right.</p>
+      </li>
+            <li>
+        <span class="step-num" aria-hidden="true">4</span>
+        <h3>Deliver</h3>
+        <p>You get the final files or the finished site, plus a handover so you can use it with confidence.</p>
+      </li>
+          </ol>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Have a project in mind?</h2>
+      <p>Tell me what you need and who it’s for. I’ll reply by email with next steps.</p>
+    </div>
+    <a class="btn btn-accent" href="contact.html">Start a project</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="brand brand-light" href="index.html">
+        <img class="brand-mark" src="assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+        <span class="brand-name">Rafael Joseph Nieves</span>
+      </a>
+      <p>Web &amp; Graphic Designer based in Marilao, Bulacan, Philippines. Available for freelance projects and internships.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2>Get in touch</h2>
+      <ul>
+        <li><a href="mailto:nrafaeljoseph@gmail.com">nrafaeljoseph@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://github.com/seveii" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <p>&copy; 2026 Rafael Joseph Nieves</p>
+  </div>
+</footer>
+</body>
+</html>

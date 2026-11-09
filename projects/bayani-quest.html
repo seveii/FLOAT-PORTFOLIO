@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; object-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bayani Quest — Rafael Joseph Nieves</title>
+<meta name="description" content="A Filipino folklore RPG in the browser: explore a barangay, catch mythical creatures and battle them, all drawn on an HTML5 canvas.">
+<meta name="theme-color" content="#0d6a6e">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" href="../index.html">
+      <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+      <span class="brand-name">Rafael Nieves</span>
+    </a>
+
+    <!-- Mobile menu: a hidden checkbox + label, so no JavaScript is needed -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open or close the menu">
+    <label for="menu-toggle" class="menu-btn"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Menu</span></label>
+
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html" class="active" aria-current="page">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary nav-cta" href="../contact.html">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-hero project-hero">
+  <div class="container">
+    <p class="crumbs"><a href="../work.html">Work</a> <span aria-hidden="true">/</span> Bayani Quest</p>
+    <p class="eyebrow">Game</p>
+    <h1>Bayani Quest</h1>
+    <p class="lede">A Filipino folklore RPG in the browser: explore a barangay, catch mythical creatures and battle them, all drawn on an HTML5 canvas.</p>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="container">
+    <figure class="project-cover fit-cover">
+      <img src="../assets/img/game-title.webp" srcset="../assets/img/game-title-sm.webp 640w, ../assets/img/game-title.webp 1280w" sizes="(min-width: 1100px) 1100px, 100vw" alt="Bayani Quest preview" width="1280" height="960">    </figure>
+
+    <div class="project-layout">
+      <div class="project-text">
+        <h2>Overview</h2>
+                <p>Bayani Quest (“bayani” means hero) is a top-down role-playing game inspired by Filipino folklore, played in Filipino. You explore Barangay Maliwanag, talk to villagers, and venture into tall grass and rice fields where creatures from Philippine myth (nilalang) appear: the Tikbalang, Diwata, Nuno sa Punso, Kapre, Santelmo and Sirena.</p>
+                <p>The whole game is a single HTML file and runs on a 640 × 480 canvas with crisp pixel-art rendering. Walking, wandering encounters, dialogue, shopping and turn-based battles are all written in plain JavaScript with no game engine.</p>
+        
+        <h2>Highlights</h2>
+        <ul class="ticks">
+                    <li>Top-down village and field map with tile textures for grass, sea, wood, lava, a stove, a chest and bookshelves.</li>
+                    <li>Animated player character with front, back, left and right frames, including a ten-frame walking cycle.</li>
+                    <li>Random encounters that depend on the terrain: tall grass is the most dangerous, then rice fields, then open grass.</li>
+                    <li>Six folklore creatures, each with its own type, stats, moves and a description of the myth behind it.</li>
+                    <li>Turn-based battles with attack, throw an agimat charm to catch the creature, use food to heal, or run away. A party of up to three catches.</li>
+                    <li>Villagers with typed-out dialogue: a healer who restores your party, a shopkeeper selling agimat and food, a guide and a gossiping child.</li>
+                    <li>Battle backdrops drawn in code for a night forest, an ocean at night and a lava crater, matching each creature’s habitat.</li>
+                    <li>Arrow keys to move, Z or Enter to confirm and talk, X to go back.</li>
+                  </ul>
+      </div>
+
+      <aside class="project-meta" aria-label="Project details">
+        <dl>
+          <div><dt>Role</dt><dd>Design &amp; development</dd></div>
+          <div><dt>Type</dt><dd>Game</dd></div>
+          <div><dt>Status</dt><dd>Playable prototype</dd></div>
+          <div>
+            <dt>Tools</dt>
+            <dd>
+              <ul class="chips">
+                                <li>HTML5 Canvas</li>
+                                <li>JavaScript</li>
+                                <li>Pixel art</li>
+                              </ul>
+            </dd>
+          </div>
+        </dl>
+                <a class="btn btn-ghost btn-block meta-link" href="https://github.com/seveii/GAME-QUEST" target="_blank" rel="noopener noreferrer">View the code on GitHub <span aria-hidden="true">&nearr;</span></a>
+                <a class="btn btn-primary btn-block" href="../contact.html">Start a similar project</a>
+      </aside>
+    </div>
+
+    
+        <h2 class="gallery-title">More from this project</h2>
+    <div class="gallery">
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/game-village.webp" srcset="../assets/img/game-village-sm.webp 640w, ../assets/img/game-village.webp 1280w" sizes="(min-width: 900px) 33vw, 100vw" alt="The village of Barangay Maliwanag with its shops, villagers and tall grass" width="1280" height="960" loading="lazy" decoding="async">        <figcaption>The village of Barangay Maliwanag with its shops, villagers and tall grass</figcaption>
+      </figure>
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/game-dialogue.webp" srcset="../assets/img/game-dialogue-sm.webp 640w, ../assets/img/game-dialogue.webp 1280w" sizes="(min-width: 900px) 33vw, 100vw" alt="Talking to Aling Maria, the shopkeeper" width="1280" height="960" loading="lazy" decoding="async">        <figcaption>Talking to Aling Maria, the shopkeeper</figcaption>
+      </figure>
+            <figure class="gallery-item fit-cover">
+        <img src="../assets/img/game-battle.webp" srcset="../assets/img/game-battle-sm.webp 640w, ../assets/img/game-battle.webp 1280w" sizes="(min-width: 900px) 33vw, 100vw" alt="A night battle against the Sirena, with attack, agimat, food and run options" width="1280" height="960" loading="lazy" decoding="async">        <figcaption>A night battle against the Sirena, with attack, agimat, food and run options</figcaption>
+      </figure>
+          </div>
+      </div>
+</section>
+
+<section class="section section-tint section-tight">
+  <div class="container pager">
+    <a class="pager-link" href="../projects/dyci-cpe-site.html">
+      <span class="pager-label"><span aria-hidden="true">&larr;</span> Previous</span>
+      <strong>DYCI Computer Engineering website</strong>
+    </a>
+    <a class="pager-link pager-next" href="../projects/aces-logos.html">
+      <span class="pager-label">Next <span aria-hidden="true">&rarr;</span></span>
+      <strong>ACES and publication logos</strong>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="brand brand-light" href="../index.html">
+        <img class="brand-mark" src="../assets/logo/rn-emblem.svg" width="44" height="44" alt="">
+        <span class="brand-name">Rafael Joseph Nieves</span>
+      </a>
+      <p>Web &amp; Graphic Designer based in Marilao, Bulacan, Philippines. Available for freelance projects and internships.</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Footer">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certificates.html">Certificates</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h2>Get in touch</h2>
+      <ul>
+        <li><a href="mailto:nrafaeljoseph@gmail.com">nrafaeljoseph@gmail.com</a></li>
+                <li><a href="https://www.instagram.com/sephhx_?stkn=MTZzY2hucDFjdWFqMw==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://github.com/seveii" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container footer-base">
+    <p>&copy; 2026 Rafael Joseph Nieves</p>
+  </div>
+</footer>
+</body>
+</html>
