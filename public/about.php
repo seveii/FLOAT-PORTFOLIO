@@ -1,4 +1,13 @@
 <?php
+/*
+ * ABOUT PAGE — about.php
+ * Techniques on this page:
+ *   - CSS float: the portrait floats left and the first paragraphs wrap around it.
+ *   - A description list <dl> for the quick facts (Based in, Studying, ...).
+ *   - An ordered list <ol> styled with CSS as a vertical timeline of leadership roles.
+ *   - A photo gallery in CSS Grid, using <figure> and <figcaption>.
+ * The text (experience, education, awards, skills) comes from data.php.
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'about';

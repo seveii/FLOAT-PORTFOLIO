@@ -1,4 +1,13 @@
 <?php
+/*
+ * PROJECT PAGE — project.php (ONE template for ALL projects)
+ * The address carries the project name: project.php?slug=oasis. PHP reads it with $_GET,
+ * find_project() looks it up in data.php, and the page fills itself with that project's
+ * title, text, tools, images and videos. If the slug does not exist, a 404 page is shown.
+ * Thirteen projects, one file: adding a project means adding data, not a new page.
+ * The previous and next links at the bottom are worked out with simple array maths.
+ * Layout: main content plus a sticky facts sidebar (CSS Grid; one column on phones).
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 // Only a slug that exists in data.php is ever accepted; anything else is a 404.

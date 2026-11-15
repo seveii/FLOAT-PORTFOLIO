@@ -7,6 +7,19 @@ defined('SITE_NAME') or exit; // never run this file directly
  *
  * To add a project: copy an entry in $projects, give it a unique 'slug', and drop its
  * image(s) in assets/img/.
+ *
+ * HOW THIS FILE WORKS (the idea of "separating content from layout"):
+ * Each section below is a PHP ARRAY, a list of values. Some are lists of lists, and some
+ * use named keys such as 'title' => '...'. The pages (index.php, work.php, project.php, ...)
+ * read these arrays and repeat their HTML with a foreach loop. So the text lives here and the
+ * HTML lives in the page files. That is why one template can show 13 different projects.
+ *
+ *   $services           the three services (home and Services pages)
+ *   $process            the four working steps
+ *   $projects           every project: slug, title, category, summary, images, videos
+ *   $experience, $education, $awards, $skills, ...   the About page
+ *   $certificate_groups the Certificates page
+ *   $facts, $worked_with  the highlights and the "work made for" strip on the home page
  */
 
 /* ---------- Services ---------- */

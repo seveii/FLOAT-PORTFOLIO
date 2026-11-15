@@ -1,4 +1,11 @@
 <?php
+/*
+ * WORK PAGE — work.php
+ * Shows every project, sorted into groups. $groups (below) holds the three headings; for
+ * each group the page loops over $projects and prints a card with project_card() for the
+ * projects that belong to it. The cards sit in a CSS Grid that adds or removes columns
+ * to fit the screen (3 on desktop, 2 on tablets, 1 on phones).
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'work';

@@ -19,6 +19,8 @@
 
 
 /* 1. Design tokens ------------------------------------------------------- */
+/* CSS VARIABLES (custom properties): the colors, fonts and sizes are named once here, then reused
+   everywhere as var(--teal), var(--gutter), and so on. To change the brand color we edit ONE line. */
 :root {
   /* Color */
   --paper:      #f3f6f4;   /* page background, a cool off-white with a hint of green */
@@ -46,6 +48,8 @@
 
 
 /* 2. Base + utilities ---------------------------------------------------- */
+/* BOX MODEL: border-box makes a box's width include its padding and border, so adding padding
+   never makes an element wider than the width we set. The * selector applies this to every element. */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -60,6 +64,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* FLEXIBLE IMAGES (responsive): an image never grows wider than its container (max-width: 100%),
+   and height: auto keeps its proportions, so photos shrink to fit phones. */
 img { display: block; max-width: 100%; height: auto; }
 
 h1, h2, h3 {
@@ -77,6 +83,8 @@ a:hover { color: var(--teal-dark); }
 
 :focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
 
+/* CENTERED PAGE COLUMN: the content is at most 1160px wide (--maxw) with side gutters, and
+   margin-inline: auto centers it. Every section puts its content inside a .container. */
 .container { width: min(100% - 2 * var(--gutter), var(--maxw)); margin-inline: auto; }
 .narrow    { max-width: 780px; }
 
@@ -85,6 +93,7 @@ a:hover { color: var(--teal-dark); }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
+/* ACCESSIBILITY: the "Skip to content" link is hidden off-screen until a keyboard user presses Tab */
 .skip-link {
   position: absolute; left: -9999px; top: 0.5rem; z-index: 100;
   background: var(--surface); color: var(--ink); padding: 0.6rem 1rem; border-radius: 8px;
@@ -130,6 +139,8 @@ a:hover { color: var(--teal-dark); }
 
 
 /* 3. Header + navigation (FLEXBOX) --------------------------------------- */
+/* STICKY HEADER: position: sticky keeps the menu bar at the top while the page scrolls.
+   z-index puts it above the content. */
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: rgba(243, 246, 244, 0.94);
@@ -154,6 +165,8 @@ a:hover { color: var(--teal-dark); }
 .brand { white-space: nowrap; }
 
 /* On the home page the header floats on top of the cover photo */
+/* On the home page the header is position: absolute (taken out of the normal flow), so it floats
+   transparently on top of the cover photo instead of pushing it down. */
 .has-cover .site-header { position: absolute; left: 0; right: 0; background: transparent; backdrop-filter: none; border-bottom: 0; }
 .has-cover .brand, .has-cover .brand:hover { color: #fff; }
 .has-cover .site-nav li a { color: rgba(255, 255, 255, 0.88); }
@@ -166,6 +179,8 @@ a:hover { color: var(--teal-dark); }
 .has-cover .menu-toggle:focus-visible + .menu-btn { outline-color: #fff; }
 
 /* Mobile menu button (a label for a hidden checkbox) */
+/* PHONE MENU WITHOUT JAVASCRIPT: a hidden checkbox plus a label. Ticking the checkbox is the
+   "open" state, and the :checked selectors below show the menu and turn the icon into an X. */
 .menu-toggle { position: absolute; opacity: 0; pointer-events: none; }
 .menu-btn { display: none; cursor: pointer; padding: 0.7rem; margin-right: -0.7rem; }
 .menu-icon, .menu-icon::before, .menu-icon::after {
@@ -183,6 +198,8 @@ a:hover { color: var(--teal-dark); }
 
 
 /* 4. Buttons -------------------------------------------------------------- */
+/* BUTTONS: a .btn is just a link (<a>) styled with padding, color and rounded corners.
+   The variants (.btn-primary, .btn-accent, .btn-ghost, .btn-light) only change the colors. */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
   padding: 0.85rem 1.5rem;
@@ -218,13 +235,19 @@ a:hover { color: var(--teal-dark); }
 
 /* COVER: the whole first screen is the photo. The shade is kept light and mostly on the
    left and bottom, so the picture stays the star and the face is never covered. */
+/* COVER (the landing screen): min-height 100vh makes it at least as tall as the screen (1vh = 1% of the
+   screen height). display: flex with align-items: flex-end puts the text at the bottom. isolation: isolate
+   keeps the photo layers (negative z-index) inside this section. */
 .cover {
   position: relative; isolation: isolate; overflow: hidden;
   min-height: 100vh; min-height: 100svh;
   display: flex; align-items: flex-end;
   background: var(--deep); color: #fff;
 }
+/* The photo fills the cover (position: absolute, inset: 0) and sits behind the text (negative z-index).
+   object-fit: cover crops it to fill the box without stretching; object-position keeps the person visible. */
 .cover-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; }
+/* A see-through dark gradient over the photo, so white text stays readable (linear-gradient + rgba) */
 .cover-shade {
   position: absolute; inset: 0; z-index: -1;
   background:
@@ -234,6 +257,8 @@ a:hover { color: var(--teal-dark); }
 }
 /* Wide screens: the photo sits on the right at about its real size (so it stays sharp) and
    fades into the dark background, which leaves the left side clear for the text. */
+/* MEDIA QUERY for wide screens: from 1000px up, the photo moves to the right side (62% wide) and fades
+   into the dark background with a mask. This also keeps the photo sharp: it is shown near its real size. */
 @media (min-width: 1000px) {
   .cover-photo {
     inset: 0 0 0 auto; width: 62%; object-position: 50% 100%;
@@ -270,6 +295,8 @@ a:hover { color: var(--teal-dark); }
 .cover-scroll i { display: block; width: 1px; height: 2.75rem; background: linear-gradient(#fff, rgba(255, 255, 255, 0)); }
 .cover :focus-visible { outline-color: #fff; }
 
+/* CSS GRID, two columns: headline on the left, text on the right (the right is slightly wider: 1.05fr).
+   minmax(0, 1fr) lets the columns shrink; at 900px the media query below makes it one column. */
 .intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
 .intro-title { font-size: clamp(1.9rem, 3.8vw, 2.9rem); }
 .intro-grid .lede { margin-top: 0; }
@@ -283,6 +310,8 @@ a:hover { color: var(--teal-dark); }
 .worked-row li { font-weight: 600; }
 
 /* A reusable responsive grid: as many columns as fit, never narrower than 300px */
+/* RESPONSIVE GRID without a media query: repeat(auto-fit, minmax(300px, 1fr)) means "as many columns as
+   fit, each at least 300px wide". So the cards are 3 across on desktop, 2 on tablets and 1 on phones. */
 .grid-3 { display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
 
 .service { border-top: 3px solid var(--teal); padding-top: 1.4rem; }
@@ -290,6 +319,7 @@ a:hover { color: var(--teal-dark); }
 .service > p { color: var(--muted); }
 .service .ticks { margin: 1.2rem 0 1.4rem; }
 
+/* The process steps use the same auto-fit grid idea, with a smaller minimum column width (230px) */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
 .step-num {
   display: grid; place-items: center; width: 2.7rem; height: 2.7rem; margin-bottom: 1rem;
@@ -307,6 +337,8 @@ a:hover { color: var(--teal-dark); }
 
 
 /* 6. Project cards + project page (GRID) ---------------------------------- */
+/* PROJECT CARD: a white box with a border and rounded corners. :hover (below) lifts it with a shadow,
+   and transition makes the change smooth instead of sudden. */
 .project-card {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
   overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
@@ -388,6 +420,8 @@ a:hover { color: var(--teal-dark); }
 
 
 /* 8. About page (FLOAT: portrait with text wrapping around it) ------------ */
+/* CSS FLOAT: the portrait below uses float: left, so the text wraps around it like in a magazine.
+   display: flow-root makes this container stretch around the floated image (it "clears" the float). */
 .about-intro { display: flow-root; max-width: 70rem; }
 .about-portrait {
   float: left; width: min(300px, 40%); margin: 0 clamp(1.5rem, 4vw, 2.5rem) 1.5rem 0;
@@ -426,6 +460,8 @@ a:hover { color: var(--teal-dark); }
 .records-link { margin-top: 1rem; }
 
 /* Photo collage: two wide photos on the left, two tall photos on the right */
+/* PHOTO GALLERY with CSS Grid: three columns and two rows. Some photos span two rows with
+   grid-row: 1 / span 2, which makes a mixed layout of tall and short pictures. */
 .moments {
   list-style: none; margin: 0; padding: 0;
   display: grid; gap: 1rem;
@@ -610,6 +646,7 @@ a:hover { color: var(--teal-dark); }
 /* 11. Responsive + reduced motion ----------------------------------------- */
 
 /* Tablet and below */
+/* TABLET AND BELOW (900px): the two-column layouts (intro, contact, services, project page) become one column */
 @media (max-width: 900px) {
   .project-layout, .contact-layout, .service-row, .intro-grid { grid-template-columns: 1fr; }
   .project-meta { position: static; }
@@ -618,6 +655,8 @@ a:hover { color: var(--teal-dark); }
 }
 
 /* The nav becomes a dropdown menu (opened by the checkbox, no JavaScript) */
+/* MENU BREAKPOINT (1020px): below this width the menu would not fit, so it is hidden (display: none)
+   and opened with the menu button instead. */
 @media (max-width: 1020px) {
   .menu-btn { display: inline-flex; }
   .site-nav {
@@ -639,6 +678,7 @@ a:hover { color: var(--teal-dark); }
 }
 
 /* Phones: the cover keeps just the name, role and two buttons so the face stays clear */
+/* PHONES (700px): the cover is simplified so the face stays clear (tags and the scroll arrow are hidden) */
 @media (max-width: 700px) {
   .cover-tags, .cover-scroll { display: none; }
   .cover-content { padding-block: 6rem 2.25rem; }
@@ -658,6 +698,7 @@ a:hover { color: var(--teal-dark); }
   .pager-link, .pager-next { max-width: none; text-align: left; margin-left: 0; }
 }
 
+/* ACCESSIBILITY: if the visitor's device asks for less motion, the animations and smooth scrolling are turned off */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

@@ -1,4 +1,12 @@
 <?php
+/*
+ * SERVICES PAGE — services.php
+ * Three services, each in its own block. The blocks are a foreach loop over $services
+ * (data.php), so all three share one layout. Each block has an id (web, graphic, content),
+ * so the home page can link straight to it with services.php#web.
+ * Layout: each block is a two-column CSS Grid; on phones it becomes one column.
+ * The "process" list reuses the same $process data as the home page.
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'services';

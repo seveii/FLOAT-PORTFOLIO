@@ -1,4 +1,11 @@
 <?php
+/*
+ * CERTIFICATES PAGE — certificates.php
+ * Loops over $certificate_groups (data.php). Each certificate is an image inside a link to
+ * the full-size file, which opens in a new tab (the "thumbnail" pattern). img() adds a small
+ * copy for phones (srcset) so the page loads fast even with many images.
+ * The grid fits as many columns as the screen allows.
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 $page        = 'certificates';

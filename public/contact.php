@@ -1,4 +1,16 @@
 <?php
+/*
+ * CONTACT PAGE — contact.php
+ * Two modes:
+ *   - On a normal PHP host: a working contact form. When it is sent, PHP checks and cleans
+ *     the fields, then emails the message with mail() and saves a copy in data/.
+ *   - On Vercel (ON_VERCEL is true, see config.php): there is no mail server, so the page
+ *     shows an "Email me" button (a mailto: link) instead of the form.
+ * Protections built into the form: a CSRF token (proves the form came from this site),
+ * a hidden "honeypot" field that only spam bots fill in, a cooldown between messages,
+ * length limits, validation of the email address, and removal of line breaks from the
+ * name and email so nobody can inject extra email headers.
+ */
 require __DIR__ . '/../includes/bootstrap.php';
 
 if (!ON_VERCEL) {

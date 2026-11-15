@@ -1,6 +1,10 @@
 <?php
 /**
  * Site-wide settings. Edit the values below — nothing else needs to change.
+ *
+ * "const" defines a constant: a named value that never changes while the page runs.
+ * Pages and templates use them by name, for example SITE_NAME in the footer, so the name,
+ * email and links are written in ONE place and shown everywhere.
  */
 
 // On Vercel there is no mail server and no place to save messages, so the contact page
