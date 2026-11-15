@@ -1,1 +1,4 @@
 .claude/
+# Messages sent through the contact form (private, never commit)
+data/messages.php
+data/messages.log
