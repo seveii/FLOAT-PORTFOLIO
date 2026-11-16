@@ -38,14 +38,15 @@ api/index.php  vercel.json   only used when deploying on Vercel
 - **Colors and fonts:** the variables at the top of `public/assets/css/style.css`.
 
 ## The contact form
-- The message is **emailed** to the address in `config.php` and **also saved** to `data/messages.php` as a backup. Open that file on the server to read them.
+- The message is **saved in the MySQL database** (the `messages` table, see Database below) and **also emailed** to the address in `config.php`. The code is in `includes/database.php`, and it uses a prepared statement, so what a visitor types can never run as SQL.
+- If the database is not available (not installed, wrong password), the message is saved to `data/messages.php` instead, so the form never fails. Open that file on the server to read those.
 - Before going live, set `MAIL_FROM` in `includes/config.php` to an address on your own domain (for example `no-reply@yourdomain.com`), otherwise some mail providers will reject the email.
 - Built-in protection: CSRF token, hidden spam trap, input validation, a short cooldown between sends, and email-header injection prevention.
 
 ## Database (SQL files)
 The `database/` folder describes the same content as `includes/data.php` as a MySQL database
-(MySQL 8 or MariaDB 10.4+). The website itself still reads `data.php`; these files are the
-database design that goes with it.
+(MySQL 8 or MariaDB 10.4+). The website pages still read `data.php`, and the contact form saves its messages in this
+database. These files create and fill it.
 
 | File | What it does |
 | --- | --- |
@@ -62,6 +63,12 @@ mysql -u root -p < database/queries.sql
 ```
 
 The `messages` table matches the contact form's fields (name, email, need type, message).
+
+### Make the contact form use the database
+1. Start MySQL (for example XAMPP's Apache and MySQL) and import `schema.sql`, then `data.sql`, in phpMyAdmin.
+2. Check the settings `DB_DSN`, `DB_USER` and `DB_PASS` in `includes/config.php`. The defaults match a fresh XAMPP (database `portfolio`, user `root`, no password). On a real host use its values, or set the environment variables `PORTFOLIO_DB_DSN`, `PORTFOLIO_DB_USER` and `PORTFOLIO_DB_PASS`.
+3. PHP needs the `pdo_mysql` extension (XAMPP has it on). With the plain `php -S` server from the PHP download, add `-d extension=pdo_mysql`.
+4. Send a message on the contact page, then read it with `SELECT * FROM messages ORDER BY id DESC;` (query 15 in `queries.sql`).
 
 ## Deploy on Vercel
 The site runs on Vercel through the community `vercel-php` runtime. `vercel.json` and `api/index.php` are already set up.

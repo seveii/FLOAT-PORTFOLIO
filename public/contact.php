@@ -3,7 +3,9 @@
  * CONTACT PAGE — contact.php
  * Two modes:
  *   - On a normal PHP host: a working contact form. When it is sent, PHP checks and cleans
- *     the fields, then emails the message with mail() and saves a copy in data/.
+ *     the fields, saves the message in the MySQL `messages` table (save_message() in
+ *     includes/database.php), and also emails it with mail(). If the database is not
+ *     available, the message is saved in a file in data/ instead.
  *   - On Vercel (ON_VERCEL is true, see config.php): there is no mail server, so the page
  *     shows an "Email me" button (a mailto: link) instead of the form.
  * Protections built into the form: a CSRF token (proves the form came from this site),
@@ -99,13 +101,20 @@ if (!ON_VERCEL && $_SERVER['REQUEST_METHOD'] === 'POST') {
             'message' => $old['message'],
         ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG);
 
-        // A private copy on the server. It is a .php file whose first line stops execution,
-        // so even if someone requested it in a browser, nothing would be shown.
-        $log = __DIR__ . '/../data/messages.php';
-        if (!is_file($log)) {
-            @file_put_contents($log, "<?php http_response_code(403); exit; ?>\n", LOCK_EX);
+        // FIRST CHOICE: save the message in the database (the `messages` table).
+        // save_message() is in includes/database.php and uses a prepared statement.
+        $saved = save_message($old['name'], $old['email'], $old['type'], $old['message']);
+
+        // BACKUP: if the database is not available, keep a private copy in a file instead.
+        // It is a .php file whose first line stops execution, so even if someone requested
+        // it in a browser, nothing would be shown.
+        if (!$saved) {
+            $log = __DIR__ . '/../data/messages.php';
+            if (!is_file($log)) {
+                @file_put_contents($log, "<?php http_response_code(403); exit; ?>\n", LOCK_EX);
+            }
+            $saved = @file_put_contents($log, $line . PHP_EOL, FILE_APPEND | LOCK_EX) !== false;
         }
-        $saved = @file_put_contents($log, $line . PHP_EOL, FILE_APPEND | LOCK_EX) !== false;
 
         $subject = 'New project inquiry from ' . $old['name'];
         $body    = "Name: {$old['name']}\nEmail: {$old['email']}\nNeeds: {$types[$old['type']]}\n\n{$old['message']}\n";
