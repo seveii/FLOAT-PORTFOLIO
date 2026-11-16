@@ -26,7 +26,6 @@ includes/                    code the pages share (never reachable from the web)
   functions.php              small helpers (safe output, images, project cards)
 data/                        saved contact-form messages (private, outside the web folder)
 database/                    SQL files: schema.sql, data.sql, queries.sql (see Database below)
-api/index.php  vercel.json   only used when deploying on Vercel
 ```
 
 ## Edit the site
@@ -70,14 +69,5 @@ The `messages` table matches the contact form's fields (name, email, need type, 
 3. PHP needs the `pdo_mysql` extension (XAMPP has it on). With the plain `php -S` server from the PHP download, add `-d extension=pdo_mysql`.
 4. Send a message on the contact page, then read it with `SELECT * FROM messages ORDER BY id DESC;` (query 15 in `queries.sql`).
 
-## Deploy on Vercel
-The site runs on Vercel through the community `vercel-php` runtime. `vercel.json` and `api/index.php` are already set up.
-
-1. In Vercel choose **Add New, Project** and import this GitHub repository.
-2. Framework Preset: **Other**. Leave the build and output settings empty (`vercel.json` already sets the output folder to `public`).
-3. Deploy. Every push to `main` redeploys automatically.
-
-On Vercel the contact page shows an **email button** instead of the form, because Vercel has no mail server and cannot save messages. On a normal PHP host the full form is used. Test the Vercel setup locally with `VERCEL=1 php -S localhost:8081 -t public api/index.php`.
-
 ## Hosting
-This site needs a host that runs PHP (almost any shared hosting does, and Vercel works too). Set the host's web root to the `public/` folder; if it only offers `public_html`, upload the contents of `public/` there and put `includes/` and `data/` next to it, not inside it. **GitHub Pages cannot run PHP.** The previous static version is in the git history if you ever need it back.
+This site needs a host that runs PHP (almost any shared hosting does). Set the host's web root to the `public/` folder; if it only offers `public_html`, upload the contents of `public/` there and put `includes/` and `data/` next to it, not inside it. **GitHub Pages cannot run PHP.** The previous static version is in the git history if you ever need it back.

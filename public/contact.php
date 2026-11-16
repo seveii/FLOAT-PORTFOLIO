@@ -1,13 +1,10 @@
 <?php
 /*
  * CONTACT PAGE — contact.php
- * Two modes:
- *   - On a normal PHP host: a working contact form. When it is sent, PHP checks and cleans
- *     the fields, saves the message in the MySQL `messages` table (save_message() in
- *     includes/database.php), and also emails it with mail(). If the database is not
- *     available, the message is saved in a file in data/ instead.
- *   - On Vercel (ON_VERCEL is true, see config.php): there is no mail server, so the page
- *     shows an "Email me" button (a mailto: link) instead of the form.
+ * A working contact form. When it is sent, PHP checks and cleans the fields, saves the
+ * message in the MySQL `messages` table (save_message() in includes/database.php), and also
+ * emails it with mail(). If the database is not available, the message is saved in a file
+ * in data/ instead.
  * Protections built into the form: a CSRF token (proves the form came from this site),
  * a hidden "honeypot" field that only spam bots fill in, a cooldown between messages,
  * length limits, validation of the email address, and removal of line breaks from the
@@ -15,16 +12,15 @@
  */
 require __DIR__ . '/../includes/init.php';
 
-if (!ON_VERCEL) {
-    session_set_cookie_params([
-        'lifetime' => 0,
-        'path'     => '/',
-        'httponly' => true,
-        'samesite' => 'Lax',
-        'secure'   => !empty($_SERVER['HTTPS']),
-    ]);
-    session_start();
-}
+// A session remembers the CSRF token and the time of the last message for this visitor.
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path'     => '/',
+    'httponly' => true,
+    'samesite' => 'Lax',
+    'secure'   => !empty($_SERVER['HTTPS']),
+]);
+session_start();
 
 $types = [
     'website' => 'A website',
@@ -38,7 +34,7 @@ $old    = ['name' => '', 'email' => '', 'type' => '', 'message' => ''];
 $sent   = isset($_GET['sent']);
 
 // One-time token that proves the form was loaded from this site (CSRF protection).
-if (!ON_VERCEL && empty($_SESSION['csrf'])) {
+if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 
@@ -52,7 +48,7 @@ function field(string $key, int $max): string
     return substr(trim($value), 0, $max);
 }
 
-if (!ON_VERCEL && $_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 1. Spam trap: real people never see or fill this hidden field.
     if (field('website', 200) !== '') {
         header('Location: contact.php?sent=1');
@@ -139,15 +135,6 @@ if (!ON_VERCEL && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$mailto = 'mailto:' . SITE_EMAIL . '?subject=' . rawurlencode('Project inquiry')
-    . '&body=' . rawurlencode("Hi Rafael,
-
-I need help with: (a website / a logo or poster / social media content)
-Who it's for:
-Any examples I like:
-
-Thanks!");
-
 $page        = 'contact';
 $title       = 'Contact — ' . SITE_NAME;
 $description = 'Start a project: tell me what you need and I will reply by email.';
@@ -167,14 +154,7 @@ require INC . '/header.php';
   <div class="container contact-layout">
 
     <div class="contact-form-wrap">
-      <?php if (ON_VERCEL): ?>
-      <div class="mail-card">
-        <h2>Email me about your project</h2>
-        <p>Tell me what you need, who it’s for and any examples you like. Your email app opens with a ready-to-fill message, and I’ll reply by email.</p>
-        <a class="btn btn-accent" href="<?= e($mailto) ?>">Email <?= e(SITE_EMAIL) ?></a>
-        <p class="hint">Prefer social media? You can also message me on Instagram, linked on this page.</p>
-      </div>
-      <?php elseif ($sent): ?>
+      <?php if ($sent): ?>
       <div class="notice notice-ok" role="status">
         <h2>Thank you, your message was sent</h2>
         <p>I’ll read it and reply to the email address you gave.</p>

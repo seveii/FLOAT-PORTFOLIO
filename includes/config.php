@@ -7,10 +7,6 @@
  * email and links are written in ONE place and shown everywhere.
  */
 
-// On Vercel there is no mail server and no place to save messages, so the contact page
-// shows an "email me" card instead of the form. Everywhere else the PHP form is used.
-define('ON_VERCEL', getenv('VERCEL') !== false && getenv('VERCEL') !== '');
-
 const SITE_NAME     = 'Rafael Joseph Nieves';
 const SITE_SHORT    = 'Rafael Nieves';
 const SITE_ROLE     = 'Web & Graphic Designer';

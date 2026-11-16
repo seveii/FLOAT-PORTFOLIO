@@ -30,8 +30,8 @@ function db(): ?PDO
     }
     $pdo = null;
 
-    // Vercel has no database for this site, and some PHP installs do not have PDO at all.
-    if (ON_VERCEL || !class_exists('PDO')) {
+    // Some PHP installs do not have PDO at all, so we check before using it.
+    if (!class_exists('PDO')) {
         return $pdo;
     }
 
