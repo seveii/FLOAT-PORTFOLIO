@@ -25,6 +25,7 @@ includes/                    code the pages share (never reachable from the web)
   header.php  footer.php     shared top and bottom of every page
   functions.php              small helpers (safe output, images, project cards)
 data/                        saved contact-form messages (private, outside the web folder)
+database/                    SQL files: schema.sql, data.sql, queries.sql (see Database below)
 api/index.php  vercel.json   only used when deploying on Vercel
 ```
 
@@ -40,6 +41,27 @@ api/index.php  vercel.json   only used when deploying on Vercel
 - The message is **emailed** to the address in `config.php` and **also saved** to `data/messages.php` as a backup. Open that file on the server to read them.
 - Before going live, set `MAIL_FROM` in `includes/config.php` to an address on your own domain (for example `no-reply@yourdomain.com`), otherwise some mail providers will reject the email.
 - Built-in protection: CSRF token, hidden spam trap, input validation, a short cooldown between sends, and email-header injection prevention.
+
+## Database (SQL files)
+The `database/` folder describes the same content as `includes/data.php` as a MySQL database
+(MySQL 8 or MariaDB 10.4+). The website itself still reads `data.php`; these files are the
+database design that goes with it.
+
+| File | What it does |
+| --- | --- |
+| `schema.sql` | Creates the `portfolio` database and 23 tables, with primary keys, foreign keys and `ON DELETE CASCADE`. |
+| `data.sql` | Fills the tables with the real content (projects, services, certificates, skills, ...) and one sample message. |
+| `queries.sql` | 18 example queries: JOIN, GROUP BY, HAVING, a subquery, a VIEW, INSERT, UPDATE and DELETE. |
+
+To load them, run the three files in order, for example in phpMyAdmin (Import tab) or with:
+
+```bash
+mysql -u root -p < database/schema.sql
+mysql -u root -p < database/data.sql
+mysql -u root -p < database/queries.sql
+```
+
+The `messages` table matches the contact form's fields (name, email, need type, message).
 
 ## Deploy on Vercel
 The site runs on Vercel through the community `vercel-php` runtime. `vercel.json` and `api/index.php` are already set up.
