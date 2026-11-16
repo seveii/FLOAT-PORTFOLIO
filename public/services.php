@@ -7,7 +7,7 @@
  * Layout: each block is a two-column CSS Grid; on phones it becomes one column.
  * The "process" list reuses the same $process data as the home page.
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 $page        = 'services';
 $title       = 'Services — ' . SITE_NAME;

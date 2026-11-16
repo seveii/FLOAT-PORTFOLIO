@@ -1,12 +1,5 @@
 <?php
-/**
- * Entry point used ONLY when the site runs on Vercel (see vercel.json).
- *
- * Vercel runs PHP through one function, so every request that is not an asset
- * is sent here and this file loads the matching page. Only the pages listed
- * below can ever be loaded, so includes/ and data/ are never reachable.
- * On a normal PHP host or `php -S`, the pages are used directly and this file is not involved.
- */
+
 $root = dirname(__DIR__);
 $web  = $root . '/public';   // the pages and assets
 
@@ -40,7 +33,7 @@ if (isset($pages[$path])) {
 }
 
 // Anything else: a friendly 404 page in the site's own design.
-require $root . '/includes/bootstrap.php';
+require $root . '/includes/init.php';
 http_response_code(404);
 $page        = '';
 $title       = 'Page not found — ' . SITE_NAME;

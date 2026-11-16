@@ -6,7 +6,7 @@
  * copy for phones (srcset) so the page loads fast even with many images.
  * The grid fits as many columns as the screen allows.
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 $page        = 'certificates';
 $title       = 'Certificates — ' . SITE_NAME;

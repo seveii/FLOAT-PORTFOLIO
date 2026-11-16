@@ -8,7 +8,7 @@
  *   - A photo gallery in CSS Grid, using <figure> and <figcaption>.
  * The text (experience, education, awards, skills) comes from data.php.
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 $page        = 'about';
 $title       = 'About — ' . SITE_NAME;

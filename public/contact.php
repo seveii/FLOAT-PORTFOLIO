@@ -13,7 +13,7 @@
  * length limits, validation of the email address, and removal of line breaks from the
  * name and email so nobody can inject extra email headers.
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 if (!ON_VERCEL) {
     session_set_cookie_params([

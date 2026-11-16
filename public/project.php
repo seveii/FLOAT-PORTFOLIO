@@ -8,7 +8,7 @@
  * The previous and next links at the bottom are worked out with simple array maths.
  * Layout: main content plus a sticky facts sidebar (CSS Grid; one column on phones).
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 // Only a slug that exists in data.php is ever accepted; anything else is a 404.
 $slug    = isset($_GET['slug']) && is_string($_GET['slug']) ? $_GET['slug'] : '';

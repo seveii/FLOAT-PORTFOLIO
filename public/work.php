@@ -6,7 +6,7 @@
  * projects that belong to it. The cards sit in a CSS Grid that adds or removes columns
  * to fit the screen (3 on desktop, 2 on tablets, 1 on phones).
  */
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 $page        = 'work';
 $title       = 'Work — ' . SITE_NAME;

@@ -1,6 +1,6 @@
 <?php
 /**
- * BOOTSTRAP — includes/bootstrap.php
+ * INIT — includes/init.php
  * Loaded first by every page: settings, helper functions, and the content data.
  *
  * "require" pastes another PHP file in at that spot. The order matters:
@@ -8,7 +8,7 @@
  *   2. database.php  the database connection and save_message() (for the contact form)
  *   3. functions.php the helper functions that the pages call
  *   4. data.php      the content: services, projects, certificates, and so on
- * Each page needs only ONE line to get all of this:  require '../includes/bootstrap.php';
+ * Each page needs only ONE line to get all of this:  require '../includes/init.php';
  */
 // __DIR__ is the folder this file is in, so INC always points to the includes/ folder.
 const INC = __DIR__;

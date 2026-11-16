@@ -18,9 +18,9 @@
  * Only HTML, CSS and PHP are used: there is no JavaScript anywhere on the site.
  */
 
-// bootstrap.php loads three things for us: the settings (config.php), the helper
+// init.php loads three things for us: the settings (config.php), the helper
 // functions (functions.php, for example e() and img()) and the content (data.php).
-require __DIR__ . '/../includes/bootstrap.php';
+require __DIR__ . '/../includes/init.php';
 
 // These variables are read by header.php to fill in the page's <title>, the
 // search-engine description and the highlighted menu link.
