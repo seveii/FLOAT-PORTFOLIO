@@ -94,11 +94,18 @@ h2 {
   flex: 1;                       /* every box takes the same width */
   border: 2px solid black;
   padding: 15px;
+}
+
+.center {
   text-align: center;
 }
 
 .box b {
   font-size: 18px;
+}
+
+.box h3 {
+  margin-top: 0;
 }
 
 /* ---------- FLEXBOX: photos in a row ---------- */
@@ -131,6 +138,64 @@ h2 {
   width: 100%;
   height: 180px;
   object-fit: cover;
+}
+
+/* ---------- GRID: certificates ---------- */
+/* On the Certificates page: 3 columns. On the home page: 4 small ones in a row. */
+.certs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.cert {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.cert img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+.cert h4 {
+  margin: 10px 0 5px 0;
+}
+
+.cert p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.cert-grid img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+.cert-grid p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+}
+
+/* ---------- Call to action box ---------- */
+.cta {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.cta h2 {
+  border-bottom: none;
 }
 
 /* ---------- GRID: two columns ---------- */
@@ -234,8 +299,11 @@ footer p {
     flex: none;
     width: 100%;
   }
-  .projects, .two-columns, .gallery {
+  .projects, .two-columns, .gallery, .certs {
     grid-template-columns: 1fr;   /* grids become one column */
+  }
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;   /* the 4 certificates become 2 by 2 */
   }
   .portrait {
     float: none;                  /* no float on a small screen */
