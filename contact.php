@@ -1,23 +1,23 @@
 <?php
-// contact.php - the contact form. The PHP code is at the top, before any HTML is shown.
+// contact.php - yung contact form. Nasa taas yung PHP code, bago pa lumabas yung kahit anong HTML.
 
 $title = "Contact";
 $result = "";
 
-// This part runs only when the form was sent (the visitor pressed the button).
+// Tatakbo lang 'tong part na 'to kapag na-send na yung form (pinindot na ng visitor yung button).
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $type = $_POST["type"];
     $message = $_POST["message"];
 
-    // Check the fields first.
+    // I-check muna natin yung mga fields.
     if ($name == "" || $email == "" || $message == "") {
         $result = "Please fill in all the fields.";
     } elseif (!in_array($type, ["website", "design", "content", "other"])) {
         $result = "Please choose what you need.";
     } else {
-        // Save the message in the database (the messages table from database.sql).
+        // I-save yung message sa database (yung messages table galing sa database.sql).
         try {
             $conn = new PDO("mysql:host=localhost;dbname=portfolio", "root", "");
             $sql = "INSERT INTO messages (name, email, need_type, message) VALUES (?, ?, ?, ?)";
@@ -37,14 +37,14 @@ include "header.php";
 
   <h2>Contact Me</h2>
 
-  <!-- Two parts side by side with flexbox: the form on the left, my info on the right -->
+  <!-- Two parts na magkatabi, flexbox: yung form sa left, yung info ko sa right -->
   <div class="contact-row">
 
     <div class="contact-form">
       <p>Tell me what you need and I will reply by email.</p>
 
       <?php
-      // Show the result (thank you or error) if there is one.
+      // Ipakita yung result (thank you o error) kung meron.
       if ($result != "") {
           echo "<p><b>" . $result . "</b></p>";
       }

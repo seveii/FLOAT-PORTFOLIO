@@ -1,6 +1,6 @@
-/* style.css - the ONLY stylesheet. It is linked in header.php, so all the pages use it. */
+/* style.css - eto lang yung ONLY stylesheet ko. Naka-link siya sa header.php, kaya lahat ng pages gumagamit nito. */
 
-/* ---------- Whole page ---------- */
+/* ---------- Buong page ---------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,15 +9,15 @@ body {
 }
 
 img {
-  max-width: 100%;   /* a picture never gets wider than the screen */
+  max-width: 100%;   /* hindi lalagpas sa lapad ng screen yung picture */
 }
 
 /* ---------- Header: FLEXBOX ---------- */
-/* display: flex puts the children (the name and the menu) in one row. */
+/* display: flex, para magkakatabi sa isang row yung name at yung menu. */
 header {
   display: flex;
-  justify-content: space-between;   /* name on the left, menu on the right */
-  align-items: center;              /* both centered vertically */
+  justify-content: space-between;   /* name sa left, menu sa right */
+  align-items: center;              /* pareho silang nasa gitna (vertical) */
   background-color: black;
   color: white;
   padding: 15px 30px;
@@ -34,11 +34,11 @@ nav a {
   margin-left: 20px;
 }
 
-/* ---------- The content area of every page ---------- */
+/* ---------- Yung content area ng bawat page ---------- */
 .content {
   width: 90%;
   max-width: 1000px;
-  margin: 0 auto;       /* auto left and right margins center the content */
+  margin: 0 auto;       /* yung auto margin sa left at right, siya yung nagpapa-center ng content */
   padding: 20px 0;
 }
 
@@ -47,20 +47,20 @@ h2 {
   padding-bottom: 5px;
 }
 
-/* ---------- Home page: big cover picture ---------- */
-/* The picture is a background image. "cover" makes it fill the whole box.
-   The first background is a dark gradient on the left side, so the white title is easy to read. */
+/* ---------- Home page: yung malaking cover picture ---------- */
+/* Background image yung picture. Yung "cover", pinupuno niya buong box.
+   Yung first background, dark gradient sa left side, para madaling basahin yung white na title. */
 .hero {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 70%),
                     url(images/cover-river.webp);
   background-size: cover;
-  background-position: 70% bottom;   /* keeps me (bottom right) inside the picture */
-  height: 85vh;                      /* 85% of the screen height */
+  background-position: 70% bottom;   /* para kita pa rin ako (nasa bottom right) sa loob ng picture */
+  height: 85vh;                      /* 85% ng taas ng screen */
   display: flex;
-  align-items: center;               /* the title is in the middle of the picture, on the left */
+  align-items: center;               /* nasa gitna yung title (vertical), sa left side ng picture */
 }
 
-/* The title inside the cover picture */
+/* Yung title sa loob ng cover picture */
 .hero-text {
   color: white;
   margin-left: 8%;
@@ -82,7 +82,7 @@ h2 {
 
 .line {
   width: 80px;
-  border-top: 4px solid white;     /* a short white line under the name */
+  border-top: 4px solid white;     /* maikling white line sa ilalim ng name */
   margin-top: 15px;
 }
 
@@ -105,14 +105,14 @@ h2 {
   border: 2px solid white;
 }
 
-/* ---------- FLEXBOX: boxes in a row ---------- */
+/* ---------- FLEXBOX: boxes na magkakatabi ---------- */
 .boxes {
   display: flex;
   gap: 15px;
 }
 
 .box {
-  flex: 1;                       /* every box takes the same width */
+  flex: 1;                       /* pantay-pantay yung lapad ng bawat box */
   border: 2px solid black;
   padding: 15px;
 }
@@ -130,7 +130,7 @@ h2 {
 }
 
 /* ---------- GRID: project cards ---------- */
-/* display: grid with 3 equal columns. The cards fill the grid row by row. */
+/* display: grid, 3 equal columns. Pinupuno ng cards yung grid, row by row. */
 .projects {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -149,7 +149,7 @@ h2 {
 }
 
 /* ---------- GRID: certificates ---------- */
-/* On the Certificates page: 3 columns. On the home page: 4 small ones in a row. */
+/* Sa Certificates page: 3 columns. Sa home page: 4 na maliliit na magkakatabi. */
 .certs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -226,7 +226,7 @@ h2 {
   object-fit: cover;
 }
 
-/* ---------- FLOAT: picture on the left, text wraps around it ---------- */
+/* ---------- FLOAT: picture sa left, yung text umiikot sa gilid ---------- */
 .portrait {
   float: left;
   width: 300px;
@@ -234,10 +234,10 @@ h2 {
 }
 
 .clear {
-  clear: both;     /* stops the float, so the next section starts below the picture */
+  clear: both;     /* tinitigil niya yung float, para yung next section magsimula sa ilalim ng picture */
 }
 
-/* ---------- Contact page: FLEXBOX (form on the left, info on the right) ---------- */
+/* ---------- Contact page: FLEXBOX (form sa left, info sa right) ---------- */
 .contact-row {
   display: flex;
   gap: 30px;
@@ -283,10 +283,10 @@ footer p {
   margin: 0;
 }
 
-/* ---------- Responsive: for phones and small screens (media query) ---------- */
+/* ---------- Responsive: para sa phones at maliliit na screen (media query) ---------- */
 @media (max-width: 700px) {
   header {
-    flex-direction: column;       /* the name and the menu go on top of each other */
+    flex-direction: column;       /* yung name at menu, pumapatong na sa isa't isa */
   }
   nav {
     margin-top: 10px;
@@ -299,7 +299,7 @@ footer p {
   }
   .hero-text {
     margin: 0 20px;
-    align-self: flex-start;       /* on a phone the title goes to the top, away from me */
+    align-self: flex-start;       /* sa phone, umaakyat yung title sa taas, para hindi matakpan yung mukha ko */
     margin-top: 40px;
   }
   .hero-text h1 {
@@ -309,16 +309,16 @@ footer p {
     font-size: 18px;
   }
   .boxes, .contact-row, footer {
-    flex-direction: column;       /* flex rows become columns */
+    flex-direction: column;       /* yung flex rows, nagiging columns na */
   }
   .projects, .two-columns, .gallery, .certs {
-    grid-template-columns: 1fr;   /* grids become one column */
+    grid-template-columns: 1fr;   /* yung grids, nagiging one column na lang */
   }
   .cert-grid {
-    grid-template-columns: 1fr 1fr;   /* the 4 certificates become 2 by 2 */
+    grid-template-columns: 1fr 1fr;   /* yung 4 certificates, nagiging 2 by 2 */
   }
   .portrait {
-    float: none;                  /* no float on a small screen */
+    float: none;                  /* walang float sa maliit na screen */
     width: 100%;
     margin: 0 0 15px 0;
   }

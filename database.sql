@@ -1,6 +1,6 @@
 -- database.sql
--- The only database part of the portfolio is the contact form.
--- Import this file once (for example in phpMyAdmin). It creates the database and one table.
+-- Yung contact form lang talaga yung may database sa portfolio ko.
+-- I-import 'tong file na 'to ng isang beses lang (halimbawa sa phpMyAdmin). Gagawa siya ng database at isang table.
 
 CREATE DATABASE IF NOT EXISTS portfolio;
 
@@ -15,5 +15,5 @@ CREATE TABLE IF NOT EXISTS messages (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- To read the messages that visitors sent (newest first):
+-- Para mabasa yung mga message na sinend ng mga visitor (pinakabago muna):
 -- SELECT * FROM messages ORDER BY id DESC;

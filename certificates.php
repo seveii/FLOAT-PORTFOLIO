@@ -10,7 +10,7 @@ include "header.php";
   <h3>AI Tools</h3>
   <p>Short courses from tixu.ai on the AI tools I use for research, coding and image and video work.</p>
 
-  <!-- The certificates are laid out in 3 columns with CSS grid. Click a picture to see it bigger. -->
+  <!-- 3 columns yung certificates, CSS grid yung gamit. I-click lang yung picture para mas malaki makita. -->
   <div class="certs">
 
     <div class="cert">

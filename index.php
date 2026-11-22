@@ -3,8 +3,8 @@ $title = "Home";
 include "header.php";
 ?>
 
-<!-- The big cover picture. The picture itself is set in style.css (the .hero class).
-     My title is inside the picture. -->
+<!-- Yung malaking cover picture. Sa style.css naka-set yung picture mismo (yung .hero class).
+     Yung title ko, nasa loob na ng picture. -->
 <div class="hero">
   <div class="hero-text">
     <h1>Rafael Joseph Nieves</h1>
@@ -17,7 +17,7 @@ include "header.php";
 
 <div class="content">
 
-  <!-- ---------- Welcome ---------- -->
+  <!-- ---------- Welcome (intro muna) ---------- -->
   <h2>Welcome</h2>
   <p>
   Hi, I am Rafael. I design and build responsive websites, and I make the logos, posters and
@@ -30,7 +30,7 @@ include "header.php";
   Dr. Yanga's Colleges, Inc. and Batch6 Coffee.
   </p>
 
-  <!-- Four boxes in a row. The row is made with flexbox. -->
+  <!-- Four boxes na magkakatabi. Flexbox yung ginamit ko dito. -->
   <div class="boxes">
     <div class="box center">
       <b>4</b><br>semesters as Dean's Lister
@@ -46,11 +46,11 @@ include "header.php";
     </div>
   </div>
 
-  <!-- ---------- What I do ---------- -->
+  <!-- ---------- What I do (yung services ko) ---------- -->
   <h2>What I Do</h2>
   <p>Whether you need a website, a consistent look, or content for your page, I handle it from first idea to final files.</p>
 
-  <!-- Three boxes in a row (flexbox) -->
+  <!-- Three boxes na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box">
       <h3>Web Design and Development</h3>
@@ -84,7 +84,7 @@ include "header.php";
   <!-- ---------- Recent projects ---------- -->
   <h2>Recent Projects</h2>
 
-  <!-- The cards are laid out in 3 columns with CSS grid -->
+  <!-- 3 columns yung cards, CSS grid yung gamit -->
   <div class="projects">
     <div class="card">
       <img src="images/whispr.svg" alt="Whispr preview">
@@ -119,10 +119,10 @@ include "header.php";
   </div>
   <p><a href="projects.php">View all projects</a></p>
 
-  <!-- ---------- Certificates preview ---------- -->
+  <!-- ---------- Certificates preview (konting preview lang) ---------- -->
   <h2>Certificates and Awards</h2>
 
-  <!-- Four certificates in a row with CSS grid -->
+  <!-- Four certificates na magkakatabi, CSS grid yung gamit -->
   <div class="cert-grid">
     <div>
       <img src="images/cert-claude-engineers.webp" alt="Certificate: Claude for Engineers">
@@ -146,7 +146,7 @@ include "header.php";
   <!-- ---------- How I work ---------- -->
   <h2>How I Work</h2>
 
-  <!-- Four steps in a row (flexbox) -->
+  <!-- Four steps na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box">
       <h3>1. Discover</h3>
@@ -166,7 +166,7 @@ include "header.php";
     </div>
   </div>
 
-  <!-- ---------- Call to action ---------- -->
+  <!-- ---------- Call to action (last part na 'to, para i-contact ako ng visitor) ---------- -->
   <div class="cta">
     <h2>Have a project in mind?</h2>
     <p>Tell me what you need and who it is for. I will reply by email with next steps.</p>

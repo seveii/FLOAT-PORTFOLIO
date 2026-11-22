@@ -7,7 +7,7 @@ include "header.php";
 
   <h2>About Me</h2>
 
-  <!-- The picture floats to the left (style.css, .portrait) so the text wraps around it. -->
+  <!-- Naka-float to the left yung picture (style.css, .portrait), kaya yung text, umiikot sa gilid niya. -->
   <img class="portrait" src="images/awards-presidents-list.webp" alt="Rafael holding two President's List certificates">
 
   <p>
@@ -39,7 +39,7 @@ include "header.php";
 
   <div class="clear"></div>
 
-  <!-- Quick facts in a row (flexbox) -->
+  <!-- Quick facts na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box center"><b>Based in</b><br>Marilao, Bulacan, Philippines</div>
     <div class="box center"><b>Studying</b><br>BS Computer Engineering, 3rd year</div>
@@ -49,7 +49,7 @@ include "header.php";
 
   <h2>Leadership and Organizations</h2>
 
-  <!-- Two columns made with CSS grid -->
+  <!-- Two columns, CSS grid yung gamit -->
   <div class="two-columns">
 
     <div>
@@ -126,7 +126,7 @@ include "header.php";
 
   <h2>What I Work With</h2>
 
-  <!-- Four skill boxes in a row (flexbox) -->
+  <!-- Four skill boxes na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box">
       <h3>Design and Content</h3>
@@ -173,7 +173,7 @@ include "header.php";
 
   <h2>More Photos</h2>
 
-  <!-- A photo gallery made with CSS grid (2 columns) -->
+  <!-- Photo gallery, CSS grid (2 columns) -->
   <div class="gallery">
     <img src="images/moment-city-night.webp" alt="Rafael leaning on a glass railing facing a lit-up city at night">
     <img src="images/moment-workshop.webp" alt="Rafael working on a laptop at a seminar table">
