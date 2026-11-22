@@ -54,24 +54,21 @@ h2 {
   background-size: cover;
   background-position: center;
   height: 85vh;              /* 85% of the screen height */
-  display: flex;
-  align-items: flex-start;   /* the text box sits at the top of the picture, not over my face */
 }
 
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.6);   /* black, a little see-through */
-  color: white;
-  padding: 20px 30px;
-  margin: 30px;
+/* The name under the cover picture */
+.intro {
+  text-align: center;
+  padding: 25px 20px 10px 20px;
 }
 
-.hero-text h1 {
-  margin: 0 0 10px 0;
+.intro h1 {
+  margin: 0 0 5px 0;
   font-size: 40px;
 }
 
-.hero-text p {
-  margin: 0 0 15px 0;
+.intro p {
+  margin: 5px 0;
 }
 
 .button {
@@ -289,7 +286,7 @@ footer p {
   .hero {
     height: 70vh;
   }
-  .hero-text h1 {
+  .intro h1 {
     font-size: 28px;
   }
   .boxes, .photos, .contact-row, footer {
