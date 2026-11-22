@@ -48,27 +48,51 @@ h2 {
 }
 
 /* ---------- Home page: big cover picture ---------- */
-/* The picture is a background image. "cover" makes it fill the whole box. */
+/* The picture is a background image. "cover" makes it fill the whole box.
+   The first background is a dark gradient on the left side, so the white title is easy to read. */
 .hero {
-  background-image: url(images/cover-pool.webp);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 70%),
+                    url(images/cover-river.webp);
   background-size: cover;
-  background-position: center;
-  height: 85vh;              /* 85% of the screen height */
+  background-position: 70% bottom;   /* keeps me (bottom right) inside the picture */
+  height: 85vh;                      /* 85% of the screen height */
+  display: flex;
+  align-items: center;               /* the title is in the middle of the picture, on the left */
 }
 
-/* The name under the cover picture */
-.intro {
-  text-align: center;
-  padding: 25px 20px 10px 20px;
+/* The title inside the cover picture */
+.hero-text {
+  color: white;
+  margin-left: 8%;
+  max-width: 500px;
 }
 
-.intro h1 {
-  margin: 0 0 5px 0;
-  font-size: 40px;
+.hero-text h1 {
+  margin: 0;
+  font-size: 56px;
+  line-height: 1.1;
+  text-shadow: 2px 2px 8px black;
 }
 
-.intro p {
-  margin: 5px 0;
+.hero-text .role {
+  margin: 10px 0 20px 0;
+  font-size: 22px;
+  text-shadow: 1px 1px 6px black;
+}
+
+.line {
+  width: 80px;
+  border-top: 4px solid white;     /* a short white line under the name */
+  margin-top: 15px;
+}
+
+.hero-text a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin: 0 10px 10px 0;
 }
 
 .button {
@@ -286,8 +310,16 @@ footer p {
   .hero {
     height: 70vh;
   }
-  .intro h1 {
-    font-size: 28px;
+  .hero-text {
+    margin: 0 20px;
+    align-self: flex-start;       /* on a phone the title goes to the top, away from me */
+    margin-top: 40px;
+  }
+  .hero-text h1 {
+    font-size: 36px;
+  }
+  .hero-text .role {
+    font-size: 18px;
   }
   .boxes, .photos, .contact-row, footer {
     flex-direction: column;       /* flex rows become columns */

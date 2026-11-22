@@ -3,14 +3,16 @@ $title = "Home";
 include "header.php";
 ?>
 
-<!-- The big cover picture. The picture itself is set in style.css (the .hero class). -->
-<div class="hero"></div>
-
-<!-- My name and two links, in plain text under the picture -->
-<div class="intro">
-  <h1>Rafael Joseph Nieves</h1>
-  <p>Web and Graphic Designer</p>
-  <p><a href="projects.php">See my projects</a> | <a href="contact.php">Contact me</a></p>
+<!-- The big cover picture. The picture itself is set in style.css (the .hero class).
+     My title is inside the picture. -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Rafael Joseph Nieves</h1>
+    <div class="line"></div>
+    <p class="role">Web and Graphic Designer</p>
+    <a href="projects.php">See my projects</a>
+    <a href="contact.php">Contact me</a>
+  </div>
 </div>
 
 <div class="content">
