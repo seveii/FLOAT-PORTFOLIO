@@ -9,15 +9,13 @@
 <body>
 
 <!-- This header is shared by every page. Each page sets $title and then includes this file. -->
-<h1>Rafael Joseph Nieves</h1>
-<p>Web and Graphic Designer</p>
-
-<p>
-<a href="index.php">Home</a> |
-<a href="about.php">About</a> |
-<a href="projects.php">Projects</a> |
-<a href="certificates.php">Certificates</a> |
-<a href="contact.php">Contact</a>
-</p>
-
-<hr>
+<header>
+  <div class="logo">Rafael Joseph Nieves</div>
+  <nav>
+    <a href="index.php">Home</a>
+    <a href="about.php">About</a>
+    <a href="projects.php">Projects</a>
+    <a href="certificates.php">Certificates</a>
+    <a href="contact.php">Contact</a>
+  </nav>
+</header>

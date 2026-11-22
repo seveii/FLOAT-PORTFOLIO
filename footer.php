@@ -1,8 +1,10 @@
 <!-- This footer is shared by every page. -->
-<hr>
-<p>Rafael Joseph Nieves - Marilao, Bulacan, Philippines</p>
-<p>Email: nrafaeljoseph@gmail.com</p>
-<p>&copy; 2026 Rafael Joseph Nieves</p>
+<footer>
+  <p>Rafael Joseph Nieves</p>
+  <p>Marilao, Bulacan, Philippines</p>
+  <p>nrafaeljoseph@gmail.com</p>
+  <p>&copy; 2026</p>
+</footer>
 
 </body>
 </html>

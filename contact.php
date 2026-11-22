@@ -33,44 +33,59 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include "header.php";
 ?>
 
-<h2>Contact Me</h2>
+<div class="content">
 
-<p>Tell me what you need and I will reply by email.</p>
+  <h2>Contact Me</h2>
 
-<?php
-// Show the result (thank you or error) if there is one.
-if ($result != "") {
-    echo "<p><b>" . $result . "</b></p>";
-}
-?>
+  <!-- Two parts side by side with flexbox: the form on the left, my info on the right -->
+  <div class="contact-row">
 
-<form method="post" action="contact.php">
-  <p>
-    Name:<br>
-    <input type="text" name="name">
-  </p>
-  <p>
-    Email:<br>
-    <input type="email" name="email">
-  </p>
-  <p>
-    What do you need?<br>
-    <select name="type">
-      <option value="website">A website</option>
-      <option value="design">Logo, poster or other design</option>
-      <option value="content">Social media content</option>
-      <option value="other">Something else</option>
-    </select>
-  </p>
-  <p>
-    Message:<br>
-    <textarea name="message" rows="6" cols="40"></textarea>
-  </p>
-  <p>
-    <input type="submit" value="Send">
-  </p>
-</form>
+    <div class="contact-form">
+      <p>Tell me what you need and I will reply by email.</p>
 
-<p>You can also email me at nrafaeljoseph@gmail.com.</p>
+      <?php
+      // Show the result (thank you or error) if there is one.
+      if ($result != "") {
+          echo "<p><b>" . $result . "</b></p>";
+      }
+      ?>
+
+      <form method="post" action="contact.php">
+        <p>
+          Name:<br>
+          <input type="text" name="name">
+        </p>
+        <p>
+          Email:<br>
+          <input type="email" name="email">
+        </p>
+        <p>
+          What do you need?<br>
+          <select name="type">
+            <option value="website">A website</option>
+            <option value="design">Logo, poster or other design</option>
+            <option value="content">Social media content</option>
+            <option value="other">Something else</option>
+          </select>
+        </p>
+        <p>
+          Message:<br>
+          <textarea name="message" rows="6" cols="40"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="Send">
+        </p>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <img src="images/awards-presidents-list.webp" alt="Rafael Joseph Nieves">
+      <p><b>Email:</b><br>nrafaeljoseph@gmail.com</p>
+      <p><b>Location:</b><br>Marilao, Bulacan, Philippines</p>
+    </div>
+
+  </div>
+
+</div>
 
 <?php include "footer.php"; ?>

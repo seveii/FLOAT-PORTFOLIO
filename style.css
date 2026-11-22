@@ -1,32 +1,248 @@
-/* style.css - the only stylesheet. It is linked in header.php, so every page uses it. */
+/* style.css - the ONLY stylesheet. It is linked in header.php, so all the pages use it. */
 
+/* ---------- Whole page ---------- */
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
   color: black;
   background-color: white;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-a {
-  color: black;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%;   /* a picture never gets wider than the screen */
 }
 
-hr {
-  border: 1px solid black;
+/* ---------- Header: FLEXBOX ---------- */
+/* display: flex puts the children (the name and the menu) in one row. */
+header {
+  display: flex;
+  justify-content: space-between;   /* name on the left, menu on the right */
+  align-items: center;              /* both centered vertically */
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+/* ---------- The content area of every page ---------- */
+.content {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;       /* auto left and right margins center the content */
+  padding: 20px 0;
+}
+
+h2 {
+  border-bottom: 3px solid black;
+  padding-bottom: 5px;
+}
+
+/* ---------- Home page: big cover picture ---------- */
+/* The picture is a background image. "cover" makes it fill the whole box. */
+.hero {
+  background-image: url(images/cover-pool.webp);
+  background-size: cover;
+  background-position: center;
+  height: 85vh;              /* 85% of the screen height */
+  display: flex;
+  align-items: flex-start;   /* the text box sits at the top of the picture, not over my face */
+}
+
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.6);   /* black, a little see-through */
+  color: white;
+  padding: 20px 30px;
+  margin: 30px;
+}
+
+.hero-text h1 {
+  margin: 0 0 10px 0;
+  font-size: 40px;
+}
+
+.hero-text p {
+  margin: 0 0 15px 0;
+}
+
+.button {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: 2px solid white;
+}
+
+/* ---------- FLEXBOX: boxes in a row ---------- */
+.boxes {
+  display: flex;
+  gap: 15px;
+}
+
+.box {
+  flex: 1;                       /* every box takes the same width */
+  border: 2px solid black;
+  padding: 15px;
+  text-align: center;
+}
+
+.box b {
+  font-size: 18px;
+}
+
+/* ---------- FLEXBOX: photos in a row ---------- */
+.photos {
+  display: flex;
+  gap: 10px;
+}
+
+.photos img {
+  flex: 1;
+  min-width: 0;
+  height: 250px;
+  object-fit: cover;     /* crops the picture to fit the box without stretching it */
+}
+
+/* ---------- GRID: project cards ---------- */
+/* display: grid with 3 equal columns. The cards fill the grid row by row. */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ---------- GRID: two columns ---------- */
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* ---------- GRID: photo gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ---------- FLOAT: picture on the left, text wraps around it ---------- */
+.portrait {
+  float: left;
+  width: 300px;
+  margin: 0 20px 10px 0;
+}
+
+.clear {
+  clear: both;     /* stops the float, so the next section starts below the picture */
+}
+
+/* ---------- Contact page: FLEXBOX (form on the left, info on the right) ---------- */
+.contact-row {
+  display: flex;
+  gap: 30px;
+}
+
+.contact-form {
+  flex: 2;
+}
+
+.contact-info {
+  flex: 1;
+  border: 2px solid black;
+  padding: 15px;
+}
+
+.contact-info img {
+  width: 100%;
 }
 
 input, textarea, select {
   font-size: 16px;
+  max-width: 95%;
 }
 
-/* keeps the message box inside the screen on a phone */
-textarea {
-  max-width: 95%;
+input[type="submit"] {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+}
+
+/* ---------- Footer: FLEXBOX ---------- */
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Responsive: for phones and small screens (media query) ---------- */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;       /* the name and the menu go on top of each other */
+  }
+  nav {
+    margin-top: 10px;
+  }
+  nav a {
+    margin: 0 8px;
+  }
+  .hero {
+    height: 70vh;
+  }
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  .boxes, .photos, .contact-row, footer {
+    flex-direction: column;       /* flex rows become columns */
+  }
+  .photos img {
+    flex: none;
+    width: 100%;
+  }
+  .projects, .two-columns, .gallery {
+    grid-template-columns: 1fr;   /* grids become one column */
+  }
+  .portrait {
+    float: none;                  /* no float on a small screen */
+    width: 100%;
+    margin: 0 0 15px 0;
+  }
+  footer p {
+    margin-bottom: 8px;
+  }
 }
