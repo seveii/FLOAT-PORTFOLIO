@@ -129,19 +129,6 @@ h2 {
   margin-top: 0;
 }
 
-/* ---------- FLEXBOX: photos in a row ---------- */
-.photos {
-  display: flex;
-  gap: 10px;
-}
-
-.photos img {
-  flex: 1;
-  min-width: 0;
-  height: 250px;
-  object-fit: cover;     /* crops the picture to fit the box without stretching it */
-}
-
 /* ---------- GRID: project cards ---------- */
 /* display: grid with 3 equal columns. The cards fill the grid row by row. */
 .projects {
@@ -321,12 +308,8 @@ footer p {
   .hero-text .role {
     font-size: 18px;
   }
-  .boxes, .photos, .contact-row, footer {
+  .boxes, .contact-row, footer {
     flex-direction: column;       /* flex rows become columns */
-  }
-  .photos img {
-    flex: none;
-    width: 100%;
   }
   .projects, .two-columns, .gallery, .certs {
     grid-template-columns: 1fr;   /* grids become one column */

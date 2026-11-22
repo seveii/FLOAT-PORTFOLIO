@@ -119,16 +119,6 @@ include "header.php";
   </div>
   <p><a href="projects.php">View all projects</a></p>
 
-  <!-- ---------- Photos ---------- -->
-  <h2>Photos</h2>
-
-  <!-- Three photos in a row. The row is made with flexbox. -->
-  <div class="photos">
-    <img src="images/moment-rooftop.webp" alt="Rafael on a rooftop terrace at night">
-    <img src="images/cover-river.webp" alt="Rafael relaxing beside a river">
-    <img src="images/moment-workshop.webp" alt="Rafael working on a laptop at a seminar">
-  </div>
-
   <!-- ---------- Certificates preview ---------- -->
   <h2>Certificates and Awards</h2>
 
