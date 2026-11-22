@@ -1,0 +1,32 @@
+/* style.css - the only stylesheet. It is linked in header.php, so every page uses it. */
+
+body {
+  font-family: Arial, sans-serif;
+  color: black;
+  background-color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+a {
+  color: black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* keeps the message box inside the screen on a phone */
+textarea {
+  max-width: 95%;
+}
