@@ -11,7 +11,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: black;
-  background-color: #f0f0f0;
+  background-color: white;
 }
 
 img {
@@ -53,14 +53,9 @@ nav a {
 }
 
 /* ---------- Yung content area ng bawat page ---------- */
-/* Puting papel sa gitna, tapos gray yung nasa gilid. */
+/* Buong lapad ng screen yung content, may konting padding lang sa gilid (walang sayang na space). */
 .content {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;       /* yung auto margin sa left at right, siya yung nagpapa-center ng content */
-  padding: 20px 30px;
-  background-color: white;
-  box-sizing: border-box;   /* kasama na sa width yung padding, para hindi lumampas sa screen */
+  padding: 20px 40px;
 }
 
 h2 {
