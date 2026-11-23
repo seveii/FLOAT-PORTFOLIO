@@ -126,24 +126,12 @@ h2 {
 }
 
 /* ---------- Banner sa taas ng About at Contact pages ---------- */
-/* Same idea sa cover ng home: background picture + dark gradient, tapos yung title sa loob. */
+/* FLEXBOX: navy na bar, yung title sa left, yung picture ko sa right. Buo yung picture (hindi naka-crop). */
 .banner {
-  background-size: cover;
-  height: 280px;
   display: flex;
+  justify-content: space-between;   /* title sa left, picture sa right */
   align-items: center;
-}
-
-.about-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),
-                    url(images/momentrooftop.webp);
-  background-position: center 45%;
-}
-
-.contact-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.35)),
-                    url(images/momentcitynight.webp);
-  background-position: center 38%;
+  background-color: #1f3a5f;
 }
 
 .banner-text {
@@ -155,13 +143,15 @@ h2 {
   margin: 0;
   font-size: 44px;
   color: white;
-  text-shadow: 2px 2px 8px black;
 }
 
 .banner-text p {
   margin: 10px 0 0 0;
   font-size: 20px;
-  text-shadow: 1px 1px 6px black;
+}
+
+.banner-photo {
+  height: 280px;      /* fixed yung taas, yung lapad sumusunod para hindi mapiga */
 }
 
 /* ---------- FLEXBOX: boxes na magkakatabi ---------- */
@@ -407,10 +397,14 @@ footer p {
     margin-bottom: 20px;
   }
   .banner {
-    height: 200px;
+    flex-direction: column;       /* sa phone, yung title sa taas tapos yung picture sa baba */
+  }
+  .banner-photo {
+    height: auto;
+    width: 100%;
   }
   .banner-text {
-    margin: 0 20px;
+    margin: 20px;
   }
   .banner-text h1 {
     font-size: 32px;
