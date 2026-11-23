@@ -3,8 +3,8 @@
 /* ---------- Mga kulay ng design ko ----------
    Navy blue (#1f3a5f) = main color. Yung header, footer, at mga headings.
    Orange (#e8912d)    = accent color. Yung mga buttons at mga linya. (Magkabaligtad sila sa color wheel = complementary scheme)
-   White, light gray   = neutrals. Yung background ng page at ng mga boxes.
-   Dark gray text (#222222) sa white = madaling basahin (high contrast). */
+   Soft blue (#e3ebf5) = background ng buong page. White = yung mga cards at boxes, para lumutang sila sa background.
+   Dark blue-gray text (#1c2a3d) = madaling basahin (high contrast). */
 
 /* ---------- Buong page ---------- */
 /* Modern na sans-serif font. Kung wala yung una, yung susunod na yung gagamitin ng browser. */
@@ -13,8 +13,8 @@ body {
   font-size: 18px;       /* mas malaki kesa sa dati, para madaling basahin */
   line-height: 1.6;      /* maluwag yung pagitan ng mga linya */
   margin: 0;
-  color: #222222;
-  background-color: white;
+  color: #1c2a3d;
+  background-color: #e3ebf5;
 }
 
 img {
@@ -129,8 +129,8 @@ h2 {
   text-decoration: none;
   font-weight: bold;
   border: 2px solid #e8912d;
-  border-radius: 8px;
-  padding: 14px 28px;
+  border-radius: 30px;
+  padding: 14px 32px;
   margin: 0 12px 12px 0;
 }
 
@@ -143,7 +143,7 @@ h2 {
   padding: 14px 28px;
   margin-right: 12px;
   border: 2px solid #e8912d;
-  border-radius: 8px;
+  border-radius: 30px;
 }
 
 /* ---------- Banner sa taas ng About at Contact pages ---------- */
@@ -182,12 +182,12 @@ h2 {
 /* Rounded corners (border-radius) at manipis na anino (box-shadow) para mas modern tingnan */
 .box {
   flex: 1;                       /* pantay-pantay yung lapad ng bawat box */
-  background-color: #f3f6fa;     /* light blue-gray */
-  border: 1px solid #dfe5ec;
+  background-color: white;       /* puti, para lumutang sa blue na background */
+  border: 1px solid #cfdae8;
   border-top: 5px solid #e8912d; /* orange na linya sa taas ng box */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #dddddd;
-  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
+  padding: 24px;
   margin: 10px;
 }
 
@@ -214,16 +214,16 @@ h2 {
 
 .card {
   background-color: white;
-  border: 1px solid #dfe5ec;
+  border: 1px solid #cfdae8;
   border-top: 5px solid #e8912d;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #dddddd;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
   padding: 18px;
 }
 
 .card img {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 
 .card h3 {
@@ -240,18 +240,18 @@ h2 {
 
 .cert {
   background-color: white;
-  border: 1px solid #dfe5ec;
+  border: 1px solid #cfdae8;
   border-top: 5px solid #e8912d;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #dddddd;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
   padding: 18px;
 }
 
 .cert img {
   width: 100%;
   height: auto;
-  border: 1px solid #dfe5ec;
-  border-radius: 6px;
+  border: 1px solid #cfdae8;
+  border-radius: 8px;
 }
 
 .cert h4 {
@@ -273,8 +273,8 @@ h2 {
 .cert-grid img {
   width: 100%;
   height: auto;
-  border: 1px solid #dfe5ec;
-  border-radius: 6px;
+  border: 1px solid #cfdae8;
+  border-radius: 8px;
 }
 
 .cert-grid p {
@@ -287,8 +287,8 @@ h2 {
   background-color: #1f3a5f;
   color: white;
   text-align: center;
-  border-radius: 12px;
-  padding: 45px 30px;
+  border-radius: 16px;
+  padding: 50px 30px;
   margin-top: 55px;
 }
 
@@ -321,8 +321,9 @@ h2 {
   float: left;
   width: 320px;
   margin: 0 35px 20px 0;
-  border: 1px solid #dfe5ec;
-  border-radius: 10px;
+  border: 4px solid white;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
 }
 
 /* Yung intro text sa About, walang limit sa lapad, para mapuno yung space sa tabi ng picture */
@@ -342,11 +343,11 @@ h2 {
 .contact-form {
   flex: 2;
   margin-right: 35px;
-  background-color: #f3f6fa;
-  border: 1px solid #dfe5ec;
+  background-color: white;
+  border: 1px solid #cfdae8;
   border-top: 5px solid #e8912d;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #dddddd;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
   padding: 28px;
 }
 
@@ -357,10 +358,10 @@ h2 {
 .contact-info {
   flex: 1;
   background-color: white;
-  border: 1px solid #dfe5ec;
+  border: 1px solid #cfdae8;
   border-top: 5px solid #e8912d;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #dddddd;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px #bccbdd;
   padding: 28px;
 }
 
@@ -383,7 +384,8 @@ label {
   padding: 12px;
   margin-top: 6px;
   border: 1px solid #999999;
-  border-radius: 6px;
+  border-radius: 8px;
+  background-color: #f3f6fa;
   font-size: 18px;
 }
 
@@ -391,8 +393,8 @@ label {
   background-color: #e8912d;
   color: black;
   border: 2px solid #e8912d;
-  border-radius: 8px;
-  padding: 14px 36px;
+  border-radius: 30px;
+  padding: 14px 40px;
   font-size: 18px;
   font-weight: bold;
 }
