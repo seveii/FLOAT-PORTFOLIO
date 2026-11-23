@@ -1,12 +1,12 @@
 /* style.css - eto lang yung ONLY stylesheet ko. Naka-link siya sa header.php, kaya lahat ng pages gumagamit nito. */
 
-/* ---------- Mga kulay ng design ko ----------
+/* Mga kulay ng design ko
    Navy blue (#1f3a5f) = main color. Yung header, footer, at mga headings.
    Orange (#e8912d)    = accent color. Yung mga buttons at mga linya. (Magkabaligtad sila sa color wheel = complementary scheme)
    Soft blue (#e3ebf5) = background ng buong page. White = yung mga cards at boxes, para lumutang sila sa background.
    Dark blue-gray text (#1c2a3d) = madaling basahin (high contrast). */
 
-/* ---------- Buong page ---------- */
+/* Buong page */
 /* Modern na sans-serif font. Kung wala yung una, yung susunod na yung gagamitin ng browser. */
 body {
   font-family: "Segoe UI", Verdana, Arial, sans-serif;
@@ -37,7 +37,7 @@ h3 {
   font-size: 22px;
 }
 
-/* ---------- Header: FLEXBOX ---------- */
+/* Header: FLEXBOX */
 /* display: flex, para magkakatabi sa isang row yung name at yung menu. */
 header {
   display: flex;
@@ -81,7 +81,7 @@ nav .nav-button {
   padding: 10px 26px;
 }
 
-/* ---------- Yung content area ng bawat page ---------- */
+/* Yung content area ng bawat page */
 /* Buong lapad ng screen yung content, may padding sa gilid para hindi siksik. */
 .content {
   padding: 30px 60px 50px 60px;
@@ -101,7 +101,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* ---------- Home page: yung malaking cover picture ---------- */
+/* Home page: yung malaking cover picture */
 /* Background image yung picture. Yung "cover", pinupuno niya buong box. */
 .hero {
   background-image: url(images/coverriver.webp);
@@ -165,7 +165,7 @@ h2 {
   border-radius: 30px;
 }
 
-/* ---------- Banner sa taas ng About at Contact pages ---------- */
+/* Banner sa taas ng About at Contact pages */
 /* Ako mismo yung gumawa ng banner.jpg (navy at orange design). Background image siya, tapos yung title nasa ibabaw. */
 .banner {
   background-color: #1f3a5f;            /* kung sakaling hindi mag-load yung picture */
@@ -193,7 +193,7 @@ h2 {
   font-size: 22px;
 }
 
-/* ---------- FLEXBOX: boxes na magkakatabi ---------- */
+/* FLEXBOX: boxes na magkakatabi */
 .boxes {
   display: flex;
 }
@@ -223,7 +223,7 @@ h2 {
   margin-top: 0;
 }
 
-/* ---------- GRID: project cards ---------- */
+/* GRID: project cards */
 /* display: grid, 3 equal columns. Pinupuno ng cards yung grid, row by row. */
 .projects {
   display: grid;
@@ -249,7 +249,7 @@ h2 {
   margin-bottom: 8px;
 }
 
-/* ---------- GRID: certificates ---------- */
+/* GRID: certificates */
 /* Sa Certificates page: 3 columns. Sa home page: 4 na maliliit na magkakatabi. */
 .certs {
   display: grid;
@@ -301,7 +301,7 @@ h2 {
   font-size: 16px;
 }
 
-/* ---------- Call to action box ---------- */
+/* Call to action box */
 .cta {
   background-color: #1f3a5f;
   color: white;
@@ -322,7 +322,7 @@ h2 {
   margin: 0 auto 25px auto;
 }
 
-/* ---------- GRID: two columns at three columns ---------- */
+/* GRID: two columns at three columns */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -335,7 +335,7 @@ h2 {
   gap: 30px;
 }
 
-/* ---------- FLOAT: picture sa left, yung text umiikot sa gilid ---------- */
+/* FLOAT: picture sa left, yung text umiikot sa gilid */
 .portrait {
   float: left;
   width: 320px;
@@ -354,7 +354,7 @@ h2 {
   clear: both;     /* tinitigil niya yung float, para yung next section magsimula sa ilalim ng picture */
 }
 
-/* ---------- Contact page: FLEXBOX (form sa left, info sa right) ---------- */
+/* Contact page: FLEXBOX (form sa left, info sa right) */
 .contact-row {
   display: flex;
 }
@@ -426,7 +426,7 @@ label {
   padding: 12px 15px;
 }
 
-/* ---------- Footer: FLEXBOX ---------- */
+/* Footer: FLEXBOX */
 footer {
   display: flex;
   justify-content: space-around;
@@ -441,7 +441,7 @@ footer p {
   margin: 0;
 }
 
-/* ---------- Responsive: para sa phones at maliliit na screen (media query) ---------- */
+/* Responsive: para sa phones at maliliit na screen (media query) */
 @media (max-width: 700px) {
   body {
     font-size: 17px;
