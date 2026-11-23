@@ -8,7 +8,7 @@ include "header.php";
   <h2>About Me</h2>
 
   <!-- Naka-float to the left yung picture (style.css, .portrait), kaya yung text, umiikot sa gilid niya. -->
-  <img class="portrait" src="images/awards-presidents-list.webp" alt="Rafael holding two President's List certificates">
+  <img class="portrait" src="images/awardspresidentslist.webp" alt="Rafael holding two President's List certificates">
 
   <p>
   Hi, I'm Rafael. I'm a third-year Computer Engineering student at Dr. Yanga's Colleges, Inc.
@@ -175,10 +175,10 @@ include "header.php";
 
   <!-- Photo gallery, CSS grid (2 columns) -->
   <div class="gallery">
-    <img src="images/moment-city-night.webp" alt="Rafael leaning on a glass railing facing a lit-up city at night">
-    <img src="images/moment-workshop.webp" alt="Rafael working on a laptop at a seminar table">
-    <img src="images/cover-river.webp" alt="Rafael relaxing in a camp chair beside a river">
-    <img src="images/moment-rooftop.webp" alt="Rafael seated on a rooftop terrace at night">
+    <img src="images/momentcitynight.webp" alt="Rafael leaning on a glass railing facing a lit-up city at night">
+    <img src="images/momentworkshop.webp" alt="Rafael working on a laptop at a seminar table">
+    <img src="images/coverriver.webp" alt="Rafael relaxing in a camp chair beside a river">
+    <img src="images/momentrooftop.webp" alt="Rafael seated on a rooftop terrace at night">
   </div>
 
 </div>

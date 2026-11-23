@@ -14,8 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // I-check muna natin yung mga fields.
     if ($name == "" || $email == "" || $message == "") {
         $result = "Please fill in all the fields.";
-    } elseif (!in_array($type, ["website", "design", "content", "other"])) {
-        $result = "Please choose what you need.";
     } else {
         // I-save yung message sa database (yung messages table galing sa database.sql).
         try {
@@ -50,18 +48,19 @@ include "header.php";
       }
       ?>
 
+      <!-- Yung label, naka-connect sa input niya gamit yung for at yung id. Yung required, bawal i-submit kapag walang laman. -->
       <form method="post" action="contact.php">
         <p>
-          Name:<br>
-          <input type="text" name="name">
+          <label for="name">Name:</label><br>
+          <input type="text" name="name" id="name" required>
         </p>
         <p>
-          Email:<br>
-          <input type="email" name="email">
+          <label for="email">Email:</label><br>
+          <input type="email" name="email" id="email" required>
         </p>
         <p>
-          What do you need?<br>
-          <select name="type">
+          <label for="type">What do you need?</label><br>
+          <select name="type" id="type">
             <option value="website">A website</option>
             <option value="design">Logo, poster or other design</option>
             <option value="content">Social media content</option>
@@ -69,8 +68,8 @@ include "header.php";
           </select>
         </p>
         <p>
-          Message:<br>
-          <textarea name="message" rows="6" cols="30"></textarea>
+          <label for="message">Message:</label><br>
+          <textarea name="message" id="message" rows="6" cols="30" required></textarea>
         </p>
         <p>
           <input type="submit" value="Send">
@@ -79,7 +78,7 @@ include "header.php";
     </div>
 
     <div class="contact-info">
-      <img src="images/awards-presidents-list.webp" alt="Rafael Joseph Nieves">
+      <img src="images/awardspresidentslist.webp" alt="Rafael Joseph Nieves">
       <p><b>Email:</b><br>nrafaeljoseph@gmail.com</p>
       <p><b>Location:</b><br>Marilao, Bulacan, Philippines</p>
     </div>

@@ -87,7 +87,7 @@ include "header.php";
   <!-- 3 columns yung cards, CSS grid yung gamit -->
   <div class="projects">
     <div class="card">
-      <img src="images/whispr.svg" alt="Whispr preview">
+      <img src="images/whispr.jpg" alt="Whispr preview">
       <h3>Whispr</h3>
       <p>An anonymous confession platform where every account still verifies back to one real person.</p>
     </div>
@@ -97,22 +97,22 @@ include "header.php";
       <p>Attendance and clearance for a college of computer studies. Students scan their ID at events and earn points.</p>
     </div>
     <div class="card">
-      <img src="images/cpe-home.webp" alt="DYCI Computer Engineering website preview">
+      <img src="images/cpehome.webp" alt="DYCI Computer Engineering website preview">
       <h3>DYCI Computer Engineering Website</h3>
       <p>A dark, circuit-board themed website for a college Computer Engineering program.</p>
     </div>
     <div class="card">
-      <img src="images/game-title.webp" alt="Bayani Quest game title screen">
+      <img src="images/gametitle.webp" alt="Bayani Quest game title screen">
       <h3>Bayani Quest</h3>
       <p>A Filipino folklore game in the browser. Explore a barangay, catch mythical creatures and battle them.</p>
     </div>
     <div class="card">
-      <img src="images/logo-collage.webp" alt="ACES and publication logos">
+      <img src="images/logocollage.webp" alt="ACES and publication logos">
       <h3>ACES and Publication Logos</h3>
       <p>The ACES emblem, an alternate cherry-blossom mark, and logos for student publications.</p>
     </div>
     <div class="card">
-      <img src="images/pubmat-grid.webp" alt="Event and social media graphics">
+      <img src="images/pubmatgrid.webp" alt="Event and social media graphics">
       <h3>Event and Social Media Graphics</h3>
       <p>Announcements, awareness days, exam reminders and tarpaulins for a college organization.</p>
     </div>
@@ -125,19 +125,19 @@ include "header.php";
   <!-- Four certificates na magkakatabi, CSS grid yung gamit -->
   <div class="cert-grid">
     <div>
-      <img src="images/cert-claude-engineers.webp" alt="Certificate: Claude for Engineers">
+      <img src="images/certclaudeengineers.webp" alt="Certificate: Claude for Engineers">
       <p>Claude for Engineers<br>tixu.ai, 17 October 2026</p>
     </div>
     <div>
-      <img src="images/cert-chatgpt.webp" alt="Certificate: ChatGPT">
+      <img src="images/certchatgpt.webp" alt="Certificate: ChatGPT">
       <p>ChatGPT<br>tixu.ai, 3 October 2026</p>
     </div>
     <div>
-      <img src="images/cert-achiever-honors-2023.webp" alt="Certificate: Academic Achiever Award, With Honors">
+      <img src="images/certachieverhonors2023.webp" alt="Certificate: Academic Achiever Award, With Honors">
       <p>Academic Achiever Award, With Honors<br>Colegio de Sto. Niño, 25 May 2023</p>
     </div>
     <div>
-      <img src="images/cert-academic-excellence-2023.webp" alt="Certificate: Certificate of Academic Excellence">
+      <img src="images/certacademicexcellence2023.webp" alt="Certificate: Certificate of Academic Excellence">
       <p>Certificate of Academic Excellence<br>Colegio de Sto. Niño, 25 May 2023</p>
     </div>
   </div>
