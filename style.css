@@ -1,10 +1,20 @@
-/* Buong page */
+/* style.css - eto lang yung ONLY stylesheet ko. Naka-link siya sa header.php, kaya lahat ng pages gumagamit nito. */
+
+/* ---------- Mga kulay ng design ko ----------
+   Navy blue (#1f3a5f) = main color. Yung header, footer, at mga headings.
+   Orange (#e8912d)    = accent color. Yung mga buttons at mga linya. (Magkabaligtad sila sa color wheel = complementary scheme)
+   White, light gray   = neutrals. Yung background ng page at ng mga boxes.
+   Dark gray text (#222222) sa white = madaling basahin (high contrast). */
+
+/* ---------- Buong page ---------- */
+/* Modern na sans-serif font. Kung wala yung una, yung susunod na yung gagamitin ng browser. */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
+  font-size: 18px;       /* mas malaki kesa sa dati, para madaling basahin */
+  line-height: 1.6;      /* maluwag yung pagitan ng mga linya */
   margin: 0;
-  color: black;
+  color: #222222;
   background-color: white;
-  line-height: 1.5;      /* mas maluwag yung pagitan ng mga lines, mas madaling basahin */
 }
 
 img {
@@ -16,13 +26,18 @@ a {
   color: #1f3a5f;
 }
 
-/* Yung mga headings, Georgia (serif) tapos navy blue */
+/* Yung mga headings, same font tapos bold na navy blue */
 h1, h2, h3, h4 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Segoe UI", Verdana, Arial, sans-serif;
   color: #1f3a5f;
+  line-height: 1.25;
 }
 
-/* Header: FLEXBOX */
+h3 {
+  font-size: 22px;
+}
+
+/* ---------- Header: FLEXBOX ---------- */
 /* display: flex, para magkakatabi sa isang row yung name at yung menu. */
 header {
   display: flex;
@@ -30,80 +45,93 @@ header {
   align-items: center;              /* pareho silang nasa gitna (vertical) */
   background-color: #1f3a5f;
   color: white;
-  padding: 15px 30px;
+  padding: 20px 50px;
+  box-shadow: 0 2px 6px #999999;    /* manipis na anino sa ilalim ng header */
 }
 
 .logo {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  font-size: 17px;
+  margin-left: 30px;
 }
 
-/* Yung content area ng bawat page */
-/* Buong lapad ng screen yung content, may konting padding lang sa gilid (walang sayang na space). */
+/* ---------- Yung content area ng bawat page ---------- */
+/* Buong lapad ng screen yung content, may padding sa gilid para hindi siksik. */
 .content {
-  padding: 20px 40px;
+  padding: 30px 60px 50px 60px;
 }
 
+/* Para hindi sobrang haba ng mga linya ng text, mas madaling basahin */
+.content p {
+  max-width: 1000px;
+}
+
+/* Yung mga section headings: may orange na bar sa left */
 h2 {
-  border-bottom: 3px solid #e8912d;
-  padding-bottom: 5px;
+  font-size: 32px;
+  border-left: 8px solid #e8912d;
+  padding-left: 15px;
+  margin-top: 55px;
+  margin-bottom: 20px;
 }
 
-/* Home page: yung malaking cover picture */
+/* ---------- Home page: yung malaking cover picture ---------- */
 /* Background image yung picture. Yung "cover", pinupuno niya buong box. */
 .hero {
   background-image: url(images/coverriver.webp);
   background-size: cover;
-  background-position: 70% bottom;  
-  height: 85vh;                     
+  background-position: 70% bottom;   /* para kita pa rin ako (nasa bottom right) sa loob ng picture */
+  height: 85vh;                      /* 85% ng taas ng screen */
   display: flex;
-  align-items: center;              
+  align-items: center;               /* nasa gitna yung title (vertical), sa left side ng picture */
 }
 
 /* Yung title sa loob ng cover picture */
 .hero-text {
   color: white;
   margin-left: 8%;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .hero-text h1 {
   margin: 0;
-  font-size: 56px;
+  font-size: 64px;
   line-height: 1.1;
   color: white;
   text-shadow: 2px 2px 8px black;
 }
 
 .hero-text .role {
-  margin: 10px 0 20px 0;
-  font-size: 22px;
+  margin: 12px 0 25px 0;
+  font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 6px black;
 }
 
 .line {
-  width: 80px;
-  border-top: 4px solid #e8912d;    
-  margin-top: 15px;
+  width: 90px;
+  border-top: 5px solid #e8912d;     /* maikling orange line sa ilalim ng name */
+  margin-top: 18px;
 }
 
-/* Yung dalawang buttons sa cover: orange na may black text */
+/* Yung dalawang buttons sa cover: orange na may black text, rounded */
 .hero-text a {
   display: inline-block;
   background-color: #e8912d;
   color: black;
   text-decoration: none;
+  font-weight: bold;
   border: 2px solid #e8912d;
-  padding: 10px 20px;
-  margin: 0 10px 10px 0;
+  border-radius: 8px;
+  padding: 14px 28px;
+  margin: 0 12px 12px 0;
 }
 
 .button {
@@ -111,50 +139,56 @@ h2 {
   background-color: #e8912d;
   color: black;
   text-decoration: none;
-  padding: 10px 20px;
-  margin-right: 10px;
+  font-weight: bold;
+  padding: 14px 28px;
+  margin-right: 12px;
   border: 2px solid #e8912d;
+  border-radius: 8px;
 }
 
-/*Banner sa taas ng About at Contact pages */
+/* ---------- Banner sa taas ng About at Contact pages ---------- */
+/* Ako mismo yung gumawa ng banner.jpg (navy at orange design). Background image siya, tapos yung title nasa ibabaw. */
 .banner {
-  background-color: #1f3a5f;            /* if ever hindi mag-load yung picture */
+  background-color: #1f3a5f;            /* kung sakaling hindi mag-load yung picture */
   background-image: url(images/banner.jpg);
   background-size: cover;
-  background-position: right bottom;    
-  height: 260px;
+  background-position: right bottom;    /* yung design nasa right, yung blank na navy nasa left para sa title */
+  height: 280px;
   display: flex;
   align-items: center;
 }
 
 .banner-text {
   color: white;
-  margin-left: 40px;
+  margin-left: 60px;
 }
 
 .banner-text h1 {
   margin: 0;
-  font-size: 44px;
+  font-size: 50px;
   color: white;
 }
 
 .banner-text p {
-  margin: 10px 0 0 0;
-  font-size: 20px;
+  margin: 12px 0 0 0;
+  font-size: 22px;
 }
 
-/*FLEXBOX: boxes na magkakatabi*/
+/* ---------- FLEXBOX: boxes na magkakatabi ---------- */
 .boxes {
   display: flex;
 }
 
+/* Rounded corners (border-radius) at manipis na anino (box-shadow) para mas modern tingnan */
 .box {
-  flex: 1;                       
-  background-color: #eef2f7;    
-  border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d; 
-  padding: 15px;
-  margin: 5px;
+  flex: 1;                       /* pantay-pantay yung lapad ng bawat box */
+  background-color: #f3f6fa;     /* light blue-gray */
+  border: 1px solid #dfe5ec;
+  border-top: 5px solid #e8912d; /* orange na linya sa taas ng box */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #dddddd;
+  padding: 22px;
+  margin: 10px;
 }
 
 .center {
@@ -162,130 +196,153 @@ h2 {
 }
 
 .box b {
-  font-size: 18px;
+  font-size: 22px;
+  color: #1f3a5f;
 }
 
 .box h3 {
   margin-top: 0;
 }
 
-/*GRID: project cards */
+/* ---------- GRID: project cards ---------- */
 /* display: grid, 3 equal columns. Pinupuno ng cards yung grid, row by row. */
 .projects {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 
 .card {
   background-color: white;
-  border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d;
-  padding: 10px;
+  border: 1px solid #dfe5ec;
+  border-top: 5px solid #e8912d;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #dddddd;
+  padding: 18px;
 }
 
 .card img {
   width: 100%;
+  border-radius: 6px;
 }
 
-/* GRID: certificates*/
+.card h3 {
+  margin-bottom: 8px;
+}
+
+/* ---------- GRID: certificates ---------- */
 /* Sa Certificates page: 3 columns. Sa home page: 4 na maliliit na magkakatabi. */
 .certs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 
 .cert {
   background-color: white;
-  border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d;
-  padding: 10px;
+  border: 1px solid #dfe5ec;
+  border-top: 5px solid #e8912d;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #dddddd;
+  padding: 18px;
 }
 
 .cert img {
   width: 100%;
   height: auto;
-  border: 1px solid #cccccc;
+  border: 1px solid #dfe5ec;
+  border-radius: 6px;
 }
 
 .cert h4 {
-  margin: 10px 0 5px 0;
+  font-size: 19px;
+  margin: 12px 0 6px 0;
 }
 
 .cert p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .cert-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .cert-grid img {
   width: 100%;
   height: auto;
-  border: 1px solid #cccccc;
+  border: 1px solid #dfe5ec;
+  border-radius: 6px;
 }
 
 .cert-grid p {
-  margin: 5px 0 0 0;
-  font-size: 14px;
+  margin: 8px 0 0 0;
+  font-size: 16px;
 }
 
-/*Call to action box*/
+/* ---------- Call to action box ---------- */
 .cta {
   background-color: #1f3a5f;
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 30px;
+  border-radius: 12px;
+  padding: 45px 30px;
+  margin-top: 55px;
 }
 
 .cta h2 {
   color: white;
-  border-bottom: none;
+  border-left: none;
+  padding-left: 0;
+  margin-top: 0;
 }
 
-/*GRID: two columns at three columns */
+.cta p {
+  margin: 0 auto 25px auto;
+}
+
+/* ---------- GRID: two columns at three columns ---------- */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 
 .three-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 30px;
 }
 
-/*FLOAT: picture sa left, yung text umiikot sa gilid*/
+/* ---------- FLOAT: picture sa left, yung text umiikot sa gilid ---------- */
 .portrait {
   float: left;
-  width: 300px;
-  margin: 0 20px 10px 0;
-  border: 1px solid #cccccc;
+  width: 320px;
+  margin: 0 35px 20px 0;
+  border: 1px solid #dfe5ec;
+  border-radius: 10px;
 }
 
 .clear {
   clear: both;     /* tinitigil niya yung float, para yung next section magsimula sa ilalim ng picture */
 }
 
-/*Contact page: FLEXBOX (form sa left, info sa right)*/
+/* ---------- Contact page: FLEXBOX (form sa left, info sa right) ---------- */
 .contact-row {
   display: flex;
 }
 
 .contact-form {
   flex: 2;
-  margin-right: 30px;
-  background-color: #eef2f7;
-  border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d;
-  padding: 20px;
+  margin-right: 35px;
+  background-color: #f3f6fa;
+  border: 1px solid #dfe5ec;
+  border-top: 5px solid #e8912d;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #dddddd;
+  padding: 28px;
 }
 
 .contact-form h2 {
@@ -295,13 +352,16 @@ h2 {
 .contact-info {
   flex: 1;
   background-color: white;
-  border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d;
-  padding: 20px;
+  border: 1px solid #dfe5ec;
+  border-top: 5px solid #e8912d;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #dddddd;
+  padding: 28px;
 }
 
 .contact-info img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .contact-info h3 {
@@ -315,55 +375,67 @@ label {
 
 .field {
   width: 90%;
-  padding: 8px;
-  margin-top: 5px;
+  padding: 12px;
+  margin-top: 6px;
   border: 1px solid #999999;
-  font-size: 16px;
+  border-radius: 6px;
+  font-size: 18px;
 }
 
 .send {
   background-color: #e8912d;
   color: black;
   border: 2px solid #e8912d;
-  padding: 10px 30px;
-  font-size: 16px;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 /* Yung thank you o error message pagkatapos i-send yung form */
 .result {
   background-color: white;
-  border-left: 5px solid #e8912d;
-  padding: 10px;
+  border-left: 6px solid #e8912d;
+  border-radius: 6px;
+  padding: 12px 15px;
 }
 
-/*Footer: FLEXBOX*/
+/* ---------- Footer: FLEXBOX ---------- */
 footer {
   display: flex;
   justify-content: space-around;
   background-color: #1f3a5f;
   color: white;
-  padding: 15px;
-  margin-top: 30px;
+  font-size: 16px;
+  padding: 30px;
+  margin-top: 40px;
 }
 
 footer p {
   margin: 0;
 }
 
-/*Responsive: para sa phones at maliliit na screen (media query)*/
+/* ---------- Responsive: para sa phones at maliliit na screen (media query) ---------- */
 @media (max-width: 700px) {
+  body {
+    font-size: 17px;
+  }
   header {
     flex-direction: column;       /* yung name at menu, pumapatong na sa isa't isa */
+    padding: 15px 20px;
   }
   nav {
     margin-top: 10px;
   }
   nav a {
-    margin: 0 8px;
+    margin: 0 10px;
   }
   .content {
-    padding: 15px;
+    padding: 20px 18px 35px 18px;
+  }
+  h2 {
+    font-size: 26px;
+    margin-top: 40px;
   }
   .hero {
     height: 70vh;
@@ -373,30 +445,34 @@ footer p {
     margin: 40px 20px 0 20px;
   }
   .hero-text h1 {
-    font-size: 36px;
+    font-size: 40px;
   }
   .hero-text .role {
-    font-size: 18px;
-  }
-  .boxes, .contact-row, footer {
-    flex-direction: column;       /* yung flex rows, nagiging columns na */
-  }
-  .contact-form {
-    margin-right: 0;
-    margin-bottom: 20px;
+    font-size: 19px;
   }
   .banner {
-    height: 180px;
+    height: 190px;
     background-position: left bottom;   /* sa phone, yung left side ng banner yung kita, kung nasaan yung title */
   }
   .banner-text {
     margin: 0 20px;
   }
   .banner-text h1 {
-    font-size: 32px;
+    font-size: 34px;
   }
   .banner-text p {
-    font-size: 16px;
+    font-size: 17px;
+  }
+  .boxes, .contact-row, footer {
+    flex-direction: column;       /* yung flex rows, nagiging columns na */
+  }
+  .contact-form {
+    margin-right: 0;
+    margin-bottom: 25px;
+    padding: 20px;
+  }
+  .contact-info {
+    padding: 20px;
   }
   .projects, .two-columns, .three-columns, .certs {
     grid-template-columns: 1fr;   /* yung grids, nagiging one column na lang */
@@ -405,9 +481,9 @@ footer p {
     grid-template-columns: 1fr 1fr;   /* yung 4 certificates, nagiging 2 by 2 */
   }
   .portrait {
-    float: none;                 
+    float: none;                  /* walang float sa maliit na screen */
     width: 100%;
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
   }
   footer p {
     margin-bottom: 8px;
