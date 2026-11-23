@@ -325,18 +325,9 @@ h2 {
   border-radius: 10px;
 }
 
-/* Yung intro text sa About, walang limit sa lapad, para mapuno yung pagitan ng dalawang picture */
+/* Yung intro text sa About, walang limit sa lapad, para mapuno yung space sa tabi ng picture */
 .intro-text p {
   max-width: none;
-}
-
-/* Pangalawang picture sa right. Naka-float to the right, kaya yung text nasa gitna ng dalawang picture. */
-.portrait-right {
-  float: right;
-  width: 360px;
-  margin: 0 0 20px 35px;
-  border: 1px solid #dfe5ec;
-  border-radius: 10px;
 }
 
 .clear {
@@ -427,13 +418,6 @@ footer {
 
 footer p {
   margin: 0;
-}
-
-/* ---------- Responsive: para sa malalaking screen lang yung pangalawang picture ---------- */
-@media (max-width: 1500px) {
-  .portrait-right {
-    display: none;     /* sa mas maliit na screen, tinatago para hindi sumikip yung text */
-  }
 }
 
 /* ---------- Responsive: para sa phones at maliliit na screen (media query) ---------- */

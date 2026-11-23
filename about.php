@@ -14,7 +14,6 @@ include "header.php";
 <div class="content">
 
   <img class="portrait" src="images/awardspresidentslist.webp" alt="Rafael holding two President's List certificates">
-  <img class="portrait-right" src="images/momentworkshop.webp" alt="Rafael working on a laptop at a seminar">
 
   <div class="intro-text">
   <p>
