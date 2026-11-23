@@ -283,18 +283,6 @@ h2 {
   gap: 20px;
 }
 
-/* ---------- GRID: photo gallery ---------- */
-.gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.gallery img {
-  width: 100%;
-  border: 1px solid #cccccc;
-}
-
 /* ---------- FLOAT: picture sa left, yung text umiikot sa gilid ---------- */
 .portrait {
   float: left;
@@ -430,7 +418,7 @@ footer p {
   .banner-text p {
     font-size: 16px;
   }
-  .projects, .two-columns, .three-columns, .gallery, .certs {
+  .projects, .two-columns, .three-columns, .certs {
     grid-template-columns: 1fr;   /* yung grids, nagiging one column na lang */
   }
   .cert-grid {

@@ -181,16 +181,6 @@ include "header.php";
     </div>
   </div>
 
-  <h2>More Photos</h2>
-
-  <!-- Photo gallery, CSS grid (2 columns) -->
-  <div class="gallery">
-    <img src="images/momentcitynight.webp" alt="Rafael leaning on a glass railing facing a lit-up city at night">
-    <img src="images/momentworkshop.webp" alt="Rafael working on a laptop at a seminar table">
-    <img src="images/coverriver.webp" alt="Rafael relaxing in a camp chair beside a river">
-    <img src="images/momentrooftop.webp" alt="Rafael seated on a rooftop terrace at night">
-  </div>
-
 </div>
 
 <?php include "footer.php"; ?>
