@@ -1,18 +1,10 @@
-/* style.css - eto lang yung ONLY stylesheet ko. Naka-link siya sa header.php, kaya lahat ng pages gumagamit nito. */
-
-/* ---------- Mga kulay ng design ko ----------
-   Navy blue (#1f3a5f) = main color. Yung header, footer, at mga headings.
-   Orange (#e8912d)    = accent color. Yung mga buttons at mga linya. (Magkabaligtad sila sa color wheel = complementary scheme)
-   White, light gray   = neutrals. Yung background ng page at ng mga boxes.
-   Black text sa white = madaling basahin (high contrast). */
-
-/* ---------- Buong page ---------- */
+/* Buong page */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: black;
   background-color: white;
-  line-height: 1.5;      /* mas maluwag yung pagitan ng mga linya, mas madaling basahin */
+  line-height: 1.5;      /* mas maluwag yung pagitan ng mga lines, mas madaling basahin */
 }
 
 img {
@@ -30,7 +22,7 @@ h1, h2, h3, h4 {
   color: #1f3a5f;
 }
 
-/* ---------- Header: FLEXBOX ---------- */
+/* Header: FLEXBOX */
 /* display: flex, para magkakatabi sa isang row yung name at yung menu. */
 header {
   display: flex;
@@ -53,7 +45,7 @@ nav a {
   margin-left: 20px;
 }
 
-/* ---------- Yung content area ng bawat page ---------- */
+/* Yung content area ng bawat page */
 /* Buong lapad ng screen yung content, may konting padding lang sa gilid (walang sayang na space). */
 .content {
   padding: 20px 40px;
@@ -64,12 +56,10 @@ h2 {
   padding-bottom: 5px;
 }
 
-/* ---------- Home page: yung malaking cover picture ---------- */
-/* Background image yung picture. Yung "cover", pinupuno niya buong box.
-   Yung first background, dark gradient (rgba), para madaling basahin yung white na title. */
+/* Home page: yung malaking cover picture */
+/* Background image yung picture. Yung "cover", pinupuno niya buong box. */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
-                    url(images/coverriver.webp);
+  background-image: url(images/coverriver.webp);
   background-size: cover;
   background-position: 70% bottom;   /* para kita pa rin ako (nasa bottom right) sa loob ng picture */
   height: 85vh;                      /* 85% ng taas ng screen */
@@ -95,6 +85,7 @@ h2 {
 .hero-text .role {
   margin: 10px 0 20px 0;
   font-size: 22px;
+  font-weight: bold;
   text-shadow: 1px 1px 6px black;
 }
 
