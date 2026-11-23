@@ -3,7 +3,6 @@ $title = "About";
 include "header.php";
 ?>
 
-<!-- Banner sa taas: yung banner.jpg na ginawa ko yung background, yung title nasa ibabaw (style.css, .banner) -->
 <div class="banner">
   <div class="banner-text">
     <h1>About Me</h1>
@@ -14,7 +13,6 @@ include "header.php";
 
 <div class="content">
 
-  <!-- Naka-float to the left yung picture (style.css, .portrait), kaya yung text, umiikot sa gilid niya. -->
   <img class="portrait" src="images/awardspresidentslist.webp" alt="Rafael holding two President's List certificates">
 
   <p>
@@ -46,7 +44,6 @@ include "header.php";
 
   <div class="clear"></div>
 
-  <!-- Quick facts na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box center"><b>Based in</b><br>Marilao, Bulacan, Philippines</div>
     <div class="box center"><b>Studying</b><br>BS Computer Engineering, 3rd year</div>
@@ -56,7 +53,6 @@ include "header.php";
 
   <h2>Leadership and Organizations</h2>
 
-  <!-- Two columns, CSS grid yung gamit. Bawat role, may sarili niyang card. -->
   <div class="two-columns">
 
     <div class="card">
@@ -101,7 +97,6 @@ include "header.php";
 
   <h2>Education, Awards and Certifications</h2>
 
-  <!-- Three columns, CSS grid yung gamit -->
   <div class="three-columns">
 
     <div class="card">
@@ -136,7 +131,6 @@ include "header.php";
 
   <h2>What I Work With</h2>
 
-  <!-- Four skill boxes na magkakatabi (flexbox) -->
   <div class="boxes">
     <div class="box">
       <h3>Design and Content</h3>

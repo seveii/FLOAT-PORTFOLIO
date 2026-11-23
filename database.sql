@@ -1,7 +1,3 @@
--- database.sql
--- Yung contact form lang talaga yung may database sa portfolio ko.
--- I-import 'tong file na 'to ng isang beses lang (halimbawa sa phpMyAdmin). Gagawa siya ng database at isang table.
-
 CREATE DATABASE IF NOT EXISTS portfolio;
 
 USE portfolio;
@@ -15,5 +11,3 @@ CREATE TABLE IF NOT EXISTS messages (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Para mabasa yung mga message na sinend ng mga visitor (pinakabago muna):
--- SELECT * FROM messages ORDER BY id DESC;

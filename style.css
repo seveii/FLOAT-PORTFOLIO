@@ -61,10 +61,10 @@ h2 {
 .hero {
   background-image: url(images/coverriver.webp);
   background-size: cover;
-  background-position: 70% bottom;   /* para kita pa rin ako (nasa bottom right) sa loob ng picture */
-  height: 85vh;                      /* 85% ng taas ng screen */
+  background-position: 70% bottom;  
+  height: 85vh;                     
   display: flex;
-  align-items: center;               /* nasa gitna yung title (vertical), sa left side ng picture */
+  align-items: center;              
 }
 
 /* Yung title sa loob ng cover picture */
@@ -91,7 +91,7 @@ h2 {
 
 .line {
   width: 80px;
-  border-top: 4px solid #e8912d;     /* maikling orange line sa ilalim ng name */
+  border-top: 4px solid #e8912d;    
   margin-top: 15px;
 }
 
@@ -116,13 +116,12 @@ h2 {
   border: 2px solid #e8912d;
 }
 
-/* ---------- Banner sa taas ng About at Contact pages ---------- */
-/* Ako mismo yung gumawa ng banner.jpg (navy at orange design). Background image siya, tapos yung title nasa ibabaw. */
+/*Banner sa taas ng About at Contact pages */
 .banner {
-  background-color: #1f3a5f;            /* kung sakaling hindi mag-load yung picture */
+  background-color: #1f3a5f;            /* if ever hindi mag-load yung picture */
   background-image: url(images/banner.jpg);
   background-size: cover;
-  background-position: right bottom;    /* yung design nasa right, yung blank na navy nasa left para sa title */
+  background-position: right bottom;    
   height: 260px;
   display: flex;
   align-items: center;
@@ -144,16 +143,16 @@ h2 {
   font-size: 20px;
 }
 
-/* ---------- FLEXBOX: boxes na magkakatabi ---------- */
+/*FLEXBOX: boxes na magkakatabi*/
 .boxes {
   display: flex;
 }
 
 .box {
-  flex: 1;                       /* pantay-pantay yung lapad ng bawat box */
-  background-color: #eef2f7;     /* light blue-gray */
+  flex: 1;                       
+  background-color: #eef2f7;    
   border: 1px solid #cccccc;
-  border-top: 4px solid #e8912d; /* orange na linya sa taas ng box */
+  border-top: 4px solid #e8912d; 
   padding: 15px;
   margin: 5px;
 }
@@ -170,7 +169,7 @@ h2 {
   margin-top: 0;
 }
 
-/* ---------- GRID: project cards ---------- */
+/*GRID: project cards */
 /* display: grid, 3 equal columns. Pinupuno ng cards yung grid, row by row. */
 .projects {
   display: grid;
@@ -189,7 +188,7 @@ h2 {
   width: 100%;
 }
 
-/* ---------- GRID: certificates ---------- */
+/* GRID: certificates*/
 /* Sa Certificates page: 3 columns. Sa home page: 4 na maliliit na magkakatabi. */
 .certs {
   display: grid;
@@ -236,7 +235,7 @@ h2 {
   font-size: 14px;
 }
 
-/* ---------- Call to action box ---------- */
+/*Call to action box*/
 .cta {
   background-color: #1f3a5f;
   color: white;
@@ -250,7 +249,7 @@ h2 {
   border-bottom: none;
 }
 
-/* ---------- GRID: two columns at three columns ---------- */
+/*GRID: two columns at three columns */
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -263,7 +262,7 @@ h2 {
   gap: 20px;
 }
 
-/* ---------- FLOAT: picture sa left, yung text umiikot sa gilid ---------- */
+/*FLOAT: picture sa left, yung text umiikot sa gilid*/
 .portrait {
   float: left;
   width: 300px;
@@ -275,7 +274,7 @@ h2 {
   clear: both;     /* tinitigil niya yung float, para yung next section magsimula sa ilalim ng picture */
 }
 
-/* ---------- Contact page: FLEXBOX (form sa left, info sa right) ---------- */
+/*Contact page: FLEXBOX (form sa left, info sa right)*/
 .contact-row {
   display: flex;
 }
@@ -338,7 +337,7 @@ label {
   padding: 10px;
 }
 
-/* ---------- Footer: FLEXBOX ---------- */
+/*Footer: FLEXBOX*/
 footer {
   display: flex;
   justify-content: space-around;
@@ -352,7 +351,7 @@ footer p {
   margin: 0;
 }
 
-/* ---------- Responsive: para sa phones at maliliit na screen (media query) ---------- */
+/*Responsive: para sa phones at maliliit na screen (media query)*/
 @media (max-width: 700px) {
   header {
     flex-direction: column;       /* yung name at menu, pumapatong na sa isa't isa */
@@ -406,7 +405,7 @@ footer p {
     grid-template-columns: 1fr 1fr;   /* yung 4 certificates, nagiging 2 by 2 */
   }
   .portrait {
-    float: none;                  /* walang float sa maliit na screen */
+    float: none;                 
     width: 100%;
     margin: 0 0 15px 0;
   }

@@ -9,7 +9,6 @@ include "header.php";
 
   <h3>Web and Design Projects</h3>
 
-  <!-- 3 columns yung cards, CSS grid yung gamit (style.css, .projects) -->
   <div class="projects">
 
     <div class="card">

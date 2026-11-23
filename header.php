@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<!-- Shared 'to sa lahat ng pages. Bawat page, nagse-set muna ng $title tapos i-include niya 'tong file na 'to. -->
 <header>
   <div class="logo">Rafael Joseph Nieves</div>
   <nav>

@@ -1,21 +1,16 @@
 <?php
-// contact.php - yung contact form. Nasa taas yung PHP code, bago pa lumabas yung kahit anong HTML.
-
 $title = "Contact";
 $result = "";
 
-// Tatakbo lang 'tong part na 'to kapag na-send na yung form (pinindot na ng visitor yung button).
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $type = $_POST["type"];
     $message = $_POST["message"];
 
-    // I-check muna natin yung mga fields.
     if ($name == "" || $email == "" || $message == "") {
         $result = "Please fill in all the fields.";
     } else {
-        // I-save yung message sa database (yung messages table galing sa database.sql).
         try {
             $conn = new PDO("mysql:host=localhost;dbname=portfolio", "root", "");
             $sql = "INSERT INTO messages (name, email, need_type, message) VALUES (?, ?, ?, ?)";
@@ -31,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include "header.php";
 ?>
 
-<!-- Banner sa taas: yung banner.jpg na ginawa ko yung background, yung title nasa ibabaw (style.css, .banner) -->
 <div class="banner">
   <div class="banner-text">
     <h1>Contact Me</h1>
@@ -42,20 +36,17 @@ include "header.php";
 
 <div class="content">
 
-  <!-- Two parts na magkatabi, flexbox: yung form sa left, yung info ko sa right -->
   <div class="contact-row">
 
     <div class="contact-form">
       <h2>Send a Message</h2>
 
       <?php
-      // Ipakita yung result (thank you o error) kung meron.
       if ($result != "") {
           echo "<p class=\"result\"><b>" . $result . "</b></p>";
       }
       ?>
 
-      <!-- Yung label, naka-connect sa input niya gamit yung for at yung id. Yung required, bawal i-submit kapag walang laman. -->
       <form method="post" action="contact.php">
         <p>
           <label for="name">Name:</label><br>
