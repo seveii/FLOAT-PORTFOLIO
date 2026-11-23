@@ -14,7 +14,9 @@ include "header.php";
 <div class="content">
 
   <img class="portrait" src="images/awardspresidentslist.webp" alt="Rafael holding two President's List certificates">
+  <img class="portrait-right" src="images/momentworkshop.webp" alt="Rafael working on a laptop at a seminar">
 
+  <div class="intro-text">
   <p>
   Hi, I'm Rafael. I'm a third-year Computer Engineering student at Dr. Yanga's Colleges, Inc.
   in Marilao, Bulacan, and a consistent Dean's Lister.
@@ -41,6 +43,7 @@ include "header.php";
   Away from the screen you will find me hopping from cafe to cafe, travelling to places I
   love, and relaxing with friends.
   </p>
+  </div>
 
   <div class="clear"></div>
 
