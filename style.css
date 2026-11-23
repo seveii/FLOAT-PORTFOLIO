@@ -45,8 +45,12 @@ header {
   align-items: center;              /* pareho silang nasa gitna (vertical) */
   background-color: #1f3a5f;
   color: white;
-  padding: 20px 50px;
-  box-shadow: 0 2px 6px #999999;    /* manipis na anino sa ilalim ng header */
+  padding: 16px 50px;
+  border-bottom: 4px solid #e8912d;   /* orange na linya sa ilalim ng header */
+  box-shadow: 0 2px 6px #999999;      /* manipis na anino sa ilalim ng header */
+  position: sticky;                   /* dumidikit sa taas habang nag-i-scroll (L6) */
+  top: 0;
+  z-index: 10;                        /* para nasa ibabaw siya ng ibang content */
 }
 
 .logo {
@@ -55,11 +59,38 @@ header {
   letter-spacing: 1px;
 }
 
+/* Yung maliit na orange na "RN" badge sa tabi ng pangalan ko */
+.mark {
+  display: inline-block;
+  background-color: #e8912d;
+  color: black;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin-right: 14px;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
 nav a {
   color: white;
   text-decoration: none;
   font-size: 17px;
+  padding: 8px 2px;
   margin-left: 30px;
+}
+
+/* Yung page na nandoon ka ngayon, may orange na underline */
+nav .active {
+  border-bottom: 3px solid #e8912d;
+}
+
+/* Yung Contact link, naka-orange na pill button */
+nav .nav-button {
+  background-color: #e8912d;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 10px 26px;
 }
 
 /* ---------- Yung content area ng bawat page ---------- */
@@ -429,13 +460,18 @@ footer p {
   }
   header {
     flex-direction: column;       /* yung name at menu, pumapatong na sa isa't isa */
-    padding: 15px 20px;
+    padding: 12px 20px;
   }
   nav {
     margin-top: 10px;
+    text-align: center;
   }
   nav a {
-    margin: 0 10px;
+    display: inline-block;        /* para may sariling space yung bawat link kapag nag-wrap sa pangalawang linya */
+    margin: 0 8px 8px 8px;
+  }
+  nav .nav-button {
+    padding: 8px 22px;
   }
   .content {
     padding: 20px 18px 35px 18px;
