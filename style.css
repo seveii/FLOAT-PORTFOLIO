@@ -1,16 +1,32 @@
 /* style.css - eto lang yung ONLY stylesheet ko. Naka-link siya sa header.php, kaya lahat ng pages gumagamit nito. */
 
+/* ---------- Mga kulay ng design ko ----------
+   Navy blue (#1f3a5f) = main color. Yung header, footer, at mga headings.
+   Orange (#e8912d)    = accent color. Yung mga buttons at mga linya. (Magkabaligtad sila sa color wheel = complementary scheme)
+   White, light gray   = neutrals. Yung background ng page at ng mga boxes.
+   Black text sa white = madaling basahin (high contrast). */
+
 /* ---------- Buong page ---------- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: black;
-  background-color: white;
+  background-color: #f0f0f0;
 }
 
 img {
   max-width: 100%;   /* hindi lalagpas sa lapad ng screen yung picture */
   height: auto;      /* sumusunod yung taas, para hindi mapiga yung picture */
+}
+
+a {
+  color: #1f3a5f;
+}
+
+/* Yung mga headings, Georgia (serif) tapos navy blue */
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #1f3a5f;
 }
 
 /* ---------- Header: FLEXBOX ---------- */
@@ -19,12 +35,13 @@ header {
   display: flex;
   justify-content: space-between;   /* name sa left, menu sa right */
   align-items: center;              /* pareho silang nasa gitna (vertical) */
-  background-color: black;
+  background-color: #1f3a5f;
   color: white;
   padding: 15px 30px;
 }
 
 .logo {
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 22px;
   font-weight: bold;
 }
@@ -36,15 +53,18 @@ nav a {
 }
 
 /* ---------- Yung content area ng bawat page ---------- */
+/* Puting papel sa gitna, tapos gray yung nasa gilid. */
 .content {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;       /* yung auto margin sa left at right, siya yung nagpapa-center ng content */
-  padding: 20px 0;
+  padding: 20px 30px;
+  background-color: white;
+  box-sizing: border-box;   /* kasama na sa width yung padding, para hindi lumampas sa screen */
 }
 
 h2 {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #e8912d;
   padding-bottom: 5px;
 }
 
@@ -72,6 +92,7 @@ h2 {
   margin: 0;
   font-size: 56px;
   line-height: 1.1;
+  color: white;
   text-shadow: 2px 2px 8px black;
 }
 
@@ -83,26 +104,29 @@ h2 {
 
 .line {
   width: 80px;
-  border-top: 4px solid white;     /* maikling white line sa ilalim ng name */
+  border-top: 4px solid #e8912d;     /* maikling orange line sa ilalim ng name */
   margin-top: 15px;
 }
 
+/* Yung dalawang buttons sa cover: orange na may black text */
 .hero-text a {
   display: inline-block;
-  color: white;
+  background-color: #e8912d;
+  color: black;
   text-decoration: none;
-  border: 2px solid white;
+  border: 2px solid #e8912d;
   padding: 10px 20px;
   margin: 0 10px 10px 0;
 }
 
 .button {
   display: inline-block;
-  background-color: white;
+  background-color: #e8912d;
   color: black;
+  text-decoration: none;
   padding: 10px 20px;
   margin-right: 10px;
-  border: 2px solid white;
+  border: 2px solid #e8912d;
 }
 
 /* ---------- FLEXBOX: boxes na magkakatabi ---------- */
@@ -112,7 +136,9 @@ h2 {
 
 .box {
   flex: 1;                       /* pantay-pantay yung lapad ng bawat box */
-  border: 2px solid black;
+  background-color: #eef2f7;     /* light blue-gray */
+  border: 1px solid #cccccc;
+  border-top: 4px solid #e8912d; /* orange na linya sa taas ng box */
   padding: 15px;
   margin: 5px;
 }
@@ -138,7 +164,9 @@ h2 {
 }
 
 .card {
-  border: 2px solid black;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-top: 4px solid #e8912d;
   padding: 10px;
 }
 
@@ -155,14 +183,16 @@ h2 {
 }
 
 .cert {
-  border: 2px solid black;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-top: 4px solid #e8912d;
   padding: 10px;
 }
 
 .cert img {
   width: 100%;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid #cccccc;
 }
 
 .cert h4 {
@@ -183,7 +213,7 @@ h2 {
 .cert-grid img {
   width: 100%;
   height: auto;
-  border: 1px solid black;
+  border: 1px solid #cccccc;
 }
 
 .cert-grid p {
@@ -193,7 +223,7 @@ h2 {
 
 /* ---------- Call to action box ---------- */
 .cta {
-  background-color: black;
+  background-color: #1f3a5f;
   color: white;
   text-align: center;
   padding: 20px;
@@ -201,6 +231,7 @@ h2 {
 }
 
 .cta h2 {
+  color: white;
   border-bottom: none;
 }
 
@@ -227,6 +258,7 @@ h2 {
   float: left;
   width: 300px;
   margin: 0 20px 10px 0;
+  border: 1px solid #cccccc;
 }
 
 .clear {
@@ -245,7 +277,9 @@ h2 {
 
 .contact-info {
   flex: 1;
-  border: 2px solid black;
+  background-color: #eef2f7;
+  border: 1px solid #cccccc;
+  border-top: 4px solid #e8912d;
   padding: 15px;
 }
 
@@ -257,7 +291,7 @@ h2 {
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: black;
+  background-color: #1f3a5f;
   color: white;
   padding: 15px;
   margin-top: 30px;
@@ -277,6 +311,9 @@ footer p {
   }
   nav a {
     margin: 0 8px;
+  }
+  .content {
+    padding: 15px;
   }
   .hero {
     height: 70vh;
