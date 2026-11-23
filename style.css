@@ -53,16 +53,10 @@ header {
   z-index: 10;                        /* para nasa ibabaw siya ng ibang content */
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-/* Yung "RN" sa tabi ng pangalan ko: orange na text lang, walang background */
-.mark {
-  color: #e8912d;
-  margin-right: 12px;
+/* Yung logo ko, picture (logo.png) na ginawa ko mismo. Fixed yung taas, yung lapad sumusunod. */
+.logo-img {
+  height: 60px;
+  display: block;
 }
 
 nav a {
@@ -455,6 +449,9 @@ footer p {
   header {
     flex-direction: column;       /* yung name at menu, pumapatong na sa isa't isa */
     padding: 12px 20px;
+  }
+  .logo-img {
+    height: 44px;
   }
   nav {
     margin-top: 10px;

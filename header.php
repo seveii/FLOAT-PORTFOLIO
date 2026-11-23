@@ -9,7 +9,7 @@
 <body>
 
 <header>
-  <div class="logo"><span class="mark">RN</span>Rafael Joseph Nieves</div>
+  <a href="index.php"><img class="logo-img" src="images/logo.png" alt="Rafael Joseph Nieves, web and graphic designer"></a>
   <nav>
     <a href="index.php"<?php if ($title == "Home") { echo ' class="active"'; } ?>>Home</a>
     <a href="about.php"<?php if ($title == "About") { echo ' class="active"'; } ?>>About</a>
