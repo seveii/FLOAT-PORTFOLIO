@@ -59,16 +59,10 @@ header {
   letter-spacing: 1px;
 }
 
-/* Yung maliit na orange na "RN" badge sa tabi ng pangalan ko */
+/* Yung "RN" sa tabi ng pangalan ko: orange na text lang, walang background */
 .mark {
-  display: inline-block;
-  background-color: #e8912d;
-  color: black;
-  border-radius: 8px;
-  padding: 4px 10px;
-  margin-right: 14px;
-  font-size: 20px;
-  letter-spacing: 0;
+  color: #e8912d;
+  margin-right: 12px;
 }
 
 nav a {
