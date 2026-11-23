@@ -3,9 +3,16 @@ $title = "About";
 include "header.php";
 ?>
 
-<div class="content">
+<!-- Banner sa taas, may picture at yung title ko sa loob (style.css, .banner) -->
+<div class="banner about-banner">
+  <div class="banner-text">
+    <h1>About Me</h1>
+    <div class="line"></div>
+    <p>Computer Engineering student, designer and student leader</p>
+  </div>
+</div>
 
-  <h2>About Me</h2>
+<div class="content">
 
   <!-- Naka-float to the left yung picture (style.css, .portrait), kaya yung text, umiikot sa gilid niya. -->
   <img class="portrait" src="images/awardspresidentslist.webp" alt="Rafael holding two President's List certificates">
@@ -49,10 +56,10 @@ include "header.php";
 
   <h2>Leadership and Organizations</h2>
 
-  <!-- Two columns, CSS grid yung gamit -->
+  <!-- Two columns, CSS grid yung gamit. Bawat role, may sarili niyang card. -->
   <div class="two-columns">
 
-    <div>
+    <div class="card">
       <h3>Public Relations Officer, ICpEP</h3>
       <p><i>Aug 2026 - Present. Institute of Computer Engineers of the Philippines</i></p>
       <ul>
@@ -62,7 +69,7 @@ include "header.php";
       </ul>
     </div>
 
-    <div>
+    <div class="card">
       <h3>Multimedia Director, ACES</h3>
       <p><i>Sep 2024 - Jul 2025. Association of Computer Enthusiast Students</i></p>
       <ul>
@@ -72,7 +79,7 @@ include "header.php";
       </ul>
     </div>
 
-    <div>
+    <div class="card">
       <h3>Multimedia Editor, ACES</h3>
       <p><i>Aug 2023 - Jun 2024. Association of Computer Enthusiast Students</i></p>
       <ul>
@@ -81,7 +88,7 @@ include "header.php";
       </ul>
     </div>
 
-    <div>
+    <div class="card">
       <h3>Committee Chair, SSLG</h3>
       <p><i>Jun 2022 - Aug 2023. Supreme Student Legislative Government</i></p>
       <ul>
@@ -94,24 +101,19 @@ include "header.php";
 
   <h2>Education, Awards and Certifications</h2>
 
-  <div class="two-columns">
+  <!-- Three columns, CSS grid yung gamit -->
+  <div class="three-columns">
 
-    <div>
+    <div class="card">
       <h3>Education</h3>
       <ul>
         <li><b>BS Computer Engineering</b> (Aug 2024 - Present), Dr. Yanga's Colleges, Inc. Dean's Lister: 1st Semester A.Y. 2024-2025 and 2nd Semester A.Y. 2025-2026.</li>
         <li><b>BS Computer Science</b> (Aug 2023 - May 2024), STI College Caloocan. President Dean's Lister: 1st and 2nd Semester A.Y. 2023-2024.</li>
         <li><b>Senior High School, STEM</b> (Jun 2021 - May 2023), Colegio de Sto. Niño. Graduated with High Honors.</li>
       </ul>
-
-      <h3>Certifications</h3>
-      <ul>
-        <li><b>AI Image Content Creation, Participant</b> (Mar 19, 2026), IRCITE 2026 / Philippine Society of Information Technology Educators.</li>
-        <li><b>AI Tools Certification Series</b> (Oct 2026), tixu.ai: Claude for Engineers, Claude, ChatGPT, Lovable, Kling, Nano Banana.</li>
-      </ul>
     </div>
 
-    <div>
+    <div class="card">
       <h3>Awards</h3>
       <ul>
         <li><b>1st Place, ASEAN Exhibit Poster Making</b> (Sep 2025), Dr. Yanga's Colleges, Inc.</li>
@@ -119,6 +121,14 @@ include "header.php";
         <li><b>Outstanding Awardee, Research Paper</b> (May 2023), Colegio de Sto. Niño.</li>
         <li><b>Academic Achiever Award, With Honors</b> (May 2023), general average of 93.00%.</li>
         <li><b>Certificate of Academic Excellence</b> (May 2023), average of 92.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Certifications</h3>
+      <ul>
+        <li><b>AI Image Content Creation, Participant</b> (Mar 19, 2026), IRCITE 2026 / Philippine Society of Information Technology Educators.</li>
+        <li><b>AI Tools Certification Series</b> (Oct 2026), tixu.ai: Claude for Engineers, Claude, ChatGPT, Lovable, Kling, Nano Banana.</li>
       </ul>
     </div>
 
