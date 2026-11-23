@@ -70,7 +70,7 @@ include "header.php";
         </p>
         <p>
           Message:<br>
-          <textarea name="message" rows="6" cols="40"></textarea>
+          <textarea name="message" rows="6" cols="30"></textarea>
         </p>
         <p>
           <input type="submit" value="Send">
