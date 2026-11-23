@@ -78,12 +78,6 @@ include "header.php";
     </div>
 
     <div class="card">
-      <img src="images/engmotherboard.webp" alt="Labeled laptop motherboard">
-      <h3>Labeled Laptop Motherboard</h3>
-      <p>A framed display of a real laptop motherboard with every major part and power rail labeled.</p>
-    </div>
-
-    <div class="card">
       <img src="images/engbreadboard.webp" alt="Circuit prototyping on a breadboard">
       <h3>Circuit Prototyping</h3>
       <p>Hands-on circuit building on breadboard and perforated board for Computer Engineering lab work.</p>
