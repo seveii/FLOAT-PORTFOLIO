@@ -3,14 +3,13 @@ $title = "About";
 include "header.php";
 ?>
 
-<!-- Banner sa taas: yung title sa left, yung picture ko sa right (style.css, .banner) -->
+<!-- Banner sa taas: yung banner.jpg na ginawa ko yung background, yung title nasa ibabaw (style.css, .banner) -->
 <div class="banner">
   <div class="banner-text">
     <h1>About Me</h1>
     <div class="line"></div>
     <p>Computer Engineering student, designer and student leader</p>
   </div>
-  <img class="banner-photo" src="images/coverriver.webp" alt="Rafael relaxing in a camp chair beside a river">
 </div>
 
 <div class="content">

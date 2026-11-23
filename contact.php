@@ -31,14 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 include "header.php";
 ?>
 
-<!-- Banner sa taas: yung title sa left, yung picture ko sa right (style.css, .banner) -->
+<!-- Banner sa taas: yung banner.jpg na ginawa ko yung background, yung title nasa ibabaw (style.css, .banner) -->
 <div class="banner">
   <div class="banner-text">
     <h1>Contact Me</h1>
     <div class="line"></div>
     <p>Tell me what you need and I will reply by email.</p>
   </div>
-  <img class="banner-photo" src="images/momentrooftop.webp" alt="Rafael seated on a rooftop terrace at night">
 </div>
 
 <div class="content">

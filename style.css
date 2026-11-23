@@ -126,12 +126,15 @@ h2 {
 }
 
 /* ---------- Banner sa taas ng About at Contact pages ---------- */
-/* FLEXBOX: navy na bar, yung title sa left, yung picture ko sa right. Buo yung picture (hindi naka-crop). */
+/* Ako mismo yung gumawa ng banner.jpg (navy at orange design). Background image siya, tapos yung title nasa ibabaw. */
 .banner {
+  background-color: #1f3a5f;            /* kung sakaling hindi mag-load yung picture */
+  background-image: url(images/banner.jpg);
+  background-size: cover;
+  background-position: right bottom;    /* yung design nasa right, yung blank na navy nasa left para sa title */
+  height: 260px;
   display: flex;
-  justify-content: space-between;   /* title sa left, picture sa right */
   align-items: center;
-  background-color: #1f3a5f;
 }
 
 .banner-text {
@@ -148,10 +151,6 @@ h2 {
 .banner-text p {
   margin: 10px 0 0 0;
   font-size: 20px;
-}
-
-.banner-photo {
-  height: 280px;      /* fixed yung taas, yung lapad sumusunod para hindi mapiga */
 }
 
 /* ---------- FLEXBOX: boxes na magkakatabi ---------- */
@@ -397,14 +396,11 @@ footer p {
     margin-bottom: 20px;
   }
   .banner {
-    flex-direction: column;       /* sa phone, yung title sa taas tapos yung picture sa baba */
-  }
-  .banner-photo {
-    height: auto;
-    width: 100%;
+    height: 180px;
+    background-position: left bottom;   /* sa phone, yung left side ng banner yung kita, kung nasaan yung title */
   }
   .banner-text {
-    margin: 20px;
+    margin: 0 20px;
   }
   .banner-text h1 {
     font-size: 32px;
